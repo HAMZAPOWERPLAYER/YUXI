@@ -39,14 +39,19 @@
       "src/features/kana/selectors.ts",
       "src/features/settings/settingsModel.ts",
       "src/features/backup/schema.ts",
+      "src/features/reminders/**/*.ts",
       "src/db/repositories/**/*.ts",
       "src/services/clock.ts",
+      "src/services/haptics.ts",
+      "src/services/notifications.ts",
+      "src/services/tts.ts",
       "src/utils/date.ts",
       "src/utils/random.ts"
     ],
     "coveragePathIgnorePatterns": [
       "/src/db/repositories/index.ts",
       "/src/features/progress/index.ts",
+      "/src/features/reminders/index.ts",
       "/src/features/srs/index.ts"
     ],
     "coverageThreshold": {
