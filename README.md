@@ -13,7 +13,7 @@ centralized mascot asset map.
 
 | Area             | What is included                                                                                           |
 | ---------------- | ---------------------------------------------------------------------------------------------------------- |
-| Learning content | 208 kana records plus 5 Part 2 units (105 words/phrases, 35 sentences)                                     |
+| Learning content | 208 kana records plus 10 Part 2 units (210 words/phrases, 70 sentences)                                    |
 | Charts           | Grouped kana charts with romaji toggle, mastery colors and per-kana detail                                 |
 | Audio            | Japanese pronunciation through the device text-to-speech engine, including a missing-voice recovery flow   |
 | Practice         | Kana → Romaji, Romaji → Kana, Listening, plus Mixed mode                                                   |
@@ -324,8 +324,9 @@ validator is a structural guard rail, not a substitute for those reviews.
 - Reminders are local-only and may be delivered approximately by the OS.
 - No EAS project, remote, signing credentials or store listing is configured.
 - Part 2 is in progress: the content model, validator, lesson browser and lesson player
-  are implemented and five units (greetings, introductions, family and home, everyday
-  objects, numbers) are authored, but the remaining units are still being written.
+  are implemented and ten units (greetings, introductions, family and home, everyday
+  objects, numbers, food, daily routine, places and transport, weather, shopping) are
+  authored, but the remaining units are still being written.
 
 ## License
 

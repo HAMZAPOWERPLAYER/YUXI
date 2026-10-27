@@ -106,5 +106,10 @@ export const contentRegistry = createContentRegistry({
     'unit-03-family-home': () => require('./data/units/unit-03-family-home.json'),
     'unit-04-objects': () => require('./data/units/unit-04-objects.json'),
     'unit-05-numbers': () => require('./data/units/unit-05-numbers.json'),
+    'unit-06-food': () => require('./data/units/unit-06-food.json'),
+    'unit-07-daily': () => require('./data/units/unit-07-daily.json'),
+    'unit-08-places': () => require('./data/units/unit-08-places.json'),
+    'unit-09-weather': () => require('./data/units/unit-09-weather.json'),
+    'unit-10-shopping': () => require('./data/units/unit-10-shopping.json'),
   },
 });

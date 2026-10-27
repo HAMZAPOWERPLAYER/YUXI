@@ -219,7 +219,7 @@ draft rather than a published curriculum.
 
 ## Part 2: Vocabulary, lessons and sentences
 
-**Status:** authoring in progress (5 of 20 units authored); **no unit is approved for release**
+**Status:** authoring in progress (10 of 20 units authored); **no unit is approved for release**
 **Data root:** `src/features/content/data/`
 **Reviewers required:** a Japanese-language teacher, a native Urdu speaker and a
 content-safety reviewer familiar with the halal constraints.
@@ -237,10 +237,15 @@ Update this table as each unit is authored. Every file and every item carries
 | `units/unit-03-family-home.json`   | Family and home        |       4 |            21 |         7 | `true`      |
 | `units/unit-04-objects.json`       | Everyday objects       |       4 |            21 |         7 | `true`      |
 | `units/unit-05-numbers.json`       | Numbers and counting   |       4 |            21 |         7 | `true`      |
-| **Total**                          | **5 units**            |  **20** |       **105** |    **35** |             |
+| `units/unit-06-food.json`          | Food and drink         |       4 |            21 |         7 | `true`      |
+| `units/unit-07-daily.json`         | Daily routine          |       4 |            21 |         7 | `true`      |
+| `units/unit-08-places.json`        | Places and transport   |       4 |            21 |         7 | `true`      |
+| `units/unit-09-weather.json`       | Weather and seasons    |       4 |            21 |         7 | `true`      |
+| `units/unit-10-shopping.json`      | Shopping and money     |       4 |            21 |         7 | `true`      |
+| **Total**                          | **10 units**           |  **40** |       **210** |    **70** |             |
 
 The target for Part 2 is 20 units, 3–5 lessons per unit, 6–10 items per lesson,
-about 420 vocabulary items/phrases and about 140 sentences. The five authored
+about 420 vocabulary items/phrases and about 140 sentences. The ten authored
 units follow a uniform 21 vocabulary + 7 sentences shape (28 items per unit,
 7 per lesson); the remaining units may vary within the schema limits. The
 machine-readable contract is in `src/features/content/schema.ts` and

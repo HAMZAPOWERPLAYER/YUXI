@@ -39,6 +39,41 @@
         "titleUr": "گنتی اور اعداد",
         "titleEn": "Numbers and counting",
         "icon": "calculator-outline"
+      },
+      {
+        "id": "unit-06-food",
+        "order": 6,
+        "titleUr": "کھانا اور پینا",
+        "titleEn": "Food and drink",
+        "icon": "restaurant-outline"
+      },
+      {
+        "id": "unit-07-daily",
+        "order": 7,
+        "titleUr": "روزمرہ کی عادتیں",
+        "titleEn": "Daily routine",
+        "icon": "time-outline"
+      },
+      {
+        "id": "unit-08-places",
+        "order": 8,
+        "titleUr": "جگہیں اور سفر",
+        "titleEn": "Places and transport",
+        "icon": "train-outline"
+      },
+      {
+        "id": "unit-09-weather",
+        "order": 9,
+        "titleUr": "موسم اور رُتیں",
+        "titleEn": "Weather and seasons",
+        "icon": "rainy-outline"
+      },
+      {
+        "id": "unit-10-shopping",
+        "order": 10,
+        "titleUr": "خریداری اور پیسے",
+        "titleEn": "Shopping and money",
+        "icon": "cart-outline"
       }
     ]
   }
