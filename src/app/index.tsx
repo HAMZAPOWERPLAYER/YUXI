@@ -1,24 +1,9 @@
-import { useT } from '@/i18n';
+import { Redirect } from 'expo-router';
 
-import { AppText } from '@/components/AppText';
-import { MascotBubble } from '@/components/MascotBubble';
-import { Screen } from '@/components/Screen';
-import { Stack } from '@/components/Stack';
+import { useSettings } from '@/providers/useSettings';
 
-export default function IndexScreen() {
-  const t = useT();
-
-  return (
-    <Screen>
-      <Stack gap={24} style={{ flex: 1, justifyContent: 'center' }}>
-        <AppText variant="display" align="center">
-          {t('common.appName')}
-        </AppText>
-        <AppText variant="body" color="textMuted" align="center">
-          {t('common.brandTagline')}
-        </AppText>
-        <MascotBubble message={t('onboarding.welcomeBody')} title={t('onboarding.welcomeTitle')} />
-      </Stack>
-    </Screen>
-  );
+/** Chooses the first screen based on whether onboarding has been finished. */
+export default function IndexRoute() {
+  const { settings } = useSettings();
+  return <Redirect href={settings.onboardingDone ? '/(tabs)/home' : '/onboarding'} />;
 }

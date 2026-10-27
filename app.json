@@ -42,7 +42,7 @@
         {
           "icon": "./assets/images/notification-icon.png",
           "color": "#E11D2E",
-          "defaultChannel": "daily-reminder",
+          "defaultChannel": "yuxi-daily-reminder",
           "enableRemoteNotifications": false
         }
       ],

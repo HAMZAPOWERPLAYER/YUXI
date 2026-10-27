@@ -15,6 +15,8 @@ export type ScreenHeaderProps = {
   back?: boolean;
   large?: boolean;
   right?: ReactNode;
+  /** Overrides the default navigation back action (for unsaved-work guards). */
+  onBack?: () => void;
 };
 
 export function ScreenHeader({
@@ -23,12 +25,17 @@ export function ScreenHeader({
   back = false,
   large = false,
   right,
+  onBack,
 }: ScreenHeaderProps) {
   const theme = useAppTheme();
   const t = useT();
   const { isRTL } = useDirection();
 
   const goBack = () => {
+    if (onBack) {
+      onBack();
+      return;
+    }
     if (router.canGoBack()) {
       router.back();
     } else {

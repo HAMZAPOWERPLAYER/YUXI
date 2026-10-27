@@ -1,6 +1,7 @@
 export { isReminderPlatformSupported } from './platform';
 export {
   REMINDER_BODY_KEYS,
+  REMINDER_NOTIFICATION_META_KEY,
   buildReminderContent,
   parseReminderTime,
   reminderVariantIndex,

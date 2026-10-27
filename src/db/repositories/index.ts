@@ -18,6 +18,8 @@ export {
   saveKanaProgress,
   saveManyKanaProgress,
 } from './kanaProgressRepository';
+export { replaceAllUserData } from './importRepository';
+export type { UserDataSnapshot } from './importRepository';
 export { clearMeta, deleteMeta, getAllMeta, getMeta, setMeta } from './metaRepository';
 export { resetAllData } from './resetRepository';
 export {

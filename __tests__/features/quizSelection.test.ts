@@ -201,7 +201,14 @@ describe('selectSessionKana', () => {
       items[3]?.id,
     ]);
     const three = items.slice(0, 3);
-    expect(ids(avoidRecentOpening(three, three.map((item) => item.id)))).toEqual(ids(three));
+    expect(
+      ids(
+        avoidRecentOpening(
+          three,
+          three.map((item) => item.id),
+        ),
+      ),
+    ).toEqual(ids(three));
     expect(avoidRecentOpening([], recent)).toEqual([]);
     expect(ids(avoidRecentOpening(items.slice(0, 1), [items[0]?.id ?? '']))).toEqual([
       items[0]?.id,

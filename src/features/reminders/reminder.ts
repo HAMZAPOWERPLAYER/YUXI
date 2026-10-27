@@ -2,6 +2,9 @@ import { isValidReminderTime } from '@/features/settings/settingsModel';
 import { translate } from '@/i18n/translate';
 import type { Language, TranslationKey } from '@/i18n/types';
 
+/** Meta key holding the identifier of the one scheduled daily reminder. */
+export const REMINDER_NOTIFICATION_META_KEY = 'reminder_notification_id';
+
 /** Rotating copy keeps the daily nudge from feeling like spam. */
 export const REMINDER_BODY_KEYS = [
   'notifications.body1',
