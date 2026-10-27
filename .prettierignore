@@ -1,0 +1,9 @@
+node_modules
+.expo
+android
+ios
+coverage
+dist
+package-lock.json
+src/generated/licenses.json
+assets

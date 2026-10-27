@@ -1,26 +1,29 @@
 {
   "expo": {
-    "name": "YUXII",
-    "slug": "YUXII",
+    "name": "Yuxi: Learn Japanese",
+    "slug": "yuxi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "yuxii",
-    "userInterfaceStyle": "automatic",
+    "scheme": "yuxi",
+    "userInterfaceStyle": "dark",
+    "description": "The friendly, offline, no-login way for Urdu speakers to learn Japanese kana.",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "bundleIdentifier": "com.hamzapowerplayer.yuxi",
+      "supportsTablet": false
     },
     "android": {
+      "package": "com.hamzapowerplayer.yuxi",
+      "allowBackup": false,
+      "blockedPermissions": ["android.permission.AD_ID"],
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0B0B0F",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "output": "server",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -28,15 +31,36 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#0B0B0F",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 160,
+          "resizeMode": "contain"
         }
-      ]
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png",
+          "color": "#E11D2E",
+          "defaultChannel": "daily-reminder",
+          "enableRemoteNotifications": false
+        }
+      ],
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": false,
+          "useSQLCipher": false
+        }
+      ],
+      "expo-localization",
+      "expo-sharing",
+      "expo-document-picker",
+      "@react-native-community/datetimepicker"
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      "typedRoutes": false,
+      "reactCompiler": false
     }
   }
 }

@@ -1,0 +1,213 @@
+{
+  "generatedBy": "scripts/generate-licenses.mjs",
+  "app": "yuxi",
+  "licenseCount": 34,
+  "licenses": [
+    {
+      "name": "@expo-google-fonts/noto-nastaliq-urdu",
+      "version": "0.4.2",
+      "license": "MIT AND OFL-1.1",
+      "repository": "git+https://github.com/expo/google-fonts.git"
+    },
+    {
+      "name": "@expo-google-fonts/noto-sans-jp",
+      "version": "0.4.4",
+      "license": "MIT AND OFL-1.1",
+      "repository": "git+https://github.com/expo/google-fonts.git"
+    },
+    {
+      "name": "@expo/vector-icons",
+      "version": "15.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/expo/vector-icons.git"
+    },
+    {
+      "name": "@react-native-community/datetimepicker",
+      "version": "9.0.0",
+      "license": "MIT",
+      "repository": "https://github.com/react-native-datetimepicker/datetimepicker"
+    },
+    {
+      "name": "expo",
+      "version": "58.0.19",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-constants",
+      "version": "58.0.13",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-device",
+      "version": "58.0.5",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-document-picker",
+      "version": "58.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-file-system",
+      "version": "58.0.11",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-font",
+      "version": "58.0.10",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-haptics",
+      "version": "58.0.7",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-linking",
+      "version": "58.0.14",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-localization",
+      "version": "58.0.5",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-notifications",
+      "version": "58.1.6",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-router",
+      "version": "58.0.26",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-sharing",
+      "version": "58.0.20",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-speech",
+      "version": "58.0.3",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-splash-screen",
+      "version": "58.0.11",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-sqlite",
+      "version": "58.0.14",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-status-bar",
+      "version": "58.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-system-ui",
+      "version": "58.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "Noto Nastaliq Urdu",
+      "version": "bundled",
+      "license": "OFL-1.1",
+      "repository": "https://github.com/notofonts/nastaliq",
+      "note": "Urdu script rendering."
+    },
+    {
+      "name": "Noto Sans JP",
+      "version": "bundled",
+      "license": "OFL-1.1",
+      "repository": "https://github.com/notofonts/noto-cjk",
+      "note": "Japanese kana and UI glyphs."
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/react/react.git"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/react/react.git"
+    },
+    {
+      "name": "react-native",
+      "version": "0.88.0",
+      "license": "MIT",
+      "repository": "git+https://github.com/react/react-native.git"
+    },
+    {
+      "name": "react-native-gesture-handler",
+      "version": "3.3.0",
+      "license": "MIT",
+      "repository": "git+https://github.com/software-mansion/react-native-gesture-handler.git"
+    },
+    {
+      "name": "react-native-reanimated",
+      "version": "4.7.1",
+      "license": "MIT",
+      "repository": "git+https://github.com/software-mansion/react-native-reanimated.git"
+    },
+    {
+      "name": "react-native-safe-area-context",
+      "version": "5.10.1",
+      "license": "MIT",
+      "repository": "git+https://github.com/appandflow/react-native-safe-area-context.git"
+    },
+    {
+      "name": "react-native-screens",
+      "version": "4.30.0",
+      "license": "MIT",
+      "repository": "git+https://github.com/software-mansion/react-native-screens.git"
+    },
+    {
+      "name": "react-native-svg",
+      "version": "15.16.0",
+      "license": "MIT",
+      "repository": "https://github.com/software-mansion/react-native-svg"
+    },
+    {
+      "name": "react-native-web",
+      "version": "0.21.4",
+      "license": "MIT",
+      "repository": "git+https://github.com/necolas/react-native-web.git"
+    },
+    {
+      "name": "react-native-worklets",
+      "version": "0.13.0",
+      "license": "MIT",
+      "repository": "git+https://github.com/software-mansion/react-native-reanimated.git"
+    },
+    {
+      "name": "zod",
+      "version": "4.6.7",
+      "license": "MIT",
+      "repository": "git+https://github.com/colinhacks/zod.git"
+    }
+  ]
+}
