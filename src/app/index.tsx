@@ -1,23 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useT } from '@/i18n';
+
+import { AppText } from '@/components/AppText';
+import { MascotBubble } from '@/components/MascotBubble';
+import { Screen } from '@/components/Screen';
+import { Stack } from '@/components/Stack';
 
 export default function IndexScreen() {
+  const t = useT();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Yuxi</Text>
-    </View>
+    <Screen>
+      <Stack gap={24} style={{ flex: 1, justifyContent: 'center' }}>
+        <AppText variant="display" align="center">
+          {t('common.appName')}
+        </AppText>
+        <AppText variant="body" color="textMuted" align="center">
+          {t('common.brandTagline')}
+        </AppText>
+        <MascotBubble message={t('onboarding.welcomeBody')} title={t('onboarding.welcomeTitle')} />
+      </Stack>
+    </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    backgroundColor: '#0B0B0F',
-    flex: 1,
-    justifyContent: 'center',
-  },
-  title: {
-    color: '#F4F4F6',
-    fontSize: 32,
-    fontWeight: '700',
-  },
-});
