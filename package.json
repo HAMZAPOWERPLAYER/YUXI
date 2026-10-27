@@ -35,8 +35,15 @@
       "src/features/quiz/engine.ts",
       "src/db/migrations/**/*.ts",
       "src/features/kana/data/**/*.ts",
+      "src/features/kana/selectors.ts",
+      "src/features/settings/settingsModel.ts",
       "src/features/backup/schema.ts",
+      "src/db/repositories/**/*.ts",
+      "src/services/clock.ts",
       "src/utils/date.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/src/db/repositories/index.ts"
     ],
     "coverageThreshold": {
       "global": {
