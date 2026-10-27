@@ -9,6 +9,15 @@ export {
 } from './data';
 export type { KanaJsonExport } from './data';
 export {
+  MASTERY_LEVELS,
+  buildMasteryBreakdown,
+  buildRowMastery,
+  emptyMasteryBreakdown,
+  masteryFor,
+  summarizeMastery,
+} from './mastery';
+export type { MasteryBreakdown, MasteryInput, RowMastery } from './mastery';
+export {
   getAllKana,
   getByGroup,
   getById,
