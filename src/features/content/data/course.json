@@ -4,6 +4,42 @@
   "course": {
     "id": "yuxi-course",
     "version": 1,
-    "units": []
+    "units": [
+      {
+        "id": "unit-01-greetings",
+        "order": 1,
+        "titleUr": "سلام اور آداب",
+        "titleEn": "Greetings and courtesy",
+        "icon": "chatbubbles-outline"
+      },
+      {
+        "id": "unit-02-introductions",
+        "order": 2,
+        "titleUr": "اپنا تعارف",
+        "titleEn": "Introducing yourself",
+        "icon": "person-circle-outline"
+      },
+      {
+        "id": "unit-03-family-home",
+        "order": 3,
+        "titleUr": "خاندان اور گھر",
+        "titleEn": "Family and home",
+        "icon": "home-outline"
+      },
+      {
+        "id": "unit-04-objects",
+        "order": 4,
+        "titleUr": "روزمرہ کی اشیاء",
+        "titleEn": "Everyday objects",
+        "icon": "cube-outline"
+      },
+      {
+        "id": "unit-05-numbers",
+        "order": 5,
+        "titleUr": "گنتی اور اعداد",
+        "titleEn": "Numbers and counting",
+        "icon": "calculator-outline"
+      }
+    ]
   }
 }

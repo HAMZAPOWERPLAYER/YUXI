@@ -219,7 +219,7 @@ draft rather than a published curriculum.
 
 ## Part 2: Vocabulary, lessons and sentences
 
-**Status:** authoring in progress; **no unit is approved for release**
+**Status:** authoring in progress (5 of 20 units authored); **no unit is approved for release**
 **Data root:** `src/features/content/data/`
 **Reviewers required:** a Japanese-language teacher, a native Urdu speaker and a
 content-safety reviewer familiar with the halal constraints.
@@ -229,13 +229,21 @@ content-safety reviewer familiar with the halal constraints.
 Update this table as each unit is authored. Every file and every item carries
 `needsHumanReview: true` until the reviewers sign off.
 
-| File          | Unit         | Lessons | Words/phrases | Sentences | Review flag |
-| ------------- | ------------ | ------: | ------------: | --------: | ----------- |
-| `course.json` | course index |       — |             — |         — | `true`      |
+| File                               | Unit                   | Lessons | Words/phrases | Sentences | Review flag |
+| ---------------------------------- | ---------------------- | ------: | ------------: | --------: | ----------- |
+| `course.json`                      | course index           |       — |             — |         — | `true`      |
+| `units/unit-01-greetings.json`     | Greetings and courtesy |       4 |            21 |         7 | `true`      |
+| `units/unit-02-introductions.json` | Introducing yourself   |       4 |            21 |         7 | `true`      |
+| `units/unit-03-family-home.json`   | Family and home        |       4 |            21 |         7 | `true`      |
+| `units/unit-04-objects.json`       | Everyday objects       |       4 |            21 |         7 | `true`      |
+| `units/unit-05-numbers.json`       | Numbers and counting   |       4 |            21 |         7 | `true`      |
+| **Total**                          | **5 units**            |  **20** |       **105** |    **35** |             |
 
 The target for Part 2 is 20 units, 3–5 lessons per unit, 6–10 items per lesson,
-about 420 vocabulary items/phrases and about 140 sentences. The machine-readable
-contract is in `src/features/content/schema.ts` and
+about 420 vocabulary items/phrases and about 140 sentences. The five authored
+units follow a uniform 21 vocabulary + 7 sentences shape (28 items per unit,
+7 per lesson); the remaining units may vary within the schema limits. The
+machine-readable contract is in `src/features/content/schema.ts` and
 `docs/content-schema/unit.schema.json`.
 
 ### Automated checks (must be green before review)

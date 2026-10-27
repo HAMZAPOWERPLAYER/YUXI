@@ -13,7 +13,7 @@ centralized mascot asset map.
 
 | Area             | What is included                                                                                           |
 | ---------------- | ---------------------------------------------------------------------------------------------------------- |
-| Learning content | 208 kana records across Hiragana and Katakana, in basic, dakuten/handakuten and yōon groups                |
+| Learning content | 208 kana records plus 5 Part 2 units (105 words/phrases, 35 sentences)                                     |
 | Charts           | Grouped kana charts with romaji toggle, mastery colors and per-kana detail                                 |
 | Audio            | Japanese pronunciation through the device text-to-speech engine, including a missing-voice recovery flow   |
 | Practice         | Kana → Romaji, Romaji → Kana, Listening, plus Mixed mode                                                   |
@@ -60,7 +60,7 @@ Useful commands:
 npm run typecheck        # tsc --noEmit
 npm run lint             # eslint .
 npm run format:check     # prettier --check .
-npm test                 # 347 Jest tests
+npm test                 # 421 Jest tests
 npm run test:coverage    # coverage report with thresholds
 npm run validate:content # course schema, references, safety and size checks
 npm run content:schema   # regenerate docs/content-schema/*.json
@@ -324,8 +324,8 @@ validator is a structural guard rail, not a substitute for those reviews.
 - Reminders are local-only and may be delivered approximately by the OS.
 - No EAS project, remote, signing credentials or store listing is configured.
 - Part 2 is in progress: the content model, validator, lesson browser and lesson player
-  are implemented, but the vocabulary units are still being authored, so the course shows
-  its empty state until the first unit ships.
+  are implemented and five units (greetings, introductions, family and home, everyday
+  objects, numbers) are authored, but the remaining units are still being written.
 
 ## License
 

@@ -100,5 +100,11 @@ export function createContentRegistry(source: ContentSource): ContentRegistry {
  */
 export const contentRegistry = createContentRegistry({
   course: () => courseJson,
-  units: {},
+  units: {
+    'unit-01-greetings': () => require('./data/units/unit-01-greetings.json'),
+    'unit-02-introductions': () => require('./data/units/unit-02-introductions.json'),
+    'unit-03-family-home': () => require('./data/units/unit-03-family-home.json'),
+    'unit-04-objects': () => require('./data/units/unit-04-objects.json'),
+    'unit-05-numbers': () => require('./data/units/unit-05-numbers.json'),
+  },
 });
