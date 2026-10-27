@@ -23,7 +23,7 @@
     },
     {
       "name": "@react-native-community/datetimepicker",
-      "version": "9.0.0",
+      "version": "9.2.1",
       "license": "MIT",
       "repository": "https://github.com/react-native-datetimepicker/datetimepicker"
     },
