@@ -1,13 +1,9 @@
-import {
-  NotoNastaliqUrdu_400Regular,
-  NotoNastaliqUrdu_700Bold,
-} from '@expo-google-fonts/noto-nastaliq-urdu';
+import { NotoNastaliqUrdu_400Regular } from '@expo-google-fonts/noto-nastaliq-urdu/400Regular';
+import { NotoNastaliqUrdu_700Bold } from '@expo-google-fonts/noto-nastaliq-urdu/700Bold';
 import type { TextStyle } from 'react-native';
-import {
-  NotoSansJP_400Regular,
-  NotoSansJP_500Medium,
-  NotoSansJP_700Bold,
-} from '@expo-google-fonts/noto-sans-jp';
+import { NotoSansJP_400Regular } from '@expo-google-fonts/noto-sans-jp/400Regular';
+import { NotoSansJP_500Medium } from '@expo-google-fonts/noto-sans-jp/500Medium';
+import { NotoSansJP_700Bold } from '@expo-google-fonts/noto-sans-jp/700Bold';
 import { useFonts } from 'expo-font';
 
 /**
