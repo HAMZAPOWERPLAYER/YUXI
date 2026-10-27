@@ -65,9 +65,10 @@ function derive(snapshot: Snapshot, at: number): Derived {
   const recentKanaIds: string[] = [];
   const seen = new Set<string>();
   for (const entry of snapshot.recentLog) {
-    if (seen.has(entry.kanaId)) continue;
-    seen.add(entry.kanaId);
-    recentKanaIds.push(entry.kanaId);
+    if (entry.itemType !== 'kana') continue;
+    if (seen.has(entry.itemId)) continue;
+    seen.add(entry.itemId);
+    recentKanaIds.push(entry.itemId);
   }
 
   return {

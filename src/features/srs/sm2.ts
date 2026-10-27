@@ -1,7 +1,8 @@
 import type { KanaProgress } from '@/types/kana';
+import type { LearningItemType, SrsItem } from '@/types/srs';
 
 /**
- * SM-2 inspired scheduler.
+ * SM-2 inspired scheduler shared by kana, vocabulary and sentences.
  *
  * The interval is measured in days and stored as a fraction for lapses so a
  * missed card returns after ten minutes.
@@ -26,7 +27,7 @@ const EASE_DELTA: Record<number, number> = {
   5: 0.1,
 };
 
-export type Sm2State = Pick<KanaProgress, 'ease' | 'intervalDays' | 'repetitions' | 'dueAt'>;
+export type Sm2State = Pick<SrsItem, 'ease' | 'intervalDays' | 'repetitions' | 'dueAt'>;
 
 export type AnswerTiming = {
   correct: boolean;
@@ -37,6 +38,17 @@ export type ReviewAnswer = AnswerTiming & {
   nowMs: number;
 };
 
+export type ReviewIdentity = {
+  itemId: string;
+  itemType: LearningItemType;
+};
+
+export type SrsReviewResult = {
+  item: SrsItem;
+  quality: number;
+};
+
+/** Legacy kana result kept for the Part 1 screens and tests. */
 export type ReviewResult = {
   progress: KanaProgress;
   quality: number;
@@ -126,17 +138,26 @@ export function applySm2(state: Sm2State, quality: number, nowMs: number): Sm2St
 }
 
 /**
- * Full progress update for one answer. `previous` is null the first time a kana
- * is reviewed. Counters are denormalized so charts and weak-item selection stay
- * a single read.
+ * Full progress update for any learning item. `previous` is null the first
+ * time an item is reviewed. Counters are denormalized so charts and
+ * weak-item selection stay a single read.
  */
-export function applyReview(
-  previous: KanaProgress | null,
-  kanaId: string,
+export function applySrsReview(
+  previous: SrsItem | null,
+  identity: ReviewIdentity,
   answer: ReviewAnswer,
-): ReviewResult {
+): SrsReviewResult {
+  if (
+    previous &&
+    (previous.itemId !== identity.itemId || previous.itemType !== identity.itemType)
+  ) {
+    throw new Error(
+      `SRS item mismatch: expected ${identity.itemType}:${identity.itemId}, received ${previous.itemType}:${previous.itemId}`,
+    );
+  }
+
   const quality = qualityFromAnswer(answer);
-  const base = previous ?? newProgress(kanaId, answer.nowMs);
+  const base = previous ?? newSrsItem(identity.itemId, identity.itemType, answer.nowMs);
   const scheduled = applySm2(
     {
       ease: base.ease,
@@ -150,8 +171,9 @@ export function applyReview(
 
   return {
     quality,
-    progress: {
-      kanaId,
+    item: {
+      itemId: base.itemId,
+      itemType: base.itemType,
       seen: base.seen + 1,
       correct: base.correct + (answer.correct ? 1 : 0),
       wrong: base.wrong + (answer.correct ? 0 : 1),
@@ -167,10 +189,11 @@ export function applyReview(
   };
 }
 
-/** A fresh, never-reviewed progress row (not normally persisted until seen). */
-export function newProgress(kanaId: string, nowMs: number): KanaProgress {
+/** A fresh, never-reviewed item (not normally persisted until seen). */
+export function newSrsItem(itemId: string, itemType: LearningItemType, nowMs: number): SrsItem {
   return {
-    kanaId,
+    itemId,
+    itemType,
     seen: 0,
     correct: 0,
     wrong: 0,
@@ -182,12 +205,68 @@ export function newProgress(kanaId: string, nowMs: number): KanaProgress {
   };
 }
 
-export function isDue(progress: KanaProgress, nowMs: number): boolean {
+/**
+ * Kana compatibility wrapper. The kana screens keep their legacy shape while
+ * the scheduler and database store one generalized item.
+ */
+export function applyReview(
+  previous: KanaProgress | null,
+  kanaId: string,
+  answer: ReviewAnswer,
+): ReviewResult {
+  const result = applySrsReview(
+    previous ? kanaProgressToSrsItem(previous) : null,
+    { itemId: kanaId, itemType: 'kana' },
+    answer,
+  );
+  return { progress: srsItemToKanaProgress(result.item), quality: result.quality };
+}
+
+export function newProgress(kanaId: string, nowMs: number): KanaProgress {
+  return srsItemToKanaProgress(newSrsItem(kanaId, 'kana', nowMs));
+}
+
+export function kanaProgressToSrsItem(progress: KanaProgress): SrsItem {
+  return {
+    itemId: progress.kanaId,
+    itemType: 'kana',
+    seen: progress.seen,
+    correct: progress.correct,
+    wrong: progress.wrong,
+    streak: progress.streak,
+    ease: progress.ease,
+    intervalDays: progress.intervalDays,
+    repetitions: progress.repetitions,
+    dueAt: progress.dueAt,
+    lastSeenAt: progress.lastSeenAt,
+    firstSeenAt: progress.firstSeenAt,
+    lapses: progress.lapses,
+  };
+}
+
+export function srsItemToKanaProgress(item: SrsItem): KanaProgress {
+  return {
+    kanaId: item.itemId,
+    seen: item.seen,
+    correct: item.correct,
+    wrong: item.wrong,
+    streak: item.streak,
+    ease: item.ease,
+    intervalDays: item.intervalDays,
+    repetitions: item.repetitions,
+    dueAt: item.dueAt,
+    lastSeenAt: item.lastSeenAt,
+    firstSeenAt: item.firstSeenAt,
+    lapses: item.lapses,
+  };
+}
+
+export function isDue(progress: Pick<SrsItem, 'dueAt'>, nowMs: number): boolean {
   return progress.dueAt <= nowMs;
 }
 
 /** Accuracy in the 0–1 range; unseen cards count as zero. */
-export function accuracyOf(progress: Pick<KanaProgress, 'correct' | 'seen'>): number {
+export function accuracyOf(progress: Pick<SrsItem, 'correct' | 'seen'>): number {
   if (progress.seen <= 0) return 0;
   return Math.min(1, Math.max(0, progress.correct / progress.seen));
 }
@@ -197,7 +276,7 @@ export function accuracyOf(progress: Pick<KanaProgress, 'correct' | 'seen'>): nu
  * Index 0 is today (including overdue cards).
  */
 export function forecastReviews(
-  progressList: readonly KanaProgress[],
+  progressList: readonly Pick<SrsItem, 'dueAt'>[],
   nowMs: number,
   days: number,
 ): number[] {

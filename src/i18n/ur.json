@@ -230,7 +230,7 @@
   "settings.exportError": "بیک اپ نہیں بن سکا۔",
   "settings.exporting": "بیک اپ بن رہا ہے…",
   "settings.importTitle": "پیش رفت تبدیل کریں؟",
-  "settings.importBody": "اس بیک اپ میں {{kana}} کانا ریکارڈز اور {{days}} دن کی سرگرمی ہے۔ درآمد کرنے سے موجودہ پیش رفت بدل جائے گی۔",
+  "settings.importBody": "اس بیک اپ میں سیکھنے کے {{items}} اندراجات، {{lessons}} اسباق اور {{days}} دن کی سرگرمی ہے۔ درآمد کرنے سے موجودہ پیش رفت بدل جائے گی۔",
   "settings.importInvalid": "یہ یوکسی بیک اپ فائل درست نہیں۔",
   "settings.importTooLarge": "یہ فائل یوکسی بیک اپ کے لیے بہت بڑی ہے۔",
   "settings.importSuccess": "پیش رفت درآمد ہو گئی۔",

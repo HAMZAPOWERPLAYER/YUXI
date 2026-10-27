@@ -1,10 +1,12 @@
 import type { ReviewLogEntry, ReviewMode } from '@/types/kana';
+import type { LearningItemType } from '@/types/srs';
 
 import type { DatabaseConnection } from '../types';
 
 type ReviewLogRow = {
   id: number;
   kana_id: string;
+  item_type: string;
   mode: string;
   correct: number;
   quality: number;
@@ -15,7 +17,8 @@ type ReviewLogRow = {
 function mapRow(row: ReviewLogRow): ReviewLogEntry {
   return {
     id: row.id,
-    kanaId: row.kana_id,
+    itemId: row.kana_id,
+    itemType: row.item_type as LearningItemType,
     mode: row.mode as ReviewMode,
     correct: row.correct === 1,
     quality: row.quality,
@@ -24,14 +27,19 @@ function mapRow(row: ReviewLogRow): ReviewLogEntry {
   };
 }
 
+/**
+ * `kana_id` is the v1 column name. Schema v2 reuses it as the generic item id
+ * and adds `item_type`, which keeps old rows readable without a table rewrite.
+ */
 export async function insertReviewLog(
   db: DatabaseConnection,
   entry: Omit<ReviewLogEntry, 'id'>,
 ): Promise<number> {
   const result = await db.runAsync(
-    `INSERT INTO review_log (kana_id, mode, correct, quality, response_ms, at)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-    entry.kanaId,
+    `INSERT INTO review_log (kana_id, item_type, mode, correct, quality, response_ms, at)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    entry.itemId,
+    entry.itemType,
     entry.mode,
     entry.correct ? 1 : 0,
     entry.quality,
@@ -48,7 +56,7 @@ export async function getRecentReviewLog(
   const safeLimit = Math.max(0, Math.trunc(limit));
   if (safeLimit === 0) return [];
   const rows = await db.getAllAsync<ReviewLogRow>(
-    `SELECT id, kana_id, mode, correct, quality, response_ms, at
+    `SELECT id, kana_id, item_type, mode, correct, quality, response_ms, at
      FROM review_log
      ORDER BY at DESC, id DESC
      LIMIT ?`,
@@ -63,7 +71,7 @@ export async function getReviewLogBetween(
   toAt: number,
 ): Promise<ReviewLogEntry[]> {
   const rows = await db.getAllAsync<ReviewLogRow>(
-    `SELECT id, kana_id, mode, correct, quality, response_ms, at
+    `SELECT id, kana_id, item_type, mode, correct, quality, response_ms, at
      FROM review_log
      WHERE at >= ? AND at < ?
      ORDER BY at ASC, id ASC`,
@@ -75,7 +83,7 @@ export async function getReviewLogBetween(
 
 export async function getAllReviewLog(db: DatabaseConnection): Promise<ReviewLogEntry[]> {
   const rows = await db.getAllAsync<ReviewLogRow>(
-    `SELECT id, kana_id, mode, correct, quality, response_ms, at
+    `SELECT id, kana_id, item_type, mode, correct, quality, response_ms, at
      FROM review_log
      ORDER BY at ASC, id ASC`,
   );

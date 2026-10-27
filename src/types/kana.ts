@@ -1,3 +1,14 @@
+export type {
+  Bookmark,
+  BookmarkItemType,
+  KanaReviewMode,
+  LearningItemType,
+  LessonProgress,
+  ReviewLogEntry,
+  ReviewMode,
+  SrsItem,
+} from './srs';
+
 export type KanaScript = 'hiragana' | 'katakana';
 export type KanaGroup = 'basic' | 'dakuten' | 'yoon';
 
@@ -26,18 +37,6 @@ export type KanaProgress = {
   lastSeenAt: number;
   firstSeenAt: number;
   lapses: number;
-};
-
-export type ReviewMode = 'kana-to-romaji' | 'romaji-to-kana' | 'listening';
-
-export type ReviewLogEntry = {
-  id?: number;
-  kanaId: string;
-  mode: ReviewMode;
-  correct: boolean;
-  quality: number;
-  responseMs: number;
-  at: number;
 };
 
 export type DailyStats = {

@@ -8,15 +8,19 @@ import {
   accuracyOf,
   applyReview,
   applySm2,
+  applySrsReview,
   clampEase,
   clampIntervalDays,
   clampQuality,
   forecastReviews,
   initialSm2State,
   isDue,
+  kanaProgressToSrsItem,
   newProgress,
+  newSrsItem,
   nextIntervalDays,
   qualityFromAnswer,
+  srsItemToKanaProgress,
 } from '@/features/srs';
 import type { KanaProgress } from '@/types/kana';
 
@@ -238,6 +242,72 @@ describe('applyReview', () => {
     });
     expect(result.quality).toBe(5);
     expect(result.progress.ease).toBe(2.6);
+  });
+});
+
+describe('applySrsReview', () => {
+  it('schedules a vocabulary item with the same rules as kana', () => {
+    const first = applySrsReview(
+      null,
+      { itemId: 'greet-ohayou', itemType: 'vocabulary' },
+      { correct: true, responseMs: 1_000, nowMs: NOW },
+    );
+
+    expect(first.item).toEqual({
+      itemId: 'greet-ohayou',
+      itemType: 'vocabulary',
+      seen: 1,
+      correct: 1,
+      wrong: 0,
+      streak: 1,
+      ease: 2.6,
+      intervalDays: 1,
+      repetitions: 1,
+      dueAt: NOW + MS_PER_DAY,
+      lastSeenAt: NOW,
+      firstSeenAt: NOW,
+      lapses: 0,
+    });
+
+    const second = applySrsReview(
+      first.item,
+      { itemId: 'greet-ohayou', itemType: 'vocabulary' },
+      { correct: true, responseMs: 1_000, nowMs: NOW + MS_PER_DAY },
+    );
+    expect(second.item.repetitions).toBe(2);
+    expect(second.item.intervalDays).toBe(3);
+  });
+
+  it('rejects a previous row for a different item identity', () => {
+    const previous = newSrsItem('kana-a', 'kana', NOW);
+    expect(() =>
+      applySrsReview(
+        previous,
+        { itemId: 'kana-a', itemType: 'vocabulary' },
+        {
+          correct: true,
+          responseMs: 1_000,
+          nowMs: NOW,
+        },
+      ),
+    ).toThrow(/SRS item mismatch/);
+  });
+
+  it('round-trips the legacy kana shape without losing fields', () => {
+    const legacy = progress({
+      seen: 6,
+      correct: 5,
+      wrong: 1,
+      streak: 2,
+      ease: 2.2,
+      intervalDays: 12,
+      repetitions: 4,
+      dueAt: NOW + 5_000,
+      lastSeenAt: NOW - 1_000,
+      firstSeenAt: NOW - 9_000,
+      lapses: 2,
+    });
+    expect(srsItemToKanaProgress(kanaProgressToSrsItem(legacy))).toEqual(legacy);
   });
 });
 

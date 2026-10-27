@@ -1,9 +1,9 @@
 import {
   addDailyActivity,
   getDailyStats,
-  getKanaProgress,
+  getSrsItem,
   insertReviewLog,
-  saveKanaProgress,
+  saveSrsItem,
   setMeta,
 } from '@/db/repositories';
 import type { DatabaseConnection } from '@/db/types';
@@ -14,8 +14,9 @@ import {
   xpForCompletedSession,
 } from '@/features/progress';
 import type { DailyGoalMinutes } from '@/features/settings/settingsModel';
-import { applyReview } from '@/features/srs';
-import type { KanaProgress, ReviewMode } from '@/types/kana';
+import { applySrsReview, kanaProgressToSrsItem, srsItemToKanaProgress } from '@/features/srs';
+import type { KanaProgress } from '@/types/kana';
+import type { LearningItemType, ReviewMode, SrsItem } from '@/types/srs';
 import { isValidDayKey, toLocalDayKey } from '@/utils/date';
 import { logEvent } from '@/utils/logger';
 
@@ -45,40 +46,69 @@ export type RecordAnswerResult = {
   secondsActive: number;
 };
 
+export type RecordItemAnswerInput = {
+  itemId: string;
+  itemType: LearningItemType;
+  mode: ReviewMode;
+  correct: boolean;
+  responseMs: number;
+  /** Timestamp of the answer; the local day is derived from it. */
+  at: number;
+  dailyGoalMinutes: DailyGoalMinutes;
+  /** Seconds spent before answering, added to today's active time. */
+  activeSeconds?: number;
+  /** Optional preloaded row; omit to read inside the transaction. */
+  currentItem?: SrsItem | null;
+};
+
+export type RecordItemAnswerResult = {
+  item: SrsItem;
+  quality: number;
+  xpEarned: number;
+  day: string;
+  goalMet: boolean;
+  secondsActive: number;
+};
+
 function clampActiveSeconds(value: number | undefined): number {
   return Math.min(MAX_ACTIVE_SECONDS_PER_TICK, safeSeconds(value ?? 0));
 }
 
 /**
- * Persists one graded answer atomically: kana SRS state, review log and daily
+ * Persists one graded answer atomically: SRS state, review log and daily
  * totals move together. A failure rolls the whole answer back so stats and
  * progress can never disagree.
  */
-export async function recordAnswer(
+export async function recordItemAnswer(
   db: DatabaseConnection,
-  input: RecordAnswerInput,
-): Promise<RecordAnswerResult> {
+  input: RecordItemAnswerInput,
+): Promise<RecordItemAnswerResult> {
   const day = toLocalDayKey(input.at);
   const responseMs = Number.isFinite(input.responseMs)
     ? Math.max(0, Math.round(input.responseMs))
     : 0;
   const activeSeconds = clampActiveSeconds(input.activeSeconds);
-  let result: RecordAnswerResult | null = null;
+  let result: RecordItemAnswerResult | null = null;
 
   await db.withTransactionAsync(async () => {
     const previous =
-      input.currentProgress !== undefined
-        ? input.currentProgress
-        : await getKanaProgress(db, input.kanaId);
-    const review = applyReview(previous, input.kanaId, {
-      correct: input.correct,
-      responseMs,
-      nowMs: input.at,
-    });
+      input.currentItem !== undefined
+        ? input.currentItem
+        : await getSrsItem(db, input.itemId, input.itemType);
+    const review = applySrsReview(
+      previous,
+      { itemId: input.itemId, itemType: input.itemType },
+      {
+        correct: input.correct,
+        responseMs,
+        nowMs: input.at,
+      },
+    );
 
-    await saveKanaProgress(db, review.progress);
+    await saveSrsItem(db, review.item);
     await insertReviewLog(db, {
-      kanaId: input.kanaId,
+      itemId: input.itemId,
+      itemType: input.itemType,
       mode: input.mode,
       correct: input.correct,
       quality: review.quality,
@@ -104,7 +134,7 @@ export async function recordAnswer(
     });
 
     result = {
-      progress: review.progress,
+      item: review.item,
       quality: review.quality,
       xpEarned,
       day,
@@ -115,6 +145,43 @@ export async function recordAnswer(
 
   if (!result) throw new Error('Answer was not saved');
   return result;
+}
+
+/**
+ * Kana compatibility wrapper used by the Part 1 quiz screen. It delegates to
+ * the generalized scheduler and returns the legacy progress shape.
+ */
+export async function recordAnswer(
+  db: DatabaseConnection,
+  input: RecordAnswerInput,
+): Promise<RecordAnswerResult> {
+  const currentItem =
+    input.currentProgress === undefined
+      ? undefined
+      : input.currentProgress === null
+        ? null
+        : kanaProgressToSrsItem(input.currentProgress);
+
+  const result = await recordItemAnswer(db, {
+    itemId: input.kanaId,
+    itemType: 'kana',
+    mode: input.mode,
+    correct: input.correct,
+    responseMs: input.responseMs,
+    at: input.at,
+    dailyGoalMinutes: input.dailyGoalMinutes,
+    activeSeconds: input.activeSeconds,
+    currentItem,
+  });
+
+  return {
+    progress: srsItemToKanaProgress(result.item),
+    quality: result.quality,
+    xpEarned: result.xpEarned,
+    day: result.day,
+    goalMet: result.goalMet,
+    secondsActive: result.secondsActive,
+  };
 }
 
 export type CompleteSessionInput = {

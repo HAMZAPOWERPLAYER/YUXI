@@ -5,6 +5,7 @@ export {
   logStudyError,
   readCompletedSessionDays,
   recordAnswer,
+  recordItemAnswer,
   recordStudySeconds,
 } from './studyService';
 export type {
@@ -12,6 +13,8 @@ export type {
   CompleteSessionResult,
   RecordAnswerInput,
   RecordAnswerResult,
+  RecordItemAnswerInput,
+  RecordItemAnswerResult,
   RecordSecondsInput,
   RecordSecondsResult,
 } from './studyService';

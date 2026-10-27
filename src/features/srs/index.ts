@@ -11,14 +11,25 @@ export {
   accuracyOf,
   applyReview,
   applySm2,
+  applySrsReview,
   clampEase,
   clampIntervalDays,
   clampQuality,
   forecastReviews,
   initialSm2State,
   isDue,
+  kanaProgressToSrsItem,
   newProgress,
+  newSrsItem,
   nextIntervalDays,
   qualityFromAnswer,
+  srsItemToKanaProgress,
 } from './sm2';
-export type { AnswerTiming, ReviewAnswer, ReviewResult, Sm2State } from './sm2';
+export type {
+  AnswerTiming,
+  ReviewAnswer,
+  ReviewIdentity,
+  ReviewResult,
+  Sm2State,
+  SrsReviewResult,
+} from './sm2';

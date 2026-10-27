@@ -230,7 +230,7 @@
   "settings.exportError": "Could not create the backup.",
   "settings.exporting": "Preparing backup…",
   "settings.importTitle": "Replace your progress?",
-  "settings.importBody": "This backup has {{kana}} kana records and {{days}} days of activity. Importing replaces your current progress.",
+  "settings.importBody": "This backup has {{items}} learning items, {{lessons}} lessons and {{days}} days of activity. Importing replaces your current progress.",
   "settings.importInvalid": "This file is not a valid Yuxi backup.",
   "settings.importTooLarge": "This file is too large to be a Yuxi backup.",
   "settings.importSuccess": "Progress imported.",

@@ -11,22 +11,22 @@ centralized mascot asset map.
 
 ## Feature overview
 
-| Area             | What is included                                                                                         |
-| ---------------- | -------------------------------------------------------------------------------------------------------- |
-| Learning content | 208 kana records across Hiragana and Katakana, in basic, dakuten/handakuten and yōon groups              |
-| Charts           | Grouped kana charts with romaji toggle, mastery colors and per-kana detail                               |
-| Audio            | Japanese pronunciation through the device text-to-speech engine, including a missing-voice recovery flow |
-| Practice         | Kana → Romaji, Romaji → Kana, Listening, plus Mixed mode                                                 |
-| Question engine  | Adaptive selection weighted by overdue cards, weak cards and new cards; four unique options per question |
-| Scheduling       | SM-2 inspired spaced repetition with lapses, ease adjustment and a 180-day interval cap                  |
-| Motivation       | XP, levels, daily goal, current/best streak and a session-complete bonus                                 |
-| Statistics       | 7/30-day accuracy, 14-day activity chart, kana mastery heatmap and lifetime totals                       |
-| Data             | SQLite persistence with versioned migrations, JSON backup export/import and double-confirmed reset       |
-| Reminders        | One local daily reminder with three rotating messages; no push server                                    |
-| Settings         | Language, text size, daily goal, haptics, reminder, backup and reset                                     |
-| Information      | About, privacy policy, generated open-source license list and a not-found screen                         |
-| Accessibility    | Screen-reader labels, 48 pt targets, reduced-motion hook, large-text support and explicit RTL layout     |
-| Content pipeline | Zod course schema, original-content validator, lazy unit registry and JSON Schema artifacts (Part 2 M0)  |
+| Area             | What is included                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------- |
+| Learning content | 208 kana records across Hiragana and Katakana, in basic, dakuten/handakuten and yōon groups                |
+| Charts           | Grouped kana charts with romaji toggle, mastery colors and per-kana detail                                 |
+| Audio            | Japanese pronunciation through the device text-to-speech engine, including a missing-voice recovery flow   |
+| Practice         | Kana → Romaji, Romaji → Kana, Listening, plus Mixed mode                                                   |
+| Question engine  | Adaptive selection weighted by overdue cards, weak cards and new cards; four unique options per question   |
+| Scheduling       | SM-2 inspired spaced repetition with lapses, ease adjustment and a 180-day interval cap                    |
+| Motivation       | XP, levels, daily goal, current/best streak and a session-complete bonus                                   |
+| Statistics       | 7/30-day accuracy, 14-day activity chart, kana mastery heatmap and lifetime totals                         |
+| Data             | SQLite persistence, generalized SRS for kana/vocabulary/sentences, JSON backup v2 with v1 import and reset |
+| Reminders        | One local daily reminder with three rotating messages; no push server                                      |
+| Settings         | Language, text size, daily goal, haptics, reminder, backup and reset                                       |
+| Information      | About, privacy policy, generated open-source license list and a not-found screen                           |
+| Accessibility    | Screen-reader labels, 48 pt targets, reduced-motion hook, large-text support and explicit RTL layout       |
+| Content pipeline | Zod course schema, original-content validator, lazy unit registry and JSON Schema artifacts (Part 2 M0)    |
 
 ## Technology
 
@@ -146,25 +146,31 @@ and keeps non-route code outside `src/app/`.
 
 ## Data and storage
 
-The database is `yuxi.db`, opened lazily through `src/db/client.ts`. Schema version 1
+The database is `yuxi.db`, opened lazily through `src/db/client.ts`. Schema version 2
 contains:
 
-| Table           | Purpose                                                               |
-| --------------- | --------------------------------------------------------------------- |
-| `kv_settings`   | Key/value application settings                                        |
-| `kana_progress` | Per-kana SM-2 state and answer counters                               |
-| `review_log`    | Append-only answer history                                            |
-| `daily_stats`   | XP, active seconds, question counts and goal completion per local day |
-| `meta`          | Session-complete markers and device-local reminder identifier         |
+| Table             | Purpose                                                                   |
+| ----------------- | ------------------------------------------------------------------------- |
+| `kv_settings`     | Key/value application settings                                            |
+| `srs_items`       | Canonical SM-2 scheduling state for kana, vocabulary and sentences        |
+| `kana_progress`   | Legacy kana mirror kept for one release so a rollback still sees progress |
+| `lesson_progress` | Per-lesson completion, timestamps and answer totals                       |
+| `bookmarks`       | Saved vocabulary and sentence ids with their unit                         |
+| `review_log`      | Append-only answer history; `kana_id` holds the generic item id           |
+| `daily_stats`     | XP, active seconds, question counts and goal completion per local day     |
+| `meta`            | Session-complete markers and device-local reminder identifier             |
 
 Migrations run inside transactions and are tracked with `PRAGMA user_version`. Profile
 import replaces all user-owned rows atomically, so a failed import cannot leave a
-half-restored profile.
+half-restored profile. Vocabulary and sentence rows live only in `srs_items`; kana rows
+are additionally mirrored into `kana_progress` for one release.
 
 ### Backup format
 
-Backups are JSON with `format: "yuxi-backup"` and `version: 1`. The file is capped at
-10 MB, validated with Zod, and excludes the device-local notification identifier. Both
+Backups are JSON with `format: "yuxi-backup"` and `version: 2`. Version 2 stores
+`srsItems`, `lessonProgress`, `bookmarks`, `dailyStats`, `reviewLog` and `meta`. Version 1
+files are still accepted and normalized in memory into the v2 shape. The file is capped
+at 10 MB, validated with Zod and excludes the device-local notification identifier. Both
 Urdu and English settings travel with the backup. Import requires an explicit
 confirmation because it replaces current progress.
 
@@ -195,10 +201,11 @@ rationale is in `docs/DECISIONS.md`. The Part 2 review checklists are in
 
 ## Learning logic
 
-- **SM-2:** a correct answer under 2.5 s scores quality 5, a normal correct answer
-  scores 4, a correct answer over 8 s scores 3, a wrong answer scores 1, and a wrong
-  answer over 12 s scores 0. Lapses return after 10 minutes. Ease never drops below 1.3
-  and intervals never exceed 180 days.
+- **SM-2:** one scheduler serves kana, vocabulary and sentences. A correct answer
+  under 2.5 s scores quality 5, a normal correct answer scores 4, a correct answer over
+  8 s scores 3, a wrong answer scores 1, and a wrong answer over 12 s scores 0. Lapses
+  return after 10 minutes. Ease never drops below 1.3 and intervals never exceed 180
+  days.
 - **Selection:** due cards first, weighted by how overdue they are; then weak cards
   (below 70% accuracy with at least 3 attempts); then new cards, at most 5 per session.
   Spare slots go to studied cards, and the last three kana are avoided when choosing

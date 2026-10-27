@@ -103,7 +103,8 @@ export function useDataActions() {
         t('settings.importTitle'),
         t('settings.importBody', {
           days: parsed.summary.dayCount,
-          kana: parsed.summary.kanaCount,
+          items: parsed.summary.itemCount,
+          lessons: parsed.summary.lessonCount,
         }),
         [
           { onPress: () => setBusy(null), style: 'cancel', text: t('common.cancel') },

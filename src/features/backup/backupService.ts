@@ -1,8 +1,10 @@
 import {
+  getAllBookmarks,
   getAllDailyStats,
-  getAllKanaProgress,
+  getAllLessonProgress,
   getAllMeta,
   getAllReviewLog,
+  getAllSrsItems,
   getSettings,
 } from '@/db/repositories';
 import { replaceAllUserData } from '@/db/repositories/importRepository';
@@ -35,13 +37,16 @@ export async function buildBackup(
   appVersion: string,
   exportedAt: number,
 ): Promise<BackupPayload> {
-  const [settings, kanaProgress, dailyStats, reviewLog, meta] = await Promise.all([
-    getSettings(db),
-    getAllKanaProgress(db),
-    getAllDailyStats(db),
-    getAllReviewLog(db),
-    getAllMeta(db),
-  ]);
+  const [settings, srsItems, lessonProgress, bookmarks, dailyStats, reviewLog, meta] =
+    await Promise.all([
+      getSettings(db),
+      getAllSrsItems(db),
+      getAllLessonProgress(db),
+      getAllBookmarks(db),
+      getAllDailyStats(db),
+      getAllReviewLog(db),
+      getAllMeta(db),
+    ]);
 
   return {
     format: BACKUP_FORMAT,
@@ -49,7 +54,9 @@ export async function buildBackup(
     exportedAt,
     appVersion,
     settings,
-    kanaProgress,
+    srsItems,
+    lessonProgress,
+    bookmarks,
     dailyStats,
     reviewLog,
     meta: withoutDeviceMeta(meta),
@@ -65,7 +72,9 @@ export async function applyBackup(
 ): Promise<AppliedBackup> {
   await replaceAllUserData(db, {
     settings: payload.settings,
-    kanaProgress: payload.kanaProgress,
+    srsItems: payload.srsItems,
+    lessonProgress: payload.lessonProgress,
+    bookmarks: payload.bookmarks,
     dailyStats: payload.dailyStats,
     reviewLog: payload.reviewLog,
     meta: withoutDeviceMeta(payload.meta),

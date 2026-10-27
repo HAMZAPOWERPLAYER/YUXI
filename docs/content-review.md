@@ -127,7 +127,10 @@ reviewer changes a glyph, the spoken text changes with it.
 Record ids are generated as `<script>-<seed id>`, for example `hiragana-shi`,
 `katakana-kya`, `hiragana-dji`. They are **persistent user data**, not display labels:
 
-- `kana_progress.kana_id` and `review_log.kana_id` store them;
+- `srs_items.(item_id, item_type)` stores schedule state; kana rows are also mirrored
+  into legacy `kana_progress.kana_id` for one release;
+- `review_log.kana_id` stores the generic item id and `review_log.item_type` names its
+  type;
 - spaced-repetition state, due dates and mastery are keyed by them;
 - backup files contain them;
 - chart, detail and quiz routes use them.
@@ -135,8 +138,8 @@ Record ids are generated as `<script>-<seed id>`, for example `hiragana-shi`,
 **Before the first public release,** ids may still be corrected, because no real user
 data exists. After release, renaming an id silently would orphan that kana's progress
 and review history. If a rename is unavoidable later, add a migration that rewrites
-`kana_progress` and `review_log` rows (and bump the backup format) instead of editing
-the seed alone.
+`srs_items`, `kana_progress` and `review_log` rows (and bump the backup format) instead
+of editing the seed alone.
 
 Also keep the hiragana/katakana pair aligned: `hiragana-shi` and `katakana-shi` should
 represent the same sound. A structural test enforces uniqueness, not semantic pairing;

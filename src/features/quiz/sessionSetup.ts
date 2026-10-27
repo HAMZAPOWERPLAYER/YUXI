@@ -2,14 +2,14 @@ import { getAllKanaProgress, getRecentReviewLog } from '@/db/repositories';
 import type { DatabaseConnection } from '@/db/types';
 import { getAllKana, getById } from '@/features/kana/selectors';
 import { hasJapaneseVoice } from '@/services/tts';
-import type { KanaGroup, KanaScript, ReviewMode } from '@/types/kana';
+import type { KanaGroup, KanaReviewMode, KanaScript } from '@/types/kana';
 import type { QuizQuestion } from '@/types/quiz';
 import { createRng } from '@/utils/random';
 
 import { QUIZ_MODES, buildQuestion, buildQuizQuestions } from './selection';
 
 export type ScriptChoice = KanaScript | 'both';
-export type ModeChoice = ReviewMode | 'mixed';
+export type ModeChoice = KanaReviewMode | 'mixed';
 
 export type QuizRequest = {
   mode: ModeChoice;
@@ -67,7 +67,7 @@ export async function prepareQuiz(
   let questions: QuizQuestion[];
   if (focus) {
     const scriptPool = getAllKana().filter((kana) => kana.script === focus.script);
-    const focusMode: ReviewMode = request.mode === 'mixed' ? 'kana-to-romaji' : request.mode;
+    const focusMode: KanaReviewMode = request.mode === 'mixed' ? 'kana-to-romaji' : request.mode;
     const rng = createRng(nowMs);
     questions = [buildQuestion(focus, focusMode, scriptPool, rng, 0)];
   } else {
@@ -76,7 +76,7 @@ export async function prepareQuiz(
         (request.script === 'both' || kana.script === request.script) &&
         (!request.group || kana.group === request.group),
     );
-    const modes: ReviewMode[] =
+    const modes: KanaReviewMode[] =
       request.mode === 'mixed'
         ? voiceAvailable
           ? [...QUIZ_MODES]
@@ -88,7 +88,9 @@ export async function prepareQuiz(
       pool,
       progress: allProgress,
       questionCount: request.length,
-      recentKanaIds: recent.map((entry) => entry.kanaId),
+      recentKanaIds: recent
+        .filter((entry) => entry.itemType === 'kana')
+        .map((entry) => entry.itemId),
       rng: createRng(nowMs),
     });
   }

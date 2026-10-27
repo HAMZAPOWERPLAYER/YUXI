@@ -70,7 +70,11 @@ lapse, 180-day cap). Generalize the stored item identity to
 
 **Consequences.** Existing kana rows are migrated into the generalized table.
 All item types share review semantics and tests. Item ids must be globally
-unique across content types.
+unique across content types. `review_log.kana_id` is retained as the generic
+item id so the append-only history needs no rewrite. `kana_progress` is kept as
+a mirrored table for one release so a user who rolls back to a v1 build still
+sees their kana progress; new vocabulary and sentence rows exist only in
+`srs_items`.
 
 ## ADR-006: Backup format is versioned and validated with Zod
 
@@ -228,6 +232,20 @@ inexact on Android.
 
 **Consequences.** No remote notification token is collected. Part 3 engagement
 features must keep the same limit.
+
+## ADR-017: Lesson progress and bookmarks live in dedicated tables
+
+**Context.** Part 2 needs per-lesson completion for unlocking and resuming, plus
+saved vocabulary and sentences for review.
+
+**Decision.** Store lesson results in `lesson_progress` keyed by `lesson_id` and
+bookmarks in `bookmarks` keyed by `(item_id, item_type)`. Both travel in backup
+format v2. Lesson results are written only after a lesson finishes; bookmarks
+can be toggled from search or a lesson.
+
+**Consequences.** Unlock logic reads one table instead of inferring progress from
+review logs. Bookmarks survive content updates by id and must be cleaned up or
+migrated if an id ever changes.
 
 ## Open questions
 

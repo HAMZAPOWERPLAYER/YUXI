@@ -3,6 +3,7 @@ import {
   getAllReviewLog,
   getDailyStats,
   getKanaProgress,
+  getSrsItem,
   setMeta,
 } from '@/db/repositories';
 import { runMigrations } from '@/db/migrations/runner';
@@ -13,6 +14,7 @@ import {
   logStudyError,
   readCompletedSessionDays,
   recordAnswer,
+  recordItemAnswer,
   recordStudySeconds,
 } from '@/features/study';
 import { toLocalDayKey } from '@/utils/date';
@@ -78,7 +80,8 @@ describe('study service', () => {
       const log = await getAllReviewLog(db);
       expect(log).toHaveLength(1);
       expect(log[0]).toMatchObject({
-        kanaId: 'hira-a',
+        itemId: 'hira-a',
+        itemType: 'kana',
         mode: 'kana-to-romaji',
         correct: true,
         quality: 5,
@@ -182,6 +185,38 @@ describe('study service', () => {
       expect(result.quality).toBe(5);
       const progress = await getKanaProgress(db, 'hira-o');
       expect(progress?.dueAt).toBe(AT + 86_400_000);
+    });
+
+    it('schedules vocabulary through the same generalized engine', async () => {
+      const result = await recordItemAnswer(db, {
+        activeSeconds: 5,
+        at: AT,
+        correct: true,
+        dailyGoalMinutes: 10,
+        itemId: 'greet-ohayou',
+        itemType: 'vocabulary',
+        mode: 'meaning-choice',
+        responseMs: 1_000,
+      });
+
+      expect(result.item).toMatchObject({
+        itemId: 'greet-ohayou',
+        itemType: 'vocabulary',
+        seen: 1,
+        correct: 1,
+        repetitions: 1,
+        intervalDays: 1,
+      });
+      await expect(getSrsItem(db, 'greet-ohayou', 'vocabulary')).resolves.toMatchObject({
+        seen: 1,
+        dueAt: AT + 86_400_000,
+      });
+      await expect(getSrsItem(db, 'greet-ohayou', 'kana')).resolves.toBeNull();
+      expect((await getAllReviewLog(db))[0]).toMatchObject({
+        itemId: 'greet-ohayou',
+        itemType: 'vocabulary',
+        mode: 'meaning-choice',
+      });
     });
   });
 

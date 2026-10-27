@@ -53,16 +53,24 @@ describe('runMigrations', () => {
     await expect(readSchemaVersion(db)).resolves.toBe(LATEST_SCHEMA_VERSION);
 
     await expect(tableNames(db)).resolves.toEqual([
+      'bookmarks',
       'daily_stats',
       'kana_progress',
       'kv_settings',
+      'lesson_progress',
       'meta',
       'review_log',
+      'srs_items',
     ]);
     await expect(indexNames(db)).resolves.toEqual([
+      'idx_bookmarks_created_at',
       'idx_kana_progress_due_at',
+      'idx_lesson_progress_unit_id',
       'idx_review_log_at',
+      'idx_review_log_item_type_at',
       'idx_review_log_kana_id',
+      'idx_srs_items_due_at',
+      'idx_srs_items_type_due_at',
     ]);
   });
 
@@ -85,7 +93,33 @@ describe('runMigrations', () => {
         'first_seen_at',
         'lapses',
       ],
-      review_log: ['id', 'kana_id', 'mode', 'correct', 'quality', 'response_ms', 'at'],
+      srs_items: [
+        'item_id',
+        'item_type',
+        'seen',
+        'correct',
+        'wrong',
+        'streak',
+        'ease',
+        'interval_days',
+        'repetitions',
+        'due_at',
+        'last_seen_at',
+        'first_seen_at',
+        'lapses',
+      ],
+      review_log: ['id', 'kana_id', 'mode', 'correct', 'quality', 'response_ms', 'at', 'item_type'],
+      lesson_progress: [
+        'lesson_id',
+        'unit_id',
+        'completed',
+        'started_at',
+        'completed_at',
+        'last_studied_at',
+        'questions',
+        'correct',
+      ],
+      bookmarks: ['item_id', 'item_type', 'unit_id', 'created_at'],
       daily_stats: ['day', 'xp', 'seconds_active', 'questions', 'correct', 'goal_met'],
       meta: ['key', 'value'],
     };
@@ -94,6 +128,47 @@ describe('runMigrations', () => {
       const rows = await db.getAllAsync<TableInfoRow>(`PRAGMA table_info(${table})`);
       expect({ table, columns: rows.map((row) => row.name) }).toEqual({ table, columns });
     }
+  });
+
+  it('migrates a v1 database without losing kana progress or review logs', async () => {
+    const first = migrations[0];
+    if (!first) throw new Error('Migration 1 is missing');
+    await db.execAsync(first.sql);
+    await db.execAsync('PRAGMA user_version = 1');
+    await db.execAsync(`
+      INSERT INTO kana_progress (
+        kana_id, seen, correct, wrong, streak, ease, interval_days,
+        repetitions, due_at, last_seen_at, first_seen_at, lapses
+      ) VALUES ('hira-a', 4, 3, 1, 2, 2.4, 3, 2, 1000, 900, 800, 1);
+      INSERT INTO review_log (kana_id, mode, correct, quality, response_ms, at)
+      VALUES ('hira-a', 'kana-to-romaji', 1, 4, 1200, 900);
+    `);
+
+    await runMigrations(db);
+
+    const srs = await db.getFirstAsync<{
+      item_id: string;
+      item_type: string;
+      seen: number;
+      first_seen_at: number;
+    }>('SELECT item_id, item_type, seen, first_seen_at FROM srs_items WHERE item_id = ?', 'hira-a');
+    expect(srs).toEqual({
+      item_id: 'hira-a',
+      item_type: 'kana',
+      seen: 4,
+      first_seen_at: 800,
+    });
+
+    const log = await db.getFirstAsync<{ item_type: string; kana_id: string }>(
+      'SELECT item_type, kana_id FROM review_log',
+    );
+    expect(log).toEqual({ item_type: 'kana', kana_id: 'hira-a' });
+
+    const legacy = await db.getFirstAsync<{ seen: number }>(
+      'SELECT seen FROM kana_progress WHERE kana_id = ?',
+      'hira-a',
+    );
+    expect(legacy?.seen).toBe(4);
   });
 
   it('is idempotent when run again', async () => {

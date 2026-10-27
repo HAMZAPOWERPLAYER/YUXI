@@ -1,6 +1,6 @@
 import { getConfusables } from '@/features/kana/selectors';
 import { MS_PER_DAY, accuracyOf } from '@/features/srs/sm2';
-import type { Kana, KanaProgress, ReviewMode } from '@/types/kana';
+import type { Kana, KanaProgress, KanaReviewMode } from '@/types/kana';
 import type { QuizOption, QuizQuestion } from '@/types/quiz';
 import { type Rng, shuffle, weightedSample } from '@/utils/random';
 
@@ -9,7 +9,11 @@ export const DEFAULT_MAX_NEW = 5;
 export const DEFAULT_OPTION_COUNT = 4;
 export const RECENT_AVOID_COUNT = 3;
 
-export const QUIZ_MODES: readonly ReviewMode[] = ['kana-to-romaji', 'romaji-to-kana', 'listening'];
+export const QUIZ_MODES: readonly KanaReviewMode[] = [
+  'kana-to-romaji',
+  'romaji-to-kana',
+  'listening',
+];
 
 export type SelectionInput = {
   pool: readonly Kana[];
@@ -23,7 +27,7 @@ export type SelectionInput = {
 };
 
 export type QuizBuildInput = SelectionInput & {
-  modes?: readonly ReviewMode[];
+  modes?: readonly KanaReviewMode[];
   optionCount?: number;
 };
 
@@ -142,11 +146,11 @@ export function avoidRecentOpening(
 }
 
 /** Text displayed on an option button for a given quiz mode. */
-export function optionTextFor(kana: Kana, mode: ReviewMode): string {
+export function optionTextFor(kana: Kana, mode: KanaReviewMode): string {
   return mode === 'kana-to-romaji' ? kana.romaji : kana.kana;
 }
 
-export function promptTextFor(kana: Kana, mode: ReviewMode): string {
+export function promptTextFor(kana: Kana, mode: KanaReviewMode): string {
   if (mode === 'kana-to-romaji') return kana.kana;
   if (mode === 'romaji-to-kana') return kana.romaji;
   return '';
@@ -159,7 +163,7 @@ export function promptTextFor(kana: Kana, mode: ReviewMode): string {
 export function buildOptions(
   kana: Kana,
   pool: readonly Kana[],
-  mode: ReviewMode,
+  mode: KanaReviewMode,
   rng: Rng,
   optionCount = DEFAULT_OPTION_COUNT,
 ): { options: QuizOption[]; correctIndex: number } {
@@ -200,7 +204,7 @@ export function buildOptions(
 
 export function buildQuestion(
   kana: Kana,
-  mode: ReviewMode,
+  mode: KanaReviewMode,
   pool: readonly Kana[],
   rng: Rng,
   index: number,

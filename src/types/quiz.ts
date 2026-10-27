@@ -1,4 +1,4 @@
-import type { Kana, ReviewMode } from './kana';
+import type { Kana, KanaReviewMode } from './kana';
 
 export type QuizOption = {
   kanaId: string;
@@ -9,7 +9,7 @@ export type QuizOption = {
 export type QuizQuestion = {
   id: string;
   kana: Kana;
-  mode: ReviewMode;
+  mode: KanaReviewMode;
   /** Text/audio prompt. Empty for listening (the prompt is spoken). */
   prompt: string;
   /** Canonical answer text, also used for accessibility. */

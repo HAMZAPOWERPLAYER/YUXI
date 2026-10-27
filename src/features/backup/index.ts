@@ -1,7 +1,10 @@
 export {
   BACKUP_FORMAT,
   BACKUP_VERSION,
+  LEGACY_BACKUP_VERSION,
   MAX_BACKUP_BYTES,
+  backupV1Schema,
+  backupV2Schema,
   parseBackupJson,
   serializeBackup,
   summarizeBackup,

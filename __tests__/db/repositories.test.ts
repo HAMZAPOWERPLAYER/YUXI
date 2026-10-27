@@ -194,7 +194,8 @@ describe('repositories', () => {
   describe('review log', () => {
     it('inserts entries and computes range accuracy', async () => {
       const id = await insertReviewLog(db, {
-        kanaId: 'hiragana-a',
+        itemId: 'hiragana-a',
+        itemType: 'kana',
         mode: 'kana-to-romaji',
         correct: true,
         quality: 5,
@@ -204,7 +205,8 @@ describe('repositories', () => {
       expect(id).toBeGreaterThan(0);
 
       await insertReviewLog(db, {
-        kanaId: 'hiragana-i',
+        itemId: 'hiragana-i',
+        itemType: 'kana',
         mode: 'listening',
         correct: false,
         quality: 1,
@@ -225,7 +227,8 @@ describe('repositories', () => {
     it('lists recent, ranged and all entries, then clears them', async () => {
       for (const at of [1_000, 2_000, 3_000]) {
         await insertReviewLog(db, {
-          kanaId: 'hiragana-a',
+          itemId: 'hiragana-a',
+          itemType: 'kana',
           mode: 'kana-to-romaji',
           correct: at !== 2_000,
           quality: at === 2_000 ? 1 : 4,
@@ -321,7 +324,8 @@ describe('repositories', () => {
       await updateSettings(db, { language: 'en' });
       await saveKanaProgress(db, makeProgress('hiragana-a'));
       await insertReviewLog(db, {
-        kanaId: 'hiragana-a',
+        itemId: 'hiragana-a',
+        itemType: 'kana',
         mode: 'romaji-to-kana',
         correct: true,
         quality: 4,

@@ -1,12 +1,22 @@
-import { insertReviewLog, saveDailyStats, saveManyKanaProgress, setMeta } from '@/db/repositories';
+import {
+  addBookmark,
+  insertReviewLog,
+  saveDailyStats,
+  saveManyLessonProgress,
+  saveManySrsItems,
+  setMeta,
+} from '@/db/repositories';
 import type { DatabaseConnection } from '@/db/types';
 import { encodeSettingsPatch } from '@/features/settings/settingsModel';
 import type { AppSettings } from '@/features/settings/settingsModel';
-import type { DailyStats, KanaProgress, ReviewLogEntry } from '@/types/kana';
+import type { DailyStats } from '@/types/kana';
+import type { Bookmark, LessonProgress, ReviewLogEntry, SrsItem } from '@/types/srs';
 
 export type UserDataSnapshot = {
   settings: AppSettings;
-  kanaProgress: readonly KanaProgress[];
+  srsItems: readonly SrsItem[];
+  lessonProgress: readonly LessonProgress[];
+  bookmarks: readonly Bookmark[];
   dailyStats: readonly DailyStats[];
   reviewLog: readonly ReviewLogEntry[];
   meta: Readonly<Record<string, string | null>>;
@@ -22,7 +32,10 @@ export async function replaceAllUserData(
 ): Promise<void> {
   await db.withTransactionAsync(async () => {
     await db.execAsync(`
+      DELETE FROM bookmarks;
+      DELETE FROM lesson_progress;
       DELETE FROM review_log;
+      DELETE FROM srs_items;
       DELETE FROM kana_progress;
       DELETE FROM daily_stats;
       DELETE FROM kv_settings;
@@ -39,7 +52,11 @@ export async function replaceAllUserData(
       );
     }
 
-    await saveManyKanaProgress(db, data.kanaProgress);
+    await saveManySrsItems(db, data.srsItems);
+    await saveManyLessonProgress(db, data.lessonProgress);
+    for (const bookmark of data.bookmarks) {
+      await addBookmark(db, bookmark);
+    }
     for (const stats of data.dailyStats) {
       await saveDailyStats(db, stats);
     }
