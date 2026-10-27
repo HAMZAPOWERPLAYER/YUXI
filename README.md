@@ -27,6 +27,7 @@ centralized mascot asset map.
 | Information      | About, privacy policy, generated open-source license list and a not-found screen                           |
 | Accessibility    | Screen-reader labels, 48 pt targets, reduced-motion hook, large-text support and explicit RTL layout       |
 | Content pipeline | Zod course schema, original-content validator, lazy unit registry and JSON Schema artifacts (Part 2 M0)    |
+| Exercises        | Seeded choice, sentence-builder and particle-cloze generators with an authored-furigana renderer           |
 
 ## Technology
 
@@ -117,6 +118,7 @@ src/
   features/
     backup/             Backup schema, build/apply service and file helpers
     content/            Course schema, validator, lazy registry and unit JSON
+    exercises/          Furigana renderer plus pure Part 2 exercise generators
     kana/               Kana data, selectors and mastery model
     practice/           Practice setup components
     progress/           XP, levels, goals and streaks
@@ -198,6 +200,19 @@ Every content file and item carries `needsHumanReview: true`. Authoring conventi
 the step-by-step unit workflow are in `src/features/content/data/README.md`; architecture
 rationale is in `docs/DECISIONS.md`. The Part 2 review checklists are in
 `docs/content-review.md`.
+
+### Exercises and furigana
+
+`src/features/exercises/` turns authored lesson templates into concrete exercises:
+meaning choice, reverse choice, sentence builder and particle cloze. Generators are pure
+and seeded, so the same lesson and seed always produce the same option order. When a
+lesson has no templates, the default set covers both directions for each word, a builder
+for each sentence and a particle cloze when a common particle is present.
+
+`FuriganaText` renders authored `segments` by stacking small readings above the base
+glyphs; it never parses kanji at runtime. Japanese text stays left-to-right even when the
+UI language is Urdu. If segments are missing or stale, the component falls back to the
+plain Japanese text.
 
 ## Learning logic
 

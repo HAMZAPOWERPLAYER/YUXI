@@ -247,6 +247,26 @@ can be toggled from search or a lesson.
 review logs. Bookmarks survive content updates by id and must be cleaned up or
 migrated if an id ever changes.
 
+## ADR-018: Exercise generation is pure and seeded
+
+**Context.** Lessons need varied practice without a server, and tests must be
+deterministic. Authored templates should stay readable in JSON.
+
+**Decision.** `src/features/exercises/` exposes pure builders for meaning choice,
+reverse choice, sentence builder and particle cloze. Each builder accepts a
+seeded `Rng` and returns a complete, language-complete exercise object. Choice
+answers are graded by stable item id, builders by tile-id order and cloze by the
+exact particle. Explicit `lesson.exercises` replace the default set; otherwise
+the generator creates both directions for each word, a builder for each
+sentence and a cloze when a common particle exists. Unsupported template types
+are skipped so the schema can grow without breaking older lessons.
+
+**Consequences.** Option order is reproducible in tests but still varied on
+device through the session seed. Invalid or cross-unit template references are
+already rejected by the content validator. Authored alternate sentence orders
+must be full token permutations; malformed alternates are ignored rather than
+taught.
+
 ## Open questions
 
 These are intentionally not guessed. Each one needs a human decision.

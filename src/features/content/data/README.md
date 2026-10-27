@@ -87,6 +87,26 @@ lesson item list.
   `vocabIds`.
 - Keep Urdu natural and idiomatic, not a word-for-word calque.
 
+## Exercises
+
+`lesson.exercises` is optional. When present, it replaces the generated default
+set, so list every exercise you want in that lesson.
+
+| Type               | Required fields                          | Notes                                                         |
+| ------------------ | ---------------------------------------- | ------------------------------------------------------------- |
+| `meaning-choice`   | `itemId`                                 | Japanese prompt, meaning options                              |
+| `reverse-choice`   | `itemId`                                 | meaning prompt, Japanese options                              |
+| `sentence-builder` | `sentenceId`, optional `acceptedOrders`  | each accepted order is a full permutation of `tokens`         |
+| `particle-cloze`   | `sentenceId`, optional `particleOptions` | defaults to common particles; first matching token is blanked |
+
+When a lesson omits `exercises`, the app generates both directions for each
+word, a builder for each sentence and a particle cloze when a common particle is
+present. Generated option order is seeded at runtime and reproducible in tests.
+
+For `particle-cloze`, include at least two `particleOptions` and make sure the
+sentence contains only one particle from that list; otherwise the first match is
+used. Never add an answer field; the answer is inferred from the sentence token.
+
 ## Validator output
 
 `npm run validate:content` prints every issue and a per-unit table
