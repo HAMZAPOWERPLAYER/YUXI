@@ -26,6 +26,7 @@ centralized mascot asset map.
 | Settings         | Language, text size, daily goal, haptics, reminder, backup and reset                                     |
 | Information      | About, privacy policy, generated open-source license list and a not-found screen                         |
 | Accessibility    | Screen-reader labels, 48 pt targets, reduced-motion hook, large-text support and explicit RTL layout     |
+| Content pipeline | Zod course schema, original-content validator, lazy unit registry and JSON Schema artifacts (Part 2 M0)  |
 
 ## Technology
 
@@ -33,8 +34,9 @@ centralized mascot asset map.
 - Expo Router **58.0.26** with typed routes disabled
 - TypeScript **6.0.3** in strict mode with `noUncheckedIndexedAccess`
 - Expo SQLite **58.0.14**, Expo Notifications **58.1.6**, Expo Speech **58.0.3**
-- Zod **4.6.7** for backup validation
+- Zod **4.6.7** for backup and course-content validation
 - Jest **30.5.2**, jest-expo **58.0.12**, Testing Library **14.1.0**, sql.js **1.15.2**
+- tsx **4.23.15** for TypeScript content scripts
 - ESLint 9 with `eslint-config-expo` and Prettier 3
 
 The full dependency list is in `package.json`; generated license metadata is in
@@ -56,10 +58,13 @@ Useful commands:
 npm run typecheck        # tsc --noEmit
 npm run lint             # eslint .
 npm run format:check     # prettier --check .
-npm test                 # 301 Jest tests
+npm test                 # 347 Jest tests
 npm run test:coverage    # coverage report with thresholds
+npm run validate:content # course schema, references, safety and size checks
+npm run content:schema   # regenerate docs/content-schema/*.json
+npm run content:schema:check # fail if generated schemas are stale
 npm run check:network    # fails if network primitives appear in src/
-npm run check            # typecheck + lint + tests + privacy gate
+npm run check            # typecheck + lint + content + tests + privacy gate
 npx expo-doctor          # dependency and config diagnosis
 npm run licenses         # regenerate src/generated/licenses.json
 ```
@@ -111,6 +116,7 @@ src/
   db/                   SQLite client, migrations and repositories
   features/
     backup/             Backup schema, build/apply service and file helpers
+    content/            Course schema, validator, lazy registry and unit JSON
     kana/               Kana data, selectors and mastery model
     practice/           Practice setup components
     progress/           XP, levels, goals and streaks
@@ -161,6 +167,31 @@ Backups are JSON with `format: "yuxi-backup"` and `version: 1`. The file is capp
 10 MB, validated with Zod, and excludes the device-local notification identifier. Both
 Urdu and English settings travel with the backup. Import requires an explicit
 confirmation because it replaces current progress.
+
+## Course content pipeline
+
+Part 2 course content lives in `src/features/content/data/`: a `course.json` index plus
+one JSON file per unit. The Zod schemas in `src/features/content/schema.ts` are the
+source of truth, and `docs/content-schema/` contains generated JSON Schema artifacts for
+editors. Units are loaded lazily through the explicit map in
+`src/features/content/contentRegistry.ts`, parsed on first use, and cached.
+
+```bash
+npm run validate:content     # schema + references + sizes + safety + registry drift
+npm run content:schema       # regenerate the committed JSON Schemas
+npm run content:schema:check # fail if the committed schemas are stale
+```
+
+The validator also prints a per-unit table of lessons, words, sentences and items. It
+fails on duplicate ids, missing meanings, invalid readings or romaji, token/furigana
+mismatches, broken references, undersized units or lessons, forbidden terms, missing
+review flags and registry drift. Warnings mark explicitly allowed halal/dietary request
+phrases.
+
+Every content file and item carries `needsHumanReview: true`. Authoring conventions and
+the step-by-step unit workflow are in `src/features/content/data/README.md`; architecture
+rationale is in `docs/DECISIONS.md`. The Part 2 review checklists are in
+`docs/content-review.md`.
 
 ## Learning logic
 
@@ -213,9 +244,10 @@ i18n key parity and theme contrast.
 
 Latest local run:
 
-- **301 tests passing** across 22 suites
-- Statements **98.64%**, branches **93.11%**, functions **99.57%**, lines **99.61%**
+- **347 tests passing** across 28 suites
+- Statements **98.38%**, branches **93.34%**, functions **99.67%**, lines **99.18%**
 - Coverage thresholds: statements 85%, branches 80%, functions 90%, lines 85%
+- Content validator, JSON Schema freshness and offline privacy gates pass
 
 UI screens are exercised by TypeScript and lint but do not yet have component-level
 render tests. The app was not launched on a physical device or emulator in the build
@@ -229,6 +261,10 @@ content is structurally complete and tested, but a Japanese teacher and a native
 speaker must review the readings, hints and confusable pairs before release. The review
 checklist is in `docs/content-review.md`.
 
+Part 2 vocabulary, lesson and sentence files carry the same flag and require three
+reviews: Japanese correctness, natural Urdu and halal/family-friendly examples. The
+validator is a structural guard rail, not a substitute for those reviews.
+
 ## Known limitations
 
 - Mascot PNGs are placeholders. Replace the five files in `assets/mascot/` without
@@ -241,6 +277,8 @@ checklist is in `docs/content-review.md`.
   not expose a theme switch in Settings.
 - Reminders are local-only and may be delivered approximately by the OS.
 - No EAS project, remote, signing credentials or store listing is configured.
+- Part 2 is in progress: the content model, validator and registry exist, but the
+  vocabulary units are still being authored and the lesson player is not built yet.
 
 ## License
 

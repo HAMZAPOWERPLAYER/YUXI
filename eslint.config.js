@@ -33,4 +33,10 @@ module.exports = defineConfig([
       },
     },
   },
+  {
+    files: ['scripts/**/*.ts'],
+    rules: {
+      'no-console': 'off',
+    },
+  },
 ]);

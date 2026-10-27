@@ -1,4 +1,8 @@
-# Kana Content Review
+# Content Review — Kana and Part 2 Course
+
+This document covers both the Part 1 kana content and the Part 2 vocabulary,
+lesson and sentence content. The kana review starts below; the Part 2 review is
+in the last section.
 
 **Status:** content complete, **not yet approved for release**
 **Applies to:** `src/features/kana/data/` (208 kana records)
@@ -209,3 +213,160 @@ Engineering:
 
 Until this table shows human approval, treat the kana content as a reviewed-quality
 draft rather than a published curriculum.
+
+## Part 2: Vocabulary, lessons and sentences
+
+**Status:** authoring in progress; **no unit is approved for release**
+**Data root:** `src/features/content/data/`
+**Reviewers required:** a Japanese-language teacher, a native Urdu speaker and a
+content-safety reviewer familiar with the halal constraints.
+
+### Inventory
+
+Update this table as each unit is authored. Every file and every item carries
+`needsHumanReview: true` until the reviewers sign off.
+
+| File          | Unit         | Lessons | Words/phrases | Sentences | Review flag |
+| ------------- | ------------ | ------: | ------------: | --------: | ----------- |
+| `course.json` | course index |       — |             — |         — | `true`      |
+
+The target for Part 2 is 20 units, 3–5 lessons per unit, 6–10 items per lesson,
+about 420 vocabulary items/phrases and about 140 sentences. The machine-readable
+contract is in `src/features/content/schema.ts` and
+`docs/content-schema/unit.schema.json`.
+
+### Automated checks (must be green before review)
+
+```bash
+npm run validate:content
+npm run content:schema:check
+npx tsc --noEmit
+npm run lint
+npm test
+```
+
+`validate:content` fails on duplicate ids, missing Urdu/English meanings, empty
+or non-Hepburn romaji, readings with non-kana characters, token/segment
+mismatches, broken `exampleIds`/`vocabIds`, items outside a lesson, units under
+20 items, lessons outside 6–10 items, forbidden terms without the halal/dietary
+exception, missing `needsHumanReview` flags and registry drift. It prints a
+per-unit table. Warnings are shown but do not fail the build.
+
+### Japanese review checklist
+
+- [ ] **Politeness:** every sentence uses standard polite forms (`です`/`ます`).
+      No slang, rude forms or invented casual contractions.
+- [ ] **Particles:** `は`, `が`, `を`, `に`, `で`, `の`, `も`, `と` are correct
+      for the intended meaning; no particle is omitted from a beginner sentence
+      without a note.
+- [ ] **Readings:** each `reading` matches the written `ja` exactly, including
+      long vowels, small kana, dakuten and counters. Sentence readings may
+      include punctuation but no kanji.
+- [ ] **Romaji:** lowercase Hepburn. Confirm `shi`, `chi`, `tsu`, `fu`, `ji`,
+      long-vowel style (`ou`/`oo`/macron) and spacing between words. Confirm
+      the standing `を` = `wo` and `ぢ`/`づ` = `dji`/`dzu` choices or request a
+      change.
+- [ ] **Furigana:** every kanji item has `segments` that concatenate to `ja`,
+      and each segment reading is the correct kana for that segment. Check that
+      okurigana are not swallowed into a ruby annotation.
+- [ ] **Tokens:** sentence tokens concatenate exactly to `ja` and split at
+      useful teaching boundaries. Token glosses are accurate and do not imply a
+      different part of speech.
+- [ ] **Examples:** `exampleIds` and `vocabIds` links point to sentences that
+      actually use the item, and the sentence is natural Japanese.
+- [ ] **Level:** vocabulary and grammar fit the `N5-ish` label; do not introduce
+      advanced keigo, rare kanji or idioms without marking them.
+- [ ] **No invention:** if a word, reading or particle is uncertain, it must be
+      omitted and recorded under `UNCLEAR:` in the review ticket. The validator
+      cannot detect a plausible but wrong word.
+
+### Urdu review checklist
+
+- [ ] **Natural Urdu:** meanings read like Urdu a teacher would say, not a
+      word-for-word English calque. Prefer common Urdu over Persianized or
+      English-mixed wording.
+- [ ] **Script:** every `meaningUr` / `translationUr` contains Urdu script and
+      no Latin text. Check joining, diacritics and the Urdu full stop (`۔`) in
+      Nastaliq at all text sizes.
+- [ ] **Accuracy:** the Urdu meaning matches the Japanese meaning, including
+      politeness level and whether the item is a word or a phrase. Do not use
+      one Urdu word for two different Japanese items unless the overlap is
+      genuine.
+- [ ] **Consistency:** the same Japanese concept uses the same Urdu term across
+      units, unless a note explains the distinction.
+- [ ] **Gender and number:** translations do not accidentally imply a gender or
+      plural that the Japanese does not mark.
+
+### Content-safety and halal review checklist
+
+- [ ] No alcohol, pork, dating/romance, gambling or music-themed examples,
+      except the deliberate practical-request unit.
+- [ ] Any mention of pork or alcohol is a polite question or dietary statement,
+      tagged `halal-request` or `dietary-request`, and never promotes the item.
+      The validator emits `forbidden-term-allowed` as a warning; review every
+      warning by hand.
+- [ ] Prayer-room, halal-food and dietary questions are respectful and
+      practical; they do not mock Japanese customs or the learner.
+- [ ] Examples are family-friendly and appropriate for a general audience.
+- [ ] Japanese cultural notes (shoes off, bowing, queueing, quiet trains) are
+      accurate and phrased as guidance, not as stereotypes.
+
+### How to review a unit
+
+1. Open the unit JSON and `course.json` side by side. Check that ids, order,
+   titles and icon agree.
+2. Read every lesson in order. Confirm the items build on each other and that
+   each lesson can be completed in 3–5 minutes.
+3. Work through the Japanese, Urdu and safety checklists above.
+4. Run `npm run validate:content`; fix all errors and inspect every warning.
+5. Open the unit in the app when the lesson player lands (P2-M3) and check
+   furigana, RTL/LTR mixing, TTS and both meaning languages on a device.
+6. Record changes as JSON edits, not runtime overrides. Keep ids stable after
+   the first public release.
+7. Update the inventory table and sign-off block, then set
+   `needsHumanReview` to `false` only when the review is genuinely complete.
+   Until then it must remain `true`.
+
+### Sign-off
+
+```text
+Yuxi Part 2 unit review
+
+Unit id:
+Unit file:
+Commit:
+Japanese reviewer:
+  Name:
+  Qualification / affiliation:
+  Date:
+  Result: approved / approved with changes / rejected
+  Changes requested:
+  UNCLEAR items:
+Urdu reviewer:
+  Name:
+  Qualification / affiliation:
+  Date:
+  Result: approved / approved with changes / rejected
+  Changes requested:
+Content-safety reviewer:
+  Name:
+  Date:
+  Result: approved / approved with changes / rejected
+  Allowed-term warnings reviewed:
+Engineering:
+  validate:content passed: yes / no
+  schema:check passed: yes / no
+  Tests passed:
+  needsHumanReview set to false: yes / no
+```
+
+### Current approval state
+
+| Area                                        | Automated checks              | Human review               |
+| ------------------------------------------- | ----------------------------- | -------------------------- |
+| Schema, references, sizes, registry         | `validate:content`            | Pending                    |
+| Japanese readings, particles and politeness | Structural tests only         | **Pending**                |
+| Urdu naturalness and Nastaliq rendering     | Structural tests only         | **Pending**                |
+| Halal/family-friendly examples              | Forbidden-term validator      | **Pending**                |
+| Furigana segmentation                       | Concatenation tests only      | **Pending**                |
+| Audio/TTS pronunciation                     | Voice-availability tests only | **Pending — device check** |

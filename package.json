@@ -15,7 +15,10 @@
     "test": "jest --runInBand",
     "test:coverage": "jest --coverage --runInBand",
     "check:network": "node scripts/check-no-network.mjs",
-    "check": "npm run typecheck && npm run lint && npm run test && npm run check:network",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "content:schema": "tsx scripts/generate-content-schema.ts",
+    "content:schema:check": "tsx scripts/generate-content-schema.ts --check",
+    "check": "npm run typecheck && npm run lint && npm run validate:content && npm run content:schema:check && npm run test && npm run check:network",
     "licenses": "node scripts/generate-licenses.mjs",
     "verify": "npm run check && npx expo-doctor"
   },
@@ -43,6 +46,7 @@
       "src/features/stats/statsModel.ts",
       "src/features/study/studyService.ts",
       "src/features/reminders/**/*.ts",
+      "src/features/content/**/*.ts",
       "src/db/repositories/**/*.ts",
       "src/services/clock.ts",
       "src/services/haptics.ts",
@@ -55,7 +59,10 @@
       "/src/db/repositories/index.ts",
       "/src/features/progress/index.ts",
       "/src/features/reminders/index.ts",
-      "/src/features/srs/index.ts"
+      "/src/features/srs/index.ts",
+      "/src/features/content/index.ts",
+      "/src/features/content/types.ts",
+      "/src/features/content/data/"
     ],
     "coverageThreshold": {
       "global": {
@@ -112,6 +119,7 @@
     "prettier": "^3.9.10",
     "sql.js": "^1.15.2",
     "test-renderer": "^1.3.1",
+    "tsx": "^4.23.15",
     "typescript": "~6.0.3"
   }
 }
