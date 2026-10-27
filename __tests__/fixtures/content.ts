@@ -424,7 +424,7 @@ const lessons: Lesson[] = [
 
 lessons[0]!.exercises = [
   { type: 'meaning-choice', itemId: 'greet-ohayou' },
-  { type: 'type-romaji', itemId: 'greet-arigatou' },
+  { type: 'reverse-choice', itemId: 'greet-arigatou' },
 ];
 lessons[1]!.exercises = [{ type: 'reverse-choice', itemId: 'intro-watashi' }];
 lessons[2]!.exercises = [

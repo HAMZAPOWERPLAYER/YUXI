@@ -40,6 +40,7 @@
       "src/features/kana/data/**/*.ts",
       "src/features/kana/mastery.ts",
       "src/features/kana/selectors.ts",
+      "src/features/lessons/**/*.ts",
       "src/features/settings/settingsModel.ts",
       "src/features/backup/backupModel.ts",
       "src/features/backup/backupService.ts",
@@ -64,7 +65,8 @@
       "/src/features/content/index.ts",
       "/src/features/content/types.ts",
       "/src/features/content/data/",
-      "/src/features/exercises/index.ts"
+      "/src/features/exercises/index.ts",
+      "/src/features/lessons/index.ts"
     ],
     "coverageThreshold": {
       "global": {

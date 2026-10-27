@@ -23,6 +23,12 @@ export function RootStack() {
         <Stack.Screen name="onboarding" options={{ animation: 'fade', gestureEnabled: false }} />
         <Stack.Screen name="(tabs)" options={{ animation: 'fade' }} />
         <Stack.Screen name="learn/[script]" />
+        <Stack.Screen name="course/index" />
+        <Stack.Screen name="course/[unitId]" />
+        <Stack.Screen
+          name="lesson/[lessonId]"
+          options={{ animation: 'fade', gestureEnabled: false }}
+        />
         <Stack.Screen name="kana/[id]" />
         <Stack.Screen
           name="practice/session"

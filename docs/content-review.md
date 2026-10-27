@@ -251,9 +251,12 @@ npm test
 `validate:content` fails on duplicate ids, missing Urdu/English meanings, empty
 or non-Hepburn romaji, readings with non-kana characters, token/segment
 mismatches, broken `exampleIds`/`vocabIds`, items outside a lesson, units under
-20 items, lessons outside 6–10 items, forbidden terms without the halal/dietary
-exception, missing `needsHumanReview` flags and registry drift. It prints a
-per-unit table. Warnings are shown but do not fail the build.
+20 items, lessons outside 6–10 items, non-consecutive lesson order, forbidden
+terms without the halal/dietary exception, missing `needsHumanReview` flags,
+invalid exercise templates and registry drift. Exercise checks cover unsupported
+types, missing or wrong-kind references, irrelevant fields, malformed alternate
+orders, and duplicate, absent or ambiguous cloze particles. It prints a per-unit
+table. Warnings are shown but do not fail the build.
 
 ### Japanese review checklist
 
@@ -314,6 +317,24 @@ per-unit table. Warnings are shown but do not fail the build.
 - [ ] Japanese cultural notes (shoes off, bowing, queueing, quiet trains) are
       accurate and phrased as guidance, not as stereotypes.
 
+### Lesson player checklist (P2-M3)
+
+- [ ] The Learn tab opens the course. With no authored units, the empty state
+      points back to kana practice.
+- [ ] Unit order matches `course.json`; the first lesson is open and later
+      lessons show a lock until their predecessor is complete.
+- [ ] A unit with `requiresUnitId` stays locked until the required unit is fully
+      complete; a `minAccuracy` threshold is met by the stored answers.
+- [ ] Choice, sentence-builder and particle-cloze answers show the correct
+      answer after a miss and cannot be changed once graded.
+- [ ] Japanese prompts, tiles and the correct-answer panel stay LTR in the Urdu
+      UI; Urdu/English options follow the selected language.
+- [ ] Quitting leaves the answers saved, does not mark the lesson complete and
+      does not award the completion bonus.
+- [ ] Finishing shows the score and XP. Replaying the lesson records answers but
+      never awards the completion bonus twice.
+- [ ] A direct route to a locked lesson shows the locked state, not a run.
+
 ### How to review a unit
 
 1. Open the unit JSON and `course.json` side by side. Check that ids, order,
@@ -322,7 +343,7 @@ per-unit table. Warnings are shown but do not fail the build.
    each lesson can be completed in 3–5 minutes.
 3. Work through the Japanese, Urdu and safety checklists above.
 4. Run `npm run validate:content`; fix all errors and inspect every warning.
-5. Open the unit in the app when the lesson player lands (P2-M3) and check
+5. Open the unit in the app and work through the lesson-player checklist:
    furigana, RTL/LTR mixing, TTS and both meaning languages on a device.
 6. Record changes as JSON edits, not runtime overrides. Keep ids stable after
    the first public release.

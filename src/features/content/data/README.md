@@ -45,6 +45,7 @@ lesson item list.
 - `segments[].text` must concatenate exactly to `ja`; segment readings are kana.
 - Every `exampleIds` and `vocabIds` entry must exist in the same unit.
 - Units need at least 20 items; lessons need 6–10 items.
+- Lesson orders must run from `1` to the lesson count with no gaps or duplicates.
 - Content must be family-friendly and halal-friendly. Pork, alcohol, dating/
   romance, gambling and music are forbidden. The only exception is a polite
   halal/dietary request or statement tagged `halal-request` or
@@ -90,26 +91,45 @@ lesson item list.
 ## Exercises
 
 `lesson.exercises` is optional. When present, it replaces the generated default
-set, so list every exercise you want in that lesson.
+set, so list every exercise you want in that lesson. Every reference must point
+to an item listed in that same lesson and unit.
 
-| Type               | Required fields                          | Notes                                                         |
-| ------------------ | ---------------------------------------- | ------------------------------------------------------------- |
-| `meaning-choice`   | `itemId`                                 | Japanese prompt, meaning options                              |
-| `reverse-choice`   | `itemId`                                 | meaning prompt, Japanese options                              |
-| `sentence-builder` | `sentenceId`, optional `acceptedOrders`  | each accepted order is a full permutation of `tokens`         |
-| `particle-cloze`   | `sentenceId`, optional `particleOptions` | defaults to common particles; first matching token is blanked |
+| Type               | Required fields                          | Notes                                                 |
+| ------------------ | ---------------------------------------- | ----------------------------------------------------- |
+| `meaning-choice`   | `itemId`                                 | Japanese prompt, meaning options                      |
+| `reverse-choice`   | `itemId`                                 | meaning prompt, Japanese options                      |
+| `sentence-builder` | `sentenceId`, optional `acceptedOrders`  | each accepted order is a full permutation of `tokens` |
+| `particle-cloze`   | `sentenceId`, optional `particleOptions` | exactly one sentence token must match the options     |
 
 When a lesson omits `exercises`, the app generates both directions for each
 word, a builder for each sentence and a particle cloze when a common particle is
 present. Generated option order is seeded at runtime and reproducible in tests.
 
-For `particle-cloze`, include at least two `particleOptions` and make sure the
-sentence contains only one particle from that list; otherwise the first match is
-used. Never add an answer field; the answer is inferred from the sentence token.
+The validator rejects unsupported types (`listening-choice`, `match-pairs`,
+`type-romaji`), missing or wrong-kind references, fields a type does not use,
+malformed `acceptedOrders`, and duplicate or padded particle options.
+
+For `particle-cloze`, include at least two distinct `particleOptions` and make
+sure only one sentence token matches that list. Two matches would make the blank
+ambiguous, so the validator rejects them rather than silently using the first.
+Never add an answer field; the answer is inferred from the sentence token.
+
+## How the player uses a lesson
+
+- The first lesson of an open unit is available; each later lesson requires the
+  previous lesson to be complete.
+- A unit with `unlock.requiresUnitId` waits for that unit to be fully complete;
+  `unlock.minAccuracy` (0–1) additionally checks the stored answers.
+- Answers are graded with the generated exercise rules and saved through the
+  shared SRS path.
+- The first completion awards the session bonus. Replaying a completed lesson
+  records answers but does not award the bonus again.
+- Leaving early saves the answers but does not mark the lesson complete.
 
 ## Validator output
 
 `npm run validate:content` prints every issue and a per-unit table
 (lessons / words / sentences / items). It fails on schema errors, duplicate ids,
-broken references, undersized units/lessons, token/segment mismatches, unsafe
-terms, missing review flags and registry drift.
+broken references, undersized units/lessons, non-consecutive lesson orders,
+token/segment mismatches, unsafe terms, missing review flags, invalid exercise
+templates and registry drift.

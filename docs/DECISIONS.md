@@ -4,7 +4,7 @@ This file records the decisions that shape Yuxi. It is the reference future
 milestones (and future maintainers) should read before changing architecture.
 Each entry lists the context, the decision, and the consequences we accept.
 
-**Last updated:** 2026-10-27 (Part 2, milestone P2-M2)
+**Last updated:** 2026-10-27 (Part 2, milestone P2-M3)
 
 ## ADR-001: Expo with Continuous Native Generation
 
@@ -263,9 +263,37 @@ are skipped so the schema can grow without breaking older lessons.
 
 **Consequences.** Option order is reproducible in tests but still varied on
 device through the session seed. Invalid or cross-unit template references are
-already rejected by the content validator. Authored alternate sentence orders
-must be full token permutations; malformed alternates are ignored rather than
-taught.
+rejected by the content validator; unsupported types, wrong item kinds,
+irrelevant fields and malformed alternate orders fail validation instead of
+being silently skipped. Authored alternate sentence orders must be full token
+permutations.
+
+## ADR-019: Lesson availability is derived, and completion is idempotent
+
+**Context.** Part 2 needs a browsable course, a player that survives restarts
+and a rule set that cannot drift between the course list and the player.
+
+**Decision.** `buildCourseOverview` is a pure read model over authored units and
+`lesson_progress`. The first lesson of an open unit is available; each later
+lesson requires the previous lesson to be complete. A unit is open when it has
+no `requiresUnitId`, or when the required unit is fully complete and any
+`minAccuracy` threshold is met. Completed lessons stay reviewable.
+
+The player creates a seeded run from explicit templates or the default
+generator. Each answer goes through `recordItemAnswer`, so SRS, review log, XP
+and daily stats stay on the same path as kana practice. Finishing a lesson
+writes `lesson_progress`; the first completion also marks a completed session
+and awards the one-time session bonus. Replaying a completed lesson records new
+answers but never awards the completion bonus again. Leaving part-way through
+saves the answers, keeps the lesson incomplete and does not award the bonus.
+`completedAt` keeps the first completion time across replays.
+
+**Consequences.** Unlock state is never stored, so content edits can change what
+is open without a migration; stable ids remain essential. Lesson accuracy in the
+read model reflects the most recent run stored for that lesson. There is no
+resume-interrupted-run state: an unfinished run records its answers and the
+next visit starts a fresh seeded run. The UI must show a locked lesson as
+unavailable rather than trusting a direct route.
 
 ## Open questions
 

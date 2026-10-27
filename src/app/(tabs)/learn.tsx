@@ -38,6 +38,33 @@ export default function LearnScreen() {
           </AppText>
         </Stack>
 
+        <Card
+          accessibilityHint={t('course.open')}
+          accessibilityLabel={t('course.title')}
+          onPress={() => router.push('/course')}
+        >
+          <Row align="center" gap={theme.spacing.sm}>
+            <View
+              style={[
+                styles.courseIcon,
+                {
+                  backgroundColor: theme.colors.primarySoft,
+                  borderRadius: theme.radii.md,
+                },
+              ]}
+            >
+              <Icon color="primaryText" name="book-outline" size={24} />
+            </View>
+            <Stack gap={2} style={styles.flex}>
+              <AppText variant="heading">{t('course.title')}</AppText>
+              <AppText color="textMuted" variant="caption">
+                {t('course.subtitle')}
+              </AppText>
+            </Stack>
+            <Icon color="textMuted" name="chevron-forward" size={20} />
+          </Row>
+        </Card>
+
         {SCRIPTS.map((script) => {
           const pool = getByScript(script);
           const mastery = buildMasteryBreakdown(pool, progress);
@@ -128,6 +155,15 @@ const styles = StyleSheet.create({
     height: 54,
     justifyContent: 'center',
     width: 54,
+  },
+  courseIcon: {
+    alignItems: 'center',
+    height: 46,
+    justifyContent: 'center',
+    width: 46,
+  },
+  flex: {
+    flex: 1,
   },
   sample: {
     alignItems: 'center',

@@ -368,5 +368,110 @@ describe('content bundle validator', () => {
     const brokenExercise = cloneBundle();
     lessonOf(brokenExercise, 0).exercises![0]!.itemId = 'missing-item';
     expect(codes(brokenExercise)).toContain('broken-exercise-ref');
+
+    const outsideLesson = cloneBundle();
+    lessonOf(outsideLesson, 0).exercises!.push({
+      type: 'meaning-choice',
+      itemId: 'intro-watashi',
+    });
+    expect(codes(outsideLesson)).toContain('exercise-ref-not-in-lesson');
+  });
+
+  it('rejects unsupported and incomplete exercise templates', () => {
+    const unsupported = cloneBundle();
+    lessonOf(unsupported, 0).exercises = [{ type: 'type-romaji', itemId: 'greet-ohayou' }];
+    expect(codes(unsupported)).toContain('unsupported-exercise-type');
+
+    const missingItem = cloneBundle();
+    lessonOf(missingItem, 0).exercises = [{ type: 'meaning-choice' }];
+    expect(codes(missingItem)).toContain('missing-exercise-item');
+
+    const missingSentence = cloneBundle();
+    lessonOf(missingSentence, 0).exercises = [{ type: 'sentence-builder' }];
+    expect(codes(missingSentence)).toContain('missing-exercise-item');
+  });
+
+  it('rejects irrelevant fields and wrong item kinds', () => {
+    const irrelevant = cloneBundle();
+    lessonOf(irrelevant, 0).exercises = [
+      {
+        type: 'meaning-choice',
+        itemId: 'greet-ohayou',
+        sentenceId: 'greet-morning-sentence',
+      },
+    ];
+    expect(codes(irrelevant)).toContain('irrelevant-exercise-field');
+
+    const vocabAsSentence = cloneBundle();
+    lessonOf(vocabAsSentence, 0).exercises = [
+      { type: 'sentence-builder', sentenceId: 'greet-ohayou' },
+    ];
+    expect(codes(vocabAsSentence)).toContain('exercise-item-kind');
+
+    const sentenceAsVocab = cloneBundle();
+    lessonOf(sentenceAsVocab, 0).exercises = [
+      { type: 'reverse-choice', itemId: 'greet-morning-sentence' },
+    ];
+    expect(codes(sentenceAsVocab)).toContain('exercise-item-kind');
+  });
+
+  it('rejects malformed sentence-builder orders', () => {
+    const bundle = cloneBundle();
+    lessonOf(bundle, 2).exercises = [
+      {
+        type: 'sentence-builder',
+        sentenceId: 'obj-book-sentence',
+        acceptedOrders: [['これ', 'は', '本', 'です']],
+      },
+    ];
+    expect(codes(bundle)).toContain('malformed-accepted-order');
+  });
+
+  it('rejects duplicate, absent and ambiguous cloze particles', () => {
+    const duplicate = cloneBundle();
+    lessonOf(duplicate, 2).exercises = [
+      {
+        type: 'particle-cloze',
+        sentenceId: 'obj-book-sentence',
+        particleOptions: ['は', 'は'],
+      },
+    ];
+    expect(codes(duplicate)).toContain('duplicate-particle-option');
+
+    const absent = cloneBundle();
+    lessonOf(absent, 2).exercises = [
+      {
+        type: 'particle-cloze',
+        sentenceId: 'obj-book-sentence',
+        particleOptions: ['が', 'を'],
+      },
+    ];
+    expect(codes(absent)).toContain('missing-cloze-particle');
+
+    const ambiguous = cloneBundle();
+    lessonOf(ambiguous, 2).exercises = [
+      {
+        type: 'particle-cloze',
+        sentenceId: 'obj-book-sentence',
+        particleOptions: ['は', 'です'],
+      },
+    ];
+    expect(codes(ambiguous)).toContain('ambiguous-cloze-particle');
+
+    const valid = cloneBundle();
+    lessonOf(valid, 2).exercises = [
+      {
+        type: 'particle-cloze',
+        sentenceId: 'obj-book-sentence',
+        particleOptions: ['は', 'が'],
+      },
+    ];
+    expect(codes(valid)).toEqual([]);
+  });
+
+  it('requires consecutive lesson order numbers', () => {
+    const gap = cloneBundle();
+    lessonOf(gap, 2).order = 4;
+    expect(codes(gap)).toContain('lesson-order-gap');
   });
 });

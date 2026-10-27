@@ -4,6 +4,7 @@ import { getDatabase } from '@/db/client';
 import {
   getAllDailyStats,
   getAllKanaProgress,
+  getAllLessonProgress,
   getAllMeta,
   getRecentReviewLog,
 } from '@/db/repositories';
@@ -18,6 +19,7 @@ import {
 import { accuracyOverDays, emptyDailyStats } from '@/features/stats';
 import { now, todayKey } from '@/services/clock';
 import type { DailyStats, KanaProgress, ReviewLogEntry } from '@/types/kana';
+import type { LessonProgress } from '@/types/srs';
 import { logEvent } from '@/utils/logger';
 
 import { ProgressContext, type ProgressContextValue, type ProgressStatus } from './ProgressContext';
@@ -26,15 +28,23 @@ const RECENT_LOG_LIMIT = 20;
 
 type Snapshot = {
   progress: KanaProgress[];
+  lessonProgress: LessonProgress[];
   stats: DailyStats[];
   meta: Record<string, string | null>;
   recentLog: ReviewLogEntry[];
 };
 
-const EMPTY_SNAPSHOT: Snapshot = { progress: [], stats: [], meta: {}, recentLog: [] };
+const EMPTY_SNAPSHOT: Snapshot = {
+  progress: [],
+  lessonProgress: [],
+  stats: [],
+  meta: {},
+  recentLog: [],
+};
 
 type Derived = {
   progressById: ReadonlyMap<string, KanaProgress>;
+  lessonProgressById: ReadonlyMap<string, LessonProgress>;
   today: string;
   todayStats: DailyStats;
   totalXp: number;
@@ -50,6 +60,7 @@ type Derived = {
 function derive(snapshot: Snapshot, at: number): Derived {
   const today = todayKey(at);
   const progressById = new Map(snapshot.progress.map((row) => [row.kanaId, row]));
+  const lessonProgressById = new Map(snapshot.lessonProgress.map((row) => [row.lessonId, row]));
   const activeDays = collectActiveDays(snapshot.stats, readCompletedSessionDays(snapshot.meta));
   const totalXp = snapshot.stats.reduce((sum, row) => sum + Math.max(0, row.xp), 0);
   const todayStats = snapshot.stats.find((row) => row.day === today) ?? emptyDailyStats(today);
@@ -73,6 +84,7 @@ function derive(snapshot: Snapshot, at: number): Derived {
 
   return {
     progressById,
+    lessonProgressById,
     today,
     todayStats,
     totalXp,
@@ -92,13 +104,14 @@ function messageOf(error: unknown): string {
 
 async function readSnapshot(): Promise<Snapshot> {
   const db = await getDatabase();
-  const [progress, stats, meta, recentLog] = await Promise.all([
+  const [progress, lessonProgress, stats, meta, recentLog] = await Promise.all([
     getAllKanaProgress(db),
+    getAllLessonProgress(db),
     getAllDailyStats(db),
     getAllMeta(db),
     getRecentReviewLog(db, RECENT_LOG_LIMIT),
   ]);
-  return { progress, stats, meta, recentLog };
+  return { progress, lessonProgress, stats, meta, recentLog };
 }
 
 /**
@@ -169,6 +182,8 @@ export function ProgressProvider({ children }: PropsWithChildren) {
       error,
       progress: snapshot.progress,
       progressById: derived.progressById,
+      lessonProgress: snapshot.lessonProgress,
+      lessonProgressById: derived.lessonProgressById,
       stats: snapshot.stats,
       meta: snapshot.meta,
       recentLog: snapshot.recentLog,

@@ -26,7 +26,8 @@ centralized mascot asset map.
 | Settings         | Language, text size, daily goal, haptics, reminder, backup and reset                                       |
 | Information      | About, privacy policy, generated open-source license list and a not-found screen                           |
 | Accessibility    | Screen-reader labels, 48 pt targets, reduced-motion hook, large-text support and explicit RTL layout       |
-| Content pipeline | Zod course schema, original-content validator, lazy unit registry and JSON Schema artifacts (Part 2 M0)    |
+| Content pipeline | Zod course schema, original-content validator, lazy unit registry and JSON Schema artifacts (Part 2)       |
+| Lessons          | Unit browser, sequential unlocking, seeded player, completion summary and safe replay                      |
 | Exercises        | Seeded choice, sentence-builder and particle-cloze generators with an authored-furigana renderer           |
 
 ## Technology
@@ -120,6 +121,7 @@ src/
     content/            Course schema, validator, lazy registry and unit JSON
     exercises/          Furigana renderer plus pure Part 2 exercise generators
     kana/               Kana data, selectors and mastery model
+    lessons/            Course read model, lesson run state, service and player components
     practice/           Practice setup components
     progress/           XP, levels, goals and streaks
     quiz/               Question selection, session engine and quiz UI
@@ -192,9 +194,11 @@ npm run content:schema:check # fail if the committed schemas are stale
 
 The validator also prints a per-unit table of lessons, words, sentences and items. It
 fails on duplicate ids, missing meanings, invalid readings or romaji, token/furigana
-mismatches, broken references, undersized units or lessons, forbidden terms, missing
-review flags and registry drift. Warnings mark explicitly allowed halal/dietary request
-phrases.
+mismatches, broken references, non-consecutive lesson orders, undersized units or
+lessons, forbidden terms, missing review flags and registry drift. Exercise templates are
+checked for unsupported types, missing or wrong-kind references, fields that the type
+does not use, malformed alternate orders, and duplicate, absent or ambiguous cloze
+particles. Warnings mark explicitly allowed halal/dietary request phrases.
 
 Every content file and item carries `needsHumanReview: true`. Authoring conventions and
 the step-by-step unit workflow are in `src/features/content/data/README.md`; architecture
@@ -214,6 +218,26 @@ glyphs; it never parses kanji at runtime. Japanese text stays left-to-right even
 UI language is Urdu. If segments are missing or stale, the component falls back to the
 plain Japanese text.
 
+### Lesson browser and player
+
+The Learn tab links to `/course`. Units are ordered by `course.json`, and each unit
+screen lists its lessons with completion, accuracy and lock state. The first lesson of an
+open unit is available; later lessons open only after the previous lesson is complete. A
+unit with `requiresUnitId` stays locked until that unit is fully complete, and
+`minAccuracy` is checked against the answers stored for the required unit.
+
+A lesson run is seeded from the current time, so option order varies between attempts but
+stays reproducible in tests. Choice, sentence-builder and particle-cloze exercises use
+the same grading rules as the generated exercise tests. Every answer is saved through the
+shared SRS, review-log and daily-stats path. The first completion stores the lesson
+result and awards the one-time session bonus; repeating a completed lesson records new
+answers without awarding the bonus again. Leaving a lesson early saves the answers but
+does not mark the lesson complete. Completed lessons remain reviewable.
+
+The course list, unit screen and lesson screen all read the same pure overview model, so
+an unlock rule cannot disagree between screens. Direct navigation to a locked lesson
+shows a locked state instead of starting a run.
+
 ## Learning logic
 
 - **SM-2:** one scheduler serves kana, vocabulary and sentences. A correct answer
@@ -226,7 +250,7 @@ plain Japanese text.
   Spare slots go to studied cards, and the last three kana are avoided when choosing
   the opening question.
 - **XP:** 10 XP for a correct answer, 2 XP for a wrong answer, and 20 XP for finishing
-  a session. A level requires 200 XP.
+  a practice session or completing a lesson for the first time. A level requires 200 XP.
 - **Time:** active seconds are capped at 120 seconds per answer tick and stored per
   local day. A day counts toward the streak when the daily goal is met or a session is
   completed.
@@ -299,8 +323,9 @@ validator is a structural guard rail, not a substitute for those reviews.
   not expose a theme switch in Settings.
 - Reminders are local-only and may be delivered approximately by the OS.
 - No EAS project, remote, signing credentials or store listing is configured.
-- Part 2 is in progress: the content model, validator and registry exist, but the
-  vocabulary units are still being authored and the lesson player is not built yet.
+- Part 2 is in progress: the content model, validator, lesson browser and lesson player
+  are implemented, but the vocabulary units are still being authored, so the course shows
+  its empty state until the first unit ships.
 
 ## License
 

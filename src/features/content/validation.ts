@@ -1,3 +1,5 @@
+import { DEFAULT_PARTICLE_OPTIONS } from '@/features/exercises/generators';
+
 import { validateSentenceItem, validateVocabItem } from './itemValidation';
 import type {
   ContentBundle,
@@ -156,6 +158,17 @@ function checkUnitStructure(file: UnitFile, path: string, add: AddIssue): Map<st
     }
   }
 
+  const orderValues = [...orders.keys()].sort((a, b) => a - b);
+  const maxOrder = orderValues[orderValues.length - 1] ?? 0;
+  if (orderValues.length !== maxOrder) {
+    add(
+      'error',
+      'lesson-order-gap',
+      `${path}/lessons`,
+      `Lesson order must run from 1 to ${maxOrder} without gaps`,
+    );
+  }
+
   return lessons;
 }
 
@@ -191,6 +204,42 @@ function checkUnlock(
   }
 }
 
+const SUPPORTED_EXERCISE_TYPES = new Set([
+  'meaning-choice',
+  'reverse-choice',
+  'sentence-builder',
+  'particle-cloze',
+]);
+
+const EXERCISE_FIELDS = [
+  'itemId',
+  'itemIds',
+  'sentenceId',
+  'particleOptions',
+  'acceptedOrders',
+] as const;
+
+const ALLOWED_FIELDS: Record<string, ReadonlySet<(typeof EXERCISE_FIELDS)[number]>> = {
+  'meaning-choice': new Set(['itemId']),
+  'reverse-choice': new Set(['itemId']),
+  'sentence-builder': new Set(['sentenceId', 'acceptedOrders']),
+  'particle-cloze': new Set(['sentenceId', 'particleOptions']),
+};
+
+function isPermutation(order: readonly string[], surfaces: readonly string[]): boolean {
+  if (order.length !== surfaces.length) return false;
+  const counts = new Map<string, number>();
+  for (const surface of surfaces) {
+    counts.set(surface, (counts.get(surface) ?? 0) + 1);
+  }
+  for (const surface of order) {
+    const remaining = counts.get(surface) ?? 0;
+    if (remaining === 0) return false;
+    counts.set(surface, remaining - 1);
+  }
+  return true;
+}
+
 function checkExercises(
   lesson: Lesson,
   unitItemIds: ReadonlySet<string>,
@@ -198,29 +247,158 @@ function checkExercises(
   path: string,
   add: AddIssue,
 ): void {
+  const lessonItemIds = new Set(lesson.items.map((ref) => ref.id));
+
   (lesson.exercises ?? []).forEach((exercise, index) => {
     const exercisePath = `${path}/exercises[${index}]`;
-    const refs = [
-      ...(exercise.itemId ? [exercise.itemId] : []),
-      ...(exercise.itemIds ?? []),
-      ...(exercise.sentenceId ? [exercise.sentenceId] : []),
-    ];
-    for (const ref of refs) {
-      if (!items.has(ref)) {
+    const { type } = exercise;
+
+    if (!SUPPORTED_EXERCISE_TYPES.has(type)) {
+      add(
+        'error',
+        'unsupported-exercise-type',
+        `${exercisePath}/type`,
+        `Exercise type "${type}" is not supported by the generator`,
+      );
+      return;
+    }
+
+    const allowed = ALLOWED_FIELDS[type] ?? new Set();
+    for (const field of EXERCISE_FIELDS) {
+      if (!allowed.has(field) && exercise[field] !== undefined) {
+        add(
+          'error',
+          'irrelevant-exercise-field',
+          `${exercisePath}/${field}`,
+          `"${field}" is not used by "${type}" exercises`,
+        );
+      }
+    }
+
+    const checkRef = (ref: string, expected: 'vocabulary' | 'sentence'): void => {
+      const item = items.get(ref);
+      if (!item) {
         add(
           'error',
           'broken-exercise-ref',
           exercisePath,
           `Exercise references unknown item "${ref}"`,
         );
-      } else if (!unitItemIds.has(ref)) {
+        return;
+      }
+      if (!unitItemIds.has(ref)) {
         add(
           'error',
           'cross-unit-exercise-ref',
           exercisePath,
           `Exercise references item "${ref}" from another unit`,
         );
+        return;
       }
+      if (!lessonItemIds.has(ref)) {
+        add(
+          'error',
+          'exercise-ref-not-in-lesson',
+          exercisePath,
+          `Exercise item "${ref}" is not listed in this lesson`,
+        );
+        return;
+      }
+      const isSentence = item.kind === 'sentence';
+      if ((expected === 'sentence') !== isSentence) {
+        add(
+          'error',
+          'exercise-item-kind',
+          exercisePath,
+          `"${type}" exercises cannot use the ${isSentence ? 'sentence' : 'vocabulary'} "${ref}"`,
+        );
+      }
+    };
+
+    if (type === 'meaning-choice' || type === 'reverse-choice') {
+      if (!exercise.itemId) {
+        add(
+          'error',
+          'missing-exercise-item',
+          `${exercisePath}/itemId`,
+          `"${type}" exercises need a vocabulary itemId`,
+        );
+      } else {
+        checkRef(exercise.itemId, 'vocabulary');
+      }
+      return;
+    }
+
+    if (!exercise.sentenceId) {
+      add(
+        'error',
+        'missing-exercise-item',
+        `${exercisePath}/sentenceId`,
+        `"${type}" exercises need a sentenceId`,
+      );
+      return;
+    }
+
+    checkRef(exercise.sentenceId, 'sentence');
+    const sentence = items.get(exercise.sentenceId);
+    if (!sentence || sentence.kind !== 'sentence') return;
+
+    if (type === 'sentence-builder') {
+      (exercise.acceptedOrders ?? []).forEach((order, orderIndex) => {
+        const surfaces = sentence.tokens.map((token) => token.surface);
+        if (!isPermutation(order, surfaces)) {
+          add(
+            'error',
+            'malformed-accepted-order',
+            `${exercisePath}/acceptedOrders[${orderIndex}]`,
+            'Alternate orders must reorder every token exactly once',
+          );
+        }
+      });
+      return;
+    }
+
+    const rawOptions = exercise.particleOptions ?? DEFAULT_PARTICLE_OPTIONS;
+    const options = new Set<string>();
+    let invalidOptions = false;
+    for (const option of rawOptions) {
+      const trimmed = option.trim();
+      if (trimmed === '' || trimmed !== option) invalidOptions = true;
+      if (options.has(trimmed)) {
+        add(
+          'error',
+          'duplicate-particle-option',
+          `${exercisePath}/particleOptions`,
+          `Particle option "${trimmed}" is repeated`,
+        );
+      }
+      options.add(trimmed);
+    }
+    if (invalidOptions || options.size < 2) {
+      add(
+        'error',
+        'invalid-particle-options',
+        `${exercisePath}/particleOptions`,
+        'Particle options must be at least two distinct, unpadded particles',
+      );
+      return;
+    }
+
+    const matches = sentence.tokens.filter((token) => options.has(token.surface));
+    if (matches.length === 0) {
+      add(
+        'error',
+        'missing-cloze-particle',
+        `${exercisePath}/particleOptions`,
+        'No sentence token matches a particle option',
+      );
+    } else if (matches.length > 1) {
+      add(
+        'error',
+        'ambiguous-cloze-particle',
+        `${exercisePath}/particleOptions`,
+        'More than one sentence token matches the particle options',
+      );
     }
   });
 }
