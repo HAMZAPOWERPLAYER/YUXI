@@ -74,6 +74,76 @@
         "titleUr": "خریداری اور پیسے",
         "titleEn": "Shopping and money",
         "icon": "cart-outline"
+      },
+      {
+        "id": "unit-11-health",
+        "order": 11,
+        "titleUr": "صحت اور جسم",
+        "titleEn": "Health and the body",
+        "icon": "medkit-outline"
+      },
+      {
+        "id": "unit-12-clothing",
+        "order": 12,
+        "titleUr": "کپڑے اور پہناوا",
+        "titleEn": "Clothing and getting dressed",
+        "icon": "shirt-outline"
+      },
+      {
+        "id": "unit-13-school",
+        "order": 13,
+        "titleUr": "اسکول اور پڑھائی",
+        "titleEn": "School and study",
+        "icon": "school-outline"
+      },
+      {
+        "id": "unit-14-work",
+        "order": 14,
+        "titleUr": "کام اور دفتر",
+        "titleEn": "Work and community",
+        "icon": "briefcase-outline"
+      },
+      {
+        "id": "unit-15-hobbies",
+        "order": 15,
+        "titleUr": "مشغلے اور فرصت",
+        "titleEn": "Hobbies and free time",
+        "icon": "happy-outline"
+      },
+      {
+        "id": "unit-16-nature",
+        "order": 16,
+        "titleUr": "قدرت اور جانور",
+        "titleEn": "Nature and animals",
+        "icon": "leaf-outline"
+      },
+      {
+        "id": "unit-17-town",
+        "order": 17,
+        "titleUr": "شہر اور راستے",
+        "titleEn": "Town and directions",
+        "icon": "map-outline"
+      },
+      {
+        "id": "unit-18-feelings",
+        "order": 18,
+        "titleUr": "جذبات اور کردار",
+        "titleEn": "Feelings and character",
+        "icon": "heart-outline"
+      },
+      {
+        "id": "unit-19-language",
+        "order": 19,
+        "titleUr": "زبان اور بات چیت",
+        "titleEn": "Language and communication",
+        "icon": "chatbubble-ellipses-outline"
+      },
+      {
+        "id": "unit-20-conversation",
+        "order": 20,
+        "titleUr": "روزمرہ گفتگو",
+        "titleEn": "Everyday conversation",
+        "icon": "chatbubbles-outline"
       }
     ]
   }

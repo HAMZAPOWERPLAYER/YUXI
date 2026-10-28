@@ -1,0 +1,1206 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-18-feelings",
+    "order": 18,
+    "titleUr": "جذبات اور کردار",
+    "titleEn": "Feelings and character",
+    "descriptionUr": "خوشی، غم، خوف، مزاج اور کردار کے بارے میں بات کرنا سیکھیں۔",
+    "descriptionEn": "Talk about joy, sadness, fear, moods and character.",
+    "icon": "heart-outline",
+    "lessons": [
+      {
+        "id": "u18-l1-joy"
+      },
+      {
+        "id": "u18-l2-sad"
+      },
+      {
+        "id": "u18-l3-reactions"
+      },
+      {
+        "id": "u18-l4-traits"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-17-town"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u18-l1-joy",
+      "unitId": "unit-18-feelings",
+      "order": 1,
+      "titleUr": "خوشی اور سکون",
+      "titleEn": "Joy and reassurance",
+      "items": [
+        {
+          "id": "u18-ureshii",
+          "kind": "word"
+        },
+        {
+          "id": "u18-anshin-shimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-yorokobimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-waraimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-shinsetsu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-shoujiki",
+          "kind": "word"
+        },
+        {
+          "id": "u18-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u18-l2-sad",
+      "unitId": "unit-18-feelings",
+      "order": 2,
+      "titleUr": "غم اور خوف",
+      "titleEn": "Sadness and fear",
+      "items": [
+        {
+          "id": "u18-kanashii",
+          "kind": "word"
+        },
+        {
+          "id": "u18-sabishii",
+          "kind": "word"
+        },
+        {
+          "id": "u18-kowai",
+          "kind": "word"
+        },
+        {
+          "id": "u18-hazukashii",
+          "kind": "word"
+        },
+        {
+          "id": "u18-nakimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-shinpai-shimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u18-l3-reactions",
+      "unitId": "unit-18-feelings",
+      "order": 3,
+      "titleUr": "ردعمل اور مزاج",
+      "titleEn": "Reactions and mood",
+      "items": [
+        {
+          "id": "u18-odorokimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-okorimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-gaman-shimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u18-seikaku",
+          "kind": "word"
+        },
+        {
+          "id": "u18-kimochi",
+          "kind": "word"
+        },
+        {
+          "id": "u18-kibun",
+          "kind": "word"
+        },
+        {
+          "id": "u18-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u18-l4-traits",
+      "unitId": "unit-18-feelings",
+      "order": 4,
+      "titleUr": "کردار",
+      "titleEn": "Character",
+      "items": [
+        {
+          "id": "u18-kurai",
+          "kind": "word"
+        },
+        {
+          "id": "u18-tsuyoi",
+          "kind": "word"
+        },
+        {
+          "id": "u18-yowai",
+          "kind": "word"
+        },
+        {
+          "id": "u18-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u18-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u18-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u18-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u18-ureshii",
+      "kind": "word",
+      "ja": "嬉しい",
+      "reading": "うれしい",
+      "romaji": "ureshii",
+      "meaningUr": "خوش",
+      "meaningEn": "Happy; glad",
+      "kanji": "嬉",
+      "pos": "i-adjective",
+      "tags": ["feeling", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "嬉",
+          "reading": "うれ"
+        },
+        {
+          "text": "しい"
+        }
+      ],
+      "exampleIds": ["u18-s1"],
+      "audioText": "嬉しい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-anshin-shimasu",
+      "kind": "word",
+      "ja": "安心します",
+      "reading": "あんしんします",
+      "romaji": "anshin shimasu",
+      "meaningUr": "اطمینان محسوس کرنا",
+      "meaningEn": "To feel relieved (polite)",
+      "kanji": "安心",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "安心",
+          "reading": "あんしん"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "安心します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-yorokobimasu",
+      "kind": "word",
+      "ja": "喜びます",
+      "reading": "よろこびます",
+      "romaji": "yorokobimasu",
+      "meaningUr": "خوش ہونا",
+      "meaningEn": "To rejoice (polite)",
+      "kanji": "喜",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "喜",
+          "reading": "よろこ"
+        },
+        {
+          "text": "びます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "喜びます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-waraimasu",
+      "kind": "word",
+      "ja": "笑います",
+      "reading": "わらいます",
+      "romaji": "waraimasu",
+      "meaningUr": "ہنسنا",
+      "meaningEn": "To laugh (polite)",
+      "kanji": "笑",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "笑",
+          "reading": "わら"
+        },
+        {
+          "text": "います"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "笑います",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-shinsetsu",
+      "kind": "word",
+      "ja": "親切",
+      "reading": "しんせつ",
+      "romaji": "shinsetsu",
+      "meaningUr": "مہربان",
+      "meaningEn": "Kind",
+      "kanji": "親切",
+      "pos": "na-adjective",
+      "tags": ["character", "adjective", "na-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "親切",
+          "reading": "しんせつ"
+        }
+      ],
+      "exampleIds": ["u18-s5"],
+      "audioText": "親切",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-shoujiki",
+      "kind": "word",
+      "ja": "正直",
+      "reading": "しょうじき",
+      "romaji": "shoujiki",
+      "meaningUr": "ایماندار",
+      "meaningEn": "Honest",
+      "kanji": "正直",
+      "pos": "na-adjective",
+      "tags": ["character", "adjective", "na-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "正直",
+          "reading": "しょうじき"
+        }
+      ],
+      "exampleIds": ["u18-s5"],
+      "audioText": "正直",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-kanashii",
+      "kind": "word",
+      "ja": "悲しい",
+      "reading": "かなしい",
+      "romaji": "kanashii",
+      "meaningUr": "غمگین",
+      "meaningEn": "Sad",
+      "kanji": "悲",
+      "pos": "i-adjective",
+      "tags": ["feeling", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "悲",
+          "reading": "かな"
+        },
+        {
+          "text": "しい"
+        }
+      ],
+      "exampleIds": ["u18-s2"],
+      "audioText": "悲しい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-sabishii",
+      "kind": "word",
+      "ja": "寂しい",
+      "reading": "さびしい",
+      "romaji": "sabishii",
+      "meaningUr": "تنہا / اداس",
+      "meaningEn": "Lonely",
+      "kanji": "寂",
+      "pos": "i-adjective",
+      "tags": ["feeling", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "寂",
+          "reading": "さび"
+        },
+        {
+          "text": "しい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "寂しい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-kowai",
+      "kind": "word",
+      "ja": "怖い",
+      "reading": "こわい",
+      "romaji": "kowai",
+      "meaningUr": "خوفناک / ڈر لگنا",
+      "meaningEn": "Scary; frightening",
+      "kanji": "怖",
+      "pos": "i-adjective",
+      "tags": ["feeling", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "怖",
+          "reading": "こわ"
+        },
+        {
+          "text": "い"
+        }
+      ],
+      "exampleIds": ["u18-s3"],
+      "audioText": "怖い",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-hazukashii",
+      "kind": "word",
+      "ja": "恥ずかしい",
+      "reading": "はずかしい",
+      "romaji": "hazukashii",
+      "meaningUr": "شرمانا",
+      "meaningEn": "Embarrassed",
+      "kanji": "恥",
+      "pos": "i-adjective",
+      "tags": ["feeling", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "恥",
+          "reading": "は"
+        },
+        {
+          "text": "ずかしい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "恥ずかしい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-nakimasu",
+      "kind": "word",
+      "ja": "泣きます",
+      "reading": "なきます",
+      "romaji": "nakimasu",
+      "meaningUr": "رونا",
+      "meaningEn": "To cry (polite)",
+      "kanji": "泣",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "泣",
+          "reading": "な"
+        },
+        {
+          "text": "きます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "泣きます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-shinpai-shimasu",
+      "kind": "word",
+      "ja": "心配します",
+      "reading": "しんぱいします",
+      "romaji": "shinpai shimasu",
+      "meaningUr": "فکر کرنا",
+      "meaningEn": "To worry (polite)",
+      "kanji": "心配",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "心配",
+          "reading": "しんぱい"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": ["u18-s4"],
+      "audioText": "心配します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-odorokimasu",
+      "kind": "word",
+      "ja": "驚きます",
+      "reading": "おどろきます",
+      "romaji": "odorokimasu",
+      "meaningUr": "حیران ہونا",
+      "meaningEn": "To be surprised (polite)",
+      "kanji": "驚",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "驚",
+          "reading": "おどろ"
+        },
+        {
+          "text": "きます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "驚きます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-okorimasu",
+      "kind": "word",
+      "ja": "怒ります",
+      "reading": "おこります",
+      "romaji": "okorimasu",
+      "meaningUr": "غصہ ہونا",
+      "meaningEn": "To get angry (polite)",
+      "kanji": "怒",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "怒",
+          "reading": "おこ"
+        },
+        {
+          "text": "ります"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "怒ります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-gaman-shimasu",
+      "kind": "word",
+      "ja": "我慢します",
+      "reading": "がまんします",
+      "romaji": "gaman shimasu",
+      "meaningUr": "صبر کرنا",
+      "meaningEn": "To be patient (polite)",
+      "kanji": "我慢",
+      "pos": "verb",
+      "tags": ["feeling", "verb"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "我慢",
+          "reading": "がまん"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "我慢します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-seikaku",
+      "kind": "word",
+      "ja": "性格",
+      "reading": "せいかく",
+      "romaji": "seikaku",
+      "meaningUr": "کردار / مزاج",
+      "meaningEn": "Personality",
+      "kanji": "性格",
+      "pos": "noun",
+      "tags": ["character", "noun"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "性格",
+          "reading": "せいかく"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "性格",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-kimochi",
+      "kind": "word",
+      "ja": "気持ち",
+      "reading": "きもち",
+      "romaji": "kimochi",
+      "meaningUr": "احساس",
+      "meaningEn": "Feeling",
+      "kanji": "気持",
+      "pos": "noun",
+      "tags": ["feeling", "noun"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "気持ち",
+          "reading": "きもち"
+        }
+      ],
+      "exampleIds": ["u18-s6"],
+      "audioText": "気持ち",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-kibun",
+      "kind": "word",
+      "ja": "気分",
+      "reading": "きぶん",
+      "romaji": "kibun",
+      "meaningUr": "مزاج / موڈ",
+      "meaningEn": "Mood",
+      "kanji": "気分",
+      "pos": "noun",
+      "tags": ["feeling", "noun"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "気分",
+          "reading": "きぶん"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "気分",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-kurai",
+      "kind": "word",
+      "ja": "暗い",
+      "reading": "くらい",
+      "romaji": "kurai",
+      "meaningUr": "اندھیرا",
+      "meaningEn": "Dark",
+      "kanji": "暗",
+      "pos": "i-adjective",
+      "tags": ["description", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "暗",
+          "reading": "くら"
+        },
+        {
+          "text": "い"
+        }
+      ],
+      "exampleIds": ["u18-s3"],
+      "audioText": "暗い",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-tsuyoi",
+      "kind": "word",
+      "ja": "強い",
+      "reading": "つよい",
+      "romaji": "tsuyoi",
+      "meaningUr": "مضبوط / طاقتور",
+      "meaningEn": "Strong",
+      "kanji": "強",
+      "pos": "i-adjective",
+      "tags": ["character", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "強",
+          "reading": "つよ"
+        },
+        {
+          "text": "い"
+        }
+      ],
+      "exampleIds": ["u18-s7"],
+      "audioText": "強い",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u18-yowai",
+      "kind": "word",
+      "ja": "弱い",
+      "reading": "よわい",
+      "romaji": "yowai",
+      "meaningUr": "کمزور",
+      "meaningEn": "Weak",
+      "kanji": "弱",
+      "pos": "i-adjective",
+      "tags": ["character", "i-adjective"],
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "弱",
+          "reading": "よわ"
+        },
+        {
+          "text": "い"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "弱い",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u18-s1",
+      "kind": "sentence",
+      "ja": "今日はとても嬉しいです。",
+      "reading": "きょうはとてもうれしいです。",
+      "romaji": "kyou wa totemo ureshii desu",
+      "translationUr": "آج میں بہت خوش ہوں۔",
+      "translationEn": "I am very happy today.",
+      "tokens": [
+        {
+          "surface": "今日",
+          "reading": "きょう",
+          "gloss": "today"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "とても",
+          "reading": "とても",
+          "gloss": "very"
+        },
+        {
+          "surface": "嬉しい",
+          "reading": "うれしい",
+          "gloss": "happy"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-ureshii"],
+      "grammarTags": ["particle-wa", "i-adjective", "polite"],
+      "tags": ["feeling", "daily"],
+      "difficulty": 1,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l1-joy",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "今日",
+          "reading": "きょう"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "とても",
+          "reading": "とても"
+        },
+        {
+          "text": "嬉しい",
+          "reading": "うれしい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u18-s2",
+      "kind": "sentence",
+      "ja": "悲しい映画を見ました。",
+      "reading": "かなしいえいがをみました。",
+      "romaji": "kanashii eiga o mimashita",
+      "translationUr": "میں نے ایک غمگین فلم دیکھی۔",
+      "translationEn": "I watched a sad movie.",
+      "tokens": [
+        {
+          "surface": "悲しい",
+          "reading": "かなしい",
+          "gloss": "sad"
+        },
+        {
+          "surface": "映画",
+          "reading": "えいが",
+          "gloss": "movie"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "見ました",
+          "reading": "みました",
+          "gloss": "watched"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-kanashii"],
+      "grammarTags": ["i-adjective", "particle-wo", "past", "polite"],
+      "tags": ["feeling", "media"],
+      "difficulty": 1,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l2-sad",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "悲しい",
+          "reading": "かなしい"
+        },
+        {
+          "text": "映画",
+          "reading": "えいが"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "見ました",
+          "reading": "みました"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u18-s3",
+      "kind": "sentence",
+      "ja": "暗い道は怖いです。",
+      "reading": "くらいみちはこわいです。",
+      "romaji": "kurai michi wa kowai desu",
+      "translationUr": "اندھی سڑک خوفناک ہے۔",
+      "translationEn": "A dark road is scary.",
+      "tokens": [
+        {
+          "surface": "暗い",
+          "reading": "くらい",
+          "gloss": "dark"
+        },
+        {
+          "surface": "道",
+          "reading": "みち",
+          "gloss": "road"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "怖い",
+          "reading": "こわい",
+          "gloss": "scary"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-kurai", "u18-kowai"],
+      "grammarTags": ["particle-wa", "i-adjective", "polite"],
+      "tags": ["feeling", "town"],
+      "difficulty": 2,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l3-reactions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "暗い",
+          "reading": "くらい"
+        },
+        {
+          "text": "道",
+          "reading": "みち"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "怖い",
+          "reading": "こわい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u18-s4",
+      "kind": "sentence",
+      "ja": "友達を心配しています。",
+      "reading": "ともだちをしんぱいしています。",
+      "romaji": "tomodachi o shinpai shite imasu",
+      "translationUr": "میں اپنے دوست کی فکر کر رہا ہوں۔",
+      "translationEn": "I am worried about my friend.",
+      "tokens": [
+        {
+          "surface": "友達",
+          "reading": "ともだち",
+          "gloss": "friend"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "心配しています",
+          "reading": "しんぱいしています",
+          "gloss": "am worrying"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-shinpai-shimasu"],
+      "grammarTags": ["particle-wo", "progressive", "polite"],
+      "tags": ["feeling", "daily"],
+      "difficulty": 2,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "友達",
+          "reading": "ともだち"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "心配しています",
+          "reading": "しんぱいしています"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u18-s5",
+      "kind": "sentence",
+      "ja": "父は親切で正直です。",
+      "reading": "ちちはしんせつでしょうじきです。",
+      "romaji": "chichi wa shinsetsu de shoujiki desu",
+      "translationUr": "میرے والد مہربان اور ایماندار ہیں۔",
+      "translationEn": "My father is kind and honest.",
+      "tokens": [
+        {
+          "surface": "父",
+          "reading": "ちち",
+          "gloss": "father"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "親切",
+          "reading": "しんせつ",
+          "gloss": "kind"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "and (copula)"
+        },
+        {
+          "surface": "正直",
+          "reading": "しょうじき",
+          "gloss": "honest"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-shinsetsu", "u18-shoujiki"],
+      "grammarTags": ["particle-wa", "na-adjective", "copula", "polite"],
+      "tags": ["character", "family"],
+      "difficulty": 1,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "父",
+          "reading": "ちち"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "親切",
+          "reading": "しんせつ"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "正直",
+          "reading": "しょうじき"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u18-s6",
+      "kind": "sentence",
+      "ja": "気持ちを話してください。",
+      "reading": "きもちをはなしてください。",
+      "romaji": "kimochi o hanashite kudasai",
+      "translationUr": "براہ کرم اپنے احساسات بتائیں۔",
+      "translationEn": "Please tell me your feelings.",
+      "tokens": [
+        {
+          "surface": "気持ち",
+          "reading": "きもち",
+          "gloss": "feeling"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "話して",
+          "reading": "はなして",
+          "gloss": "speak and"
+        },
+        {
+          "surface": "ください",
+          "reading": "ください",
+          "gloss": "please"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-kimochi"],
+      "grammarTags": ["particle-wo", "te-form", "request", "polite"],
+      "tags": ["feeling", "communication"],
+      "difficulty": 1,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "気持ち",
+          "reading": "きもち"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "話して",
+          "reading": "はなして"
+        },
+        {
+          "text": "ください",
+          "reading": "ください"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u18-s7",
+      "kind": "sentence",
+      "ja": "強い人になりたいです。",
+      "reading": "つよいひとになりたいです。",
+      "romaji": "tsuyoi hito ni naritai desu",
+      "translationUr": "میں ایک مضبوط انسان بننا چاہتا ہوں۔",
+      "translationEn": "I want to become a strong person.",
+      "tokens": [
+        {
+          "surface": "強い",
+          "reading": "つよい",
+          "gloss": "strong"
+        },
+        {
+          "surface": "人",
+          "reading": "ひと",
+          "gloss": "person"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "target particle"
+        },
+        {
+          "surface": "なりたい",
+          "reading": "なりたい",
+          "gloss": "want to become"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u18-tsuyoi"],
+      "grammarTags": ["i-adjective", "particle-ni", "desire", "polite"],
+      "tags": ["character"],
+      "difficulty": 2,
+      "unitId": "unit-18-feelings",
+      "lessonId": "u18-l4-traits",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "強い",
+          "reading": "つよい"
+        },
+        {
+          "text": "人",
+          "reading": "ひと"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "なりたい",
+          "reading": "なりたい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

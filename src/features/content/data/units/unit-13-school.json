@@ -1,0 +1,1220 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-13-school",
+    "order": 13,
+    "titleUr": "اسکول اور پڑھائی",
+    "titleEn": "School and study",
+    "descriptionUr": "کلاس روم، پڑھائی، اساتذہ اور امتحان کے بارے میں عام الفاظ سیکھیں۔",
+    "descriptionEn": "Learn classroom words, study actions, teachers and tests.",
+    "icon": "school-outline",
+    "lessons": [
+      {
+        "id": "u13-l1-class"
+      },
+      {
+        "id": "u13-l2-learn"
+      },
+      {
+        "id": "u13-l3-read"
+      },
+      {
+        "id": "u13-l4-exam"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-12-clothing"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u13-l1-class",
+      "unitId": "unit-13-school",
+      "order": 1,
+      "titleUr": "کلاس روم",
+      "titleEn": "In the classroom",
+      "items": [
+        {
+          "id": "u13-kyoushitsu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-jugyou",
+          "kind": "word"
+        },
+        {
+          "id": "u13-shukudai",
+          "kind": "word"
+        },
+        {
+          "id": "u13-tesuto",
+          "kind": "word"
+        },
+        {
+          "id": "u13-shitsumon",
+          "kind": "word"
+        },
+        {
+          "id": "u13-kokuban",
+          "kind": "word"
+        },
+        {
+          "id": "u13-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u13-l2-learn",
+      "unitId": "unit-13-school",
+      "order": 2,
+      "titleUr": "سیکھنے کے عمل",
+      "titleEn": "Learning actions",
+      "items": [
+        {
+          "id": "u13-kotaemasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-oshiemasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-naraimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-oboemasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-wasuremasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-kikimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u13-l3-read",
+      "unitId": "unit-13-school",
+      "order": 3,
+      "titleUr": "پڑھنا اور لکھنا",
+      "titleEn": "Reading and writing",
+      "items": [
+        {
+          "id": "u13-yomimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-kakimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-jisho",
+          "kind": "word"
+        },
+        {
+          "id": "u13-keshigomu",
+          "kind": "word"
+        },
+        {
+          "id": "u13-jougi",
+          "kind": "word"
+        },
+        {
+          "id": "u13-daigaku",
+          "kind": "word"
+        },
+        {
+          "id": "u13-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u13-l4-exam",
+      "unitId": "unit-13-school",
+      "order": 4,
+      "titleUr": "امتحان اور مشکل",
+      "titleEn": "Tests and difficulty",
+      "items": [
+        {
+          "id": "u13-koukou",
+          "kind": "word"
+        },
+        {
+          "id": "u13-muzukashii",
+          "kind": "word"
+        },
+        {
+          "id": "u13-yasashii",
+          "kind": "word"
+        },
+        {
+          "id": "u13-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u13-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u13-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u13-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u13-kyoushitsu",
+      "kind": "word",
+      "ja": "教室",
+      "reading": "きょうしつ",
+      "romaji": "kyoushitsu",
+      "meaningUr": "کلاس روم",
+      "meaningEn": "Classroom",
+      "kanji": "教室",
+      "pos": "noun",
+      "tags": ["school", "place", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "教室",
+          "reading": "きょうしつ"
+        }
+      ],
+      "exampleIds": ["u13-s1"],
+      "audioText": "教室",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-jugyou",
+      "kind": "word",
+      "ja": "授業",
+      "reading": "じゅぎょう",
+      "romaji": "jugyou",
+      "meaningUr": "سبق / کلاس",
+      "meaningEn": "Class; lesson",
+      "kanji": "授業",
+      "pos": "noun",
+      "tags": ["school", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "授業",
+          "reading": "じゅぎょう"
+        }
+      ],
+      "exampleIds": ["u13-s5"],
+      "audioText": "授業",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-shukudai",
+      "kind": "word",
+      "ja": "宿題",
+      "reading": "しゅくだい",
+      "romaji": "shukudai",
+      "meaningUr": "ہوم ورک",
+      "meaningEn": "Homework",
+      "kanji": "宿題",
+      "pos": "noun",
+      "tags": ["school", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "宿題",
+          "reading": "しゅくだい"
+        }
+      ],
+      "exampleIds": ["u13-s3"],
+      "audioText": "宿題",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-tesuto",
+      "kind": "word",
+      "ja": "テスト",
+      "reading": "テスト",
+      "romaji": "tesuto",
+      "meaningUr": "امتحان",
+      "meaningEn": "Test",
+      "pos": "noun",
+      "tags": ["school", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "exampleIds": ["u13-s6"],
+      "audioText": "テスト",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-shitsumon",
+      "kind": "word",
+      "ja": "質問",
+      "reading": "しつもん",
+      "romaji": "shitsumon",
+      "meaningUr": "سوال",
+      "meaningEn": "Question",
+      "kanji": "質問",
+      "pos": "noun",
+      "tags": ["school", "communication", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "質問",
+          "reading": "しつもん"
+        }
+      ],
+      "exampleIds": ["u13-s2"],
+      "audioText": "質問",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-kokuban",
+      "kind": "word",
+      "ja": "黒板",
+      "reading": "こくばん",
+      "romaji": "kokuban",
+      "meaningUr": "بلیک بورڈ",
+      "meaningEn": "Blackboard",
+      "kanji": "黒板",
+      "pos": "noun",
+      "tags": ["school", "object", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "黒板",
+          "reading": "こくばん"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "黒板",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-kotaemasu",
+      "kind": "word",
+      "ja": "答えます",
+      "reading": "こたえます",
+      "romaji": "kotaemasu",
+      "meaningUr": "جواب دینا",
+      "meaningEn": "To answer (polite)",
+      "kanji": "答",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "答",
+          "reading": "こた"
+        },
+        {
+          "text": "えます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "答えます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-oshiemasu",
+      "kind": "word",
+      "ja": "教えます",
+      "reading": "おしえます",
+      "romaji": "oshiemasu",
+      "meaningUr": "سکھانا",
+      "meaningEn": "To teach (polite)",
+      "kanji": "教",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "教",
+          "reading": "おし"
+        },
+        {
+          "text": "えます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "教えます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-naraimasu",
+      "kind": "word",
+      "ja": "習います",
+      "reading": "ならいます",
+      "romaji": "naraimasu",
+      "meaningUr": "سیکھنا",
+      "meaningEn": "To learn (polite)",
+      "kanji": "習",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "習",
+          "reading": "なら"
+        },
+        {
+          "text": "います"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "習います",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-oboemasu",
+      "kind": "word",
+      "ja": "覚えます",
+      "reading": "おぼえます",
+      "romaji": "oboemasu",
+      "meaningUr": "یاد کرنا",
+      "meaningEn": "To memorize (polite)",
+      "kanji": "覚",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "覚",
+          "reading": "おぼ"
+        },
+        {
+          "text": "えます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "覚えます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-wasuremasu",
+      "kind": "word",
+      "ja": "忘れます",
+      "reading": "わすれます",
+      "romaji": "wasuremasu",
+      "meaningUr": "بھولنا",
+      "meaningEn": "To forget (polite)",
+      "kanji": "忘",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "忘",
+          "reading": "わす"
+        },
+        {
+          "text": "れます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "忘れます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-kikimasu",
+      "kind": "word",
+      "ja": "聞きます",
+      "reading": "ききます",
+      "romaji": "kikimasu",
+      "meaningUr": "سننا / پوچھنا",
+      "meaningEn": "To listen; to ask (polite)",
+      "kanji": "聞",
+      "pos": "verb",
+      "tags": ["school", "communication", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "聞",
+          "reading": "き"
+        },
+        {
+          "text": "きます"
+        }
+      ],
+      "exampleIds": ["u13-s5"],
+      "audioText": "聞きます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-yomimasu",
+      "kind": "word",
+      "ja": "読みます",
+      "reading": "よみます",
+      "romaji": "yomimasu",
+      "meaningUr": "پڑھنا",
+      "meaningEn": "To read (polite)",
+      "kanji": "読",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "読",
+          "reading": "よ"
+        },
+        {
+          "text": "みます"
+        }
+      ],
+      "exampleIds": ["u13-s7"],
+      "audioText": "読みます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-kakimasu",
+      "kind": "word",
+      "ja": "書きます",
+      "reading": "かきます",
+      "romaji": "kakimasu",
+      "meaningUr": "لکھنا",
+      "meaningEn": "To write (polite)",
+      "kanji": "書",
+      "pos": "verb",
+      "tags": ["school", "verb"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "書",
+          "reading": "か"
+        },
+        {
+          "text": "きます"
+        }
+      ],
+      "exampleIds": ["u13-s6"],
+      "audioText": "書きます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-jisho",
+      "kind": "word",
+      "ja": "辞書",
+      "reading": "じしょ",
+      "romaji": "jisho",
+      "meaningUr": "لغت / ڈکشنری",
+      "meaningEn": "Dictionary",
+      "kanji": "辞書",
+      "pos": "noun",
+      "tags": ["school", "object", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "辞書",
+          "reading": "じしょ"
+        }
+      ],
+      "exampleIds": ["u13-s4"],
+      "audioText": "辞書",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-keshigomu",
+      "kind": "word",
+      "ja": "消しゴム",
+      "reading": "けしごむ",
+      "romaji": "keshigomu",
+      "meaningUr": "ربڑ",
+      "meaningEn": "Eraser",
+      "kanji": "消",
+      "pos": "noun",
+      "tags": ["school", "object", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "消",
+          "reading": "け"
+        },
+        {
+          "text": "しゴム"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "消しゴム",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-jougi",
+      "kind": "word",
+      "ja": "定規",
+      "reading": "じょうぎ",
+      "romaji": "jougi",
+      "meaningUr": "پیمانہ / رولر",
+      "meaningEn": "Ruler",
+      "kanji": "定規",
+      "pos": "noun",
+      "tags": ["school", "object", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "定規",
+          "reading": "じょうぎ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "定規",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-daigaku",
+      "kind": "word",
+      "ja": "大学",
+      "reading": "だいがく",
+      "romaji": "daigaku",
+      "meaningUr": "یونیورسٹی",
+      "meaningEn": "University",
+      "kanji": "大学",
+      "pos": "noun",
+      "tags": ["school", "place", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "大学",
+          "reading": "だいがく"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "大学",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-koukou",
+      "kind": "word",
+      "ja": "高校",
+      "reading": "こうこう",
+      "romaji": "koukou",
+      "meaningUr": "ہائی اسکول",
+      "meaningEn": "High school",
+      "kanji": "高校",
+      "pos": "noun",
+      "tags": ["school", "place", "noun"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "高校",
+          "reading": "こうこう"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "高校",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-muzukashii",
+      "kind": "word",
+      "ja": "難しい",
+      "reading": "むずかしい",
+      "romaji": "muzukashii",
+      "meaningUr": "مشکل",
+      "meaningEn": "Difficult",
+      "kanji": "難",
+      "pos": "i-adjective",
+      "tags": ["school", "i-adjective"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "難",
+          "reading": "むずか"
+        },
+        {
+          "text": "しい"
+        }
+      ],
+      "exampleIds": ["u13-s3"],
+      "audioText": "難しい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u13-yasashii",
+      "kind": "word",
+      "ja": "易しい",
+      "reading": "やさしい",
+      "romaji": "yasashii",
+      "meaningUr": "آسان",
+      "meaningEn": "Easy",
+      "kanji": "易",
+      "pos": "i-adjective",
+      "tags": ["school", "i-adjective"],
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "易",
+          "reading": "やさ"
+        },
+        {
+          "text": "しい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "易しい",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u13-s1",
+      "kind": "sentence",
+      "ja": "教室で日本語を勉強します。",
+      "reading": "きょうしつでにほんごをべんきょうします。",
+      "romaji": "kyoushitsu de nihongo o benkyou shimasu",
+      "translationUr": "میں کلاس روم میں جاپانی پڑھتا ہوں۔",
+      "translationEn": "I study Japanese in the classroom.",
+      "tokens": [
+        {
+          "surface": "教室",
+          "reading": "きょうしつ",
+          "gloss": "classroom"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "日本語",
+          "reading": "にほんご",
+          "gloss": "Japanese language"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "勉強します",
+          "reading": "べんきょうします",
+          "gloss": "study (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-kyoushitsu"],
+      "grammarTags": ["particle-de", "particle-wo", "polite"],
+      "tags": ["school", "study"],
+      "difficulty": 1,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l1-class",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "教室",
+          "reading": "きょうしつ"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "日本語",
+          "reading": "にほんご"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "勉強します",
+          "reading": "べんきょうします"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u13-s2",
+      "kind": "sentence",
+      "ja": "先生に質問をします。",
+      "reading": "せんせいにしつもんをします。",
+      "romaji": "sensei ni shitsumon o shimasu",
+      "translationUr": "میں استاد سے سوال کرتا ہوں۔",
+      "translationEn": "I ask the teacher a question.",
+      "tokens": [
+        {
+          "surface": "先生",
+          "reading": "せんせい",
+          "gloss": "teacher"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "target particle"
+        },
+        {
+          "surface": "質問",
+          "reading": "しつもん",
+          "gloss": "question"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "します",
+          "reading": "します",
+          "gloss": "do (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-shitsumon"],
+      "grammarTags": ["particle-ni", "particle-wo", "polite"],
+      "tags": ["school", "communication"],
+      "difficulty": 1,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l2-learn",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "先生",
+          "reading": "せんせい"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "質問",
+          "reading": "しつもん"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "します",
+          "reading": "します"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u13-s3",
+      "kind": "sentence",
+      "ja": "宿題は難しいです。",
+      "reading": "しゅくだいはむずかしいです。",
+      "romaji": "shukudai wa muzukashii desu",
+      "translationUr": "ہوم ورک مشکل ہے۔",
+      "translationEn": "Homework is difficult.",
+      "tokens": [
+        {
+          "surface": "宿題",
+          "reading": "しゅくだい",
+          "gloss": "homework"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "難しい",
+          "reading": "むずかしい",
+          "gloss": "difficult"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-shukudai", "u13-muzukashii"],
+      "grammarTags": ["particle-wa", "i-adjective", "polite"],
+      "tags": ["school"],
+      "difficulty": 1,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l3-read",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "宿題",
+          "reading": "しゅくだい"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "難しい",
+          "reading": "むずかしい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u13-s4",
+      "kind": "sentence",
+      "ja": "辞書で言葉を調べます。",
+      "reading": "じしょでことばをしらべます。",
+      "romaji": "jisho de kotoba o shirabemasu",
+      "translationUr": "میں لغت میں لفظ تلاش کرتا ہوں۔",
+      "translationEn": "I look up words in a dictionary.",
+      "tokens": [
+        {
+          "surface": "辞書",
+          "reading": "じしょ",
+          "gloss": "dictionary"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "means particle"
+        },
+        {
+          "surface": "言葉",
+          "reading": "ことば",
+          "gloss": "word"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "調べます",
+          "reading": "しらべます",
+          "gloss": "look up (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-jisho"],
+      "grammarTags": ["particle-de", "particle-wo", "polite"],
+      "tags": ["school", "study"],
+      "difficulty": 2,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "辞書",
+          "reading": "じしょ"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "言葉",
+          "reading": "ことば"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "調べます",
+          "reading": "しらべます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u13-s5",
+      "kind": "sentence",
+      "ja": "授業で先生の話を聞きます。",
+      "reading": "じゅぎょうでせんせいのはなしをききます。",
+      "romaji": "jugyou de sensei no hanashi o kikimasu",
+      "translationUr": "میں کلاس میں استاد کی بات سنتا ہوں۔",
+      "translationEn": "I listen to the teacher in class.",
+      "tokens": [
+        {
+          "surface": "授業",
+          "reading": "じゅぎょう",
+          "gloss": "class"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "先生",
+          "reading": "せんせい",
+          "gloss": "teacher"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "話",
+          "reading": "はなし",
+          "gloss": "talk"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "聞きます",
+          "reading": "ききます",
+          "gloss": "listen (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-jugyou", "u13-kikimasu"],
+      "grammarTags": ["particle-de", "particle-no", "particle-wo", "polite"],
+      "tags": ["school", "communication"],
+      "difficulty": 2,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "授業",
+          "reading": "じゅぎょう"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "先生",
+          "reading": "せんせい"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "話",
+          "reading": "はなし"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "聞きます",
+          "reading": "ききます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u13-s6",
+      "kind": "sentence",
+      "ja": "テストの答えを書きます。",
+      "reading": "てすとのこたえをかきます。",
+      "romaji": "tesuto no kotae o kakimasu",
+      "translationUr": "میں امتحان کے جواب لکھتا ہوں۔",
+      "translationEn": "I write the test answers.",
+      "tokens": [
+        {
+          "surface": "テスト",
+          "reading": "テスト",
+          "gloss": "test"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "答え",
+          "reading": "こたえ",
+          "gloss": "answer"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "書きます",
+          "reading": "かきます",
+          "gloss": "write (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-tesuto", "u13-kakimasu"],
+      "grammarTags": ["particle-no", "particle-wo", "polite"],
+      "tags": ["school", "study"],
+      "difficulty": 2,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "テスト",
+          "reading": "テスト"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "答え",
+          "reading": "こたえ"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "書きます",
+          "reading": "かきます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u13-s7",
+      "kind": "sentence",
+      "ja": "図書館で本を読みます。",
+      "reading": "としょかんでほんをよみます。",
+      "romaji": "toshokan de hon o yomimasu",
+      "translationUr": "میں کتب خانے میں کتاب پڑھتا ہوں۔",
+      "translationEn": "I read books in the library.",
+      "tokens": [
+        {
+          "surface": "図書館",
+          "reading": "としょかん",
+          "gloss": "library"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "本",
+          "reading": "ほん",
+          "gloss": "book"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "読みます",
+          "reading": "よみます",
+          "gloss": "read (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u13-yomimasu"],
+      "grammarTags": ["particle-de", "particle-wo", "polite"],
+      "tags": ["school", "study"],
+      "difficulty": 1,
+      "unitId": "unit-13-school",
+      "lessonId": "u13-l4-exam",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "図書館",
+          "reading": "としょかん"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "本",
+          "reading": "ほん"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "読みます",
+          "reading": "よみます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

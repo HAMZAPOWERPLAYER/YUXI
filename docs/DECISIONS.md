@@ -4,7 +4,7 @@ This file records the decisions that shape Yuxi. It is the reference future
 milestones (and future maintainers) should read before changing architecture.
 Each entry lists the context, the decision, and the consequences we accept.
 
-**Last updated:** 2026-10-27 (Part 2, milestone P2-M3)
+**Last updated:** 2026-10-28 (Part 2, milestone P2-M6)
 
 ## ADR-001: Expo with Continuous Native Generation
 

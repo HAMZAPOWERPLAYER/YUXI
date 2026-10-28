@@ -1,0 +1,1263 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-16-nature",
+    "order": 16,
+    "titleUr": "قدرت اور جانور",
+    "titleEn": "Nature and animals",
+    "descriptionUr": "جانوروں، پودوں، پہاڑوں، سمندر اور آسمان کے بارے میں بات کرنا سیکھیں۔",
+    "descriptionEn": "Talk about animals, plants, mountains, the sea and the sky.",
+    "icon": "leaf-outline",
+    "lessons": [
+      {
+        "id": "u16-l1-animals"
+      },
+      {
+        "id": "u16-l2-plants"
+      },
+      {
+        "id": "u16-l3-sky"
+      },
+      {
+        "id": "u16-l4-size"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-15-hobbies"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u16-l1-animals",
+      "unitId": "unit-16-nature",
+      "order": 1,
+      "titleUr": "جانور",
+      "titleEn": "Animals",
+      "items": [
+        {
+          "id": "u16-doubutsu",
+          "kind": "word"
+        },
+        {
+          "id": "u16-inu",
+          "kind": "word"
+        },
+        {
+          "id": "u16-neko",
+          "kind": "word"
+        },
+        {
+          "id": "u16-tori",
+          "kind": "word"
+        },
+        {
+          "id": "u16-uma",
+          "kind": "word"
+        },
+        {
+          "id": "u16-tobimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u16-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u16-l2-plants",
+      "unitId": "unit-16-nature",
+      "order": 2,
+      "titleUr": "پودے اور زمین",
+      "titleEn": "Plants and land",
+      "items": [
+        {
+          "id": "u16-hana",
+          "kind": "word"
+        },
+        {
+          "id": "u16-ki",
+          "kind": "word"
+        },
+        {
+          "id": "u16-mori",
+          "kind": "word"
+        },
+        {
+          "id": "u16-yama",
+          "kind": "word"
+        },
+        {
+          "id": "u16-kawa",
+          "kind": "word"
+        },
+        {
+          "id": "u16-umi",
+          "kind": "word"
+        },
+        {
+          "id": "u16-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u16-l3-sky",
+      "unitId": "unit-16-nature",
+      "order": 3,
+      "titleUr": "آسمان اور قدرت",
+      "titleEn": "Sky and nature",
+      "items": [
+        {
+          "id": "u16-sora",
+          "kind": "word"
+        },
+        {
+          "id": "u16-hoshi",
+          "kind": "word"
+        },
+        {
+          "id": "u16-tsuki",
+          "kind": "word"
+        },
+        {
+          "id": "u16-taiyou",
+          "kind": "word"
+        },
+        {
+          "id": "u16-shizen",
+          "kind": "word"
+        },
+        {
+          "id": "u16-ishi",
+          "kind": "word"
+        },
+        {
+          "id": "u16-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u16-l4-size",
+      "unitId": "unit-16-nature",
+      "order": 4,
+      "titleUr": "زمین اور حجم",
+      "titleEn": "Earth and size",
+      "items": [
+        {
+          "id": "u16-tsuchi",
+          "kind": "word"
+        },
+        {
+          "id": "u16-chiisai",
+          "kind": "word"
+        },
+        {
+          "id": "u16-ookii",
+          "kind": "word"
+        },
+        {
+          "id": "u16-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u16-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u16-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u16-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u16-doubutsu",
+      "kind": "word",
+      "ja": "動物",
+      "reading": "どうぶつ",
+      "romaji": "doubutsu",
+      "meaningUr": "جانور",
+      "meaningEn": "Animal",
+      "kanji": "動物",
+      "pos": "noun",
+      "tags": ["nature", "animal", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "動物",
+          "reading": "どうぶつ"
+        }
+      ],
+      "exampleIds": ["u16-s7"],
+      "audioText": "動物",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-inu",
+      "kind": "word",
+      "ja": "犬",
+      "reading": "いぬ",
+      "romaji": "inu",
+      "meaningUr": "کتا",
+      "meaningEn": "Dog",
+      "kanji": "犬",
+      "pos": "noun",
+      "tags": ["nature", "animal", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "犬",
+          "reading": "いぬ"
+        }
+      ],
+      "exampleIds": ["u16-s1"],
+      "audioText": "犬",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-neko",
+      "kind": "word",
+      "ja": "猫",
+      "reading": "ねこ",
+      "romaji": "neko",
+      "meaningUr": "بلی",
+      "meaningEn": "Cat",
+      "kanji": "猫",
+      "pos": "noun",
+      "tags": ["nature", "animal", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "猫",
+          "reading": "ねこ"
+        }
+      ],
+      "exampleIds": ["u16-s1"],
+      "audioText": "猫",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-tori",
+      "kind": "word",
+      "ja": "鳥",
+      "reading": "とり",
+      "romaji": "tori",
+      "meaningUr": "پرندہ",
+      "meaningEn": "Bird",
+      "kanji": "鳥",
+      "pos": "noun",
+      "tags": ["nature", "animal", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "鳥",
+          "reading": "とり"
+        }
+      ],
+      "exampleIds": ["u16-s2"],
+      "audioText": "鳥",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-uma",
+      "kind": "word",
+      "ja": "馬",
+      "reading": "うま",
+      "romaji": "uma",
+      "meaningUr": "گھوڑا",
+      "meaningEn": "Horse",
+      "kanji": "馬",
+      "pos": "noun",
+      "tags": ["nature", "animal", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "馬",
+          "reading": "うま"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "馬",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-tobimasu",
+      "kind": "word",
+      "ja": "飛びます",
+      "reading": "とびます",
+      "romaji": "tobimasu",
+      "meaningUr": "اڑنا",
+      "meaningEn": "To fly (polite)",
+      "kanji": "飛",
+      "pos": "verb",
+      "tags": ["nature", "verb"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "飛",
+          "reading": "と"
+        },
+        {
+          "text": "びます"
+        }
+      ],
+      "exampleIds": ["u16-s2"],
+      "audioText": "飛びます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-hana",
+      "kind": "word",
+      "ja": "花",
+      "reading": "はな",
+      "romaji": "hana",
+      "meaningUr": "پھول",
+      "meaningEn": "Flower",
+      "kanji": "花",
+      "pos": "noun",
+      "tags": ["nature", "plant", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "花",
+          "reading": "はな"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "花",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-ki",
+      "kind": "word",
+      "ja": "木",
+      "reading": "き",
+      "romaji": "ki",
+      "meaningUr": "درخت",
+      "meaningEn": "Tree",
+      "kanji": "木",
+      "pos": "noun",
+      "tags": ["nature", "plant", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "木",
+          "reading": "き"
+        }
+      ],
+      "exampleIds": ["u16-s6"],
+      "audioText": "木",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-mori",
+      "kind": "word",
+      "ja": "森",
+      "reading": "もり",
+      "romaji": "mori",
+      "meaningUr": "جنگل",
+      "meaningEn": "Forest",
+      "kanji": "森",
+      "pos": "noun",
+      "tags": ["nature", "place", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "森",
+          "reading": "もり"
+        }
+      ],
+      "exampleIds": ["u16-s6"],
+      "audioText": "森",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-yama",
+      "kind": "word",
+      "ja": "山",
+      "reading": "やま",
+      "romaji": "yama",
+      "meaningUr": "پہاڑ",
+      "meaningEn": "Mountain",
+      "kanji": "山",
+      "pos": "noun",
+      "tags": ["nature", "place", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "山",
+          "reading": "やま"
+        }
+      ],
+      "exampleIds": ["u16-s3"],
+      "audioText": "山",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-kawa",
+      "kind": "word",
+      "ja": "川",
+      "reading": "かわ",
+      "romaji": "kawa",
+      "meaningUr": "دریا",
+      "meaningEn": "River",
+      "kanji": "川",
+      "pos": "noun",
+      "tags": ["nature", "place", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "川",
+          "reading": "かわ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "川",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-umi",
+      "kind": "word",
+      "ja": "海",
+      "reading": "うみ",
+      "romaji": "umi",
+      "meaningUr": "سمندر",
+      "meaningEn": "Sea",
+      "kanji": "海",
+      "pos": "noun",
+      "tags": ["nature", "place", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "海",
+          "reading": "うみ"
+        }
+      ],
+      "exampleIds": ["u16-s4"],
+      "audioText": "海",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-sora",
+      "kind": "word",
+      "ja": "空",
+      "reading": "そら",
+      "romaji": "sora",
+      "meaningUr": "آسمان",
+      "meaningEn": "Sky",
+      "kanji": "空",
+      "pos": "noun",
+      "tags": ["nature", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "空",
+          "reading": "そら"
+        }
+      ],
+      "exampleIds": ["u16-s2", "u16-s5"],
+      "audioText": "空",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-hoshi",
+      "kind": "word",
+      "ja": "星",
+      "reading": "ほし",
+      "romaji": "hoshi",
+      "meaningUr": "ستارہ",
+      "meaningEn": "Star",
+      "kanji": "星",
+      "pos": "noun",
+      "tags": ["nature", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "星",
+          "reading": "ほし"
+        }
+      ],
+      "exampleIds": ["u16-s5"],
+      "audioText": "星",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-tsuki",
+      "kind": "word",
+      "ja": "月",
+      "reading": "つき",
+      "romaji": "tsuki",
+      "meaningUr": "چاند",
+      "meaningEn": "Moon",
+      "kanji": "月",
+      "pos": "noun",
+      "tags": ["nature", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "月",
+          "reading": "つき"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "月",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-taiyou",
+      "kind": "word",
+      "ja": "太陽",
+      "reading": "たいよう",
+      "romaji": "taiyou",
+      "meaningUr": "سورج",
+      "meaningEn": "Sun",
+      "kanji": "太陽",
+      "pos": "noun",
+      "tags": ["nature", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "太陽",
+          "reading": "たいよう"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "太陽",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-shizen",
+      "kind": "word",
+      "ja": "自然",
+      "reading": "しぜん",
+      "romaji": "shizen",
+      "meaningUr": "قدرت / فطرت",
+      "meaningEn": "Nature",
+      "kanji": "自然",
+      "pos": "noun",
+      "tags": ["nature", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "自然",
+          "reading": "しぜん"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "自然",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-ishi",
+      "kind": "word",
+      "ja": "石",
+      "reading": "いし",
+      "romaji": "ishi",
+      "meaningUr": "پتھر",
+      "meaningEn": "Stone",
+      "kanji": "石",
+      "pos": "noun",
+      "tags": ["nature", "object", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "石",
+          "reading": "いし"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "石",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-tsuchi",
+      "kind": "word",
+      "ja": "土",
+      "reading": "つち",
+      "romaji": "tsuchi",
+      "meaningUr": "مٹی",
+      "meaningEn": "Soil",
+      "kanji": "土",
+      "pos": "noun",
+      "tags": ["nature", "noun"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "土",
+          "reading": "つち"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "土",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-chiisai",
+      "kind": "word",
+      "ja": "小さい",
+      "reading": "ちいさい",
+      "romaji": "chiisai",
+      "meaningUr": "چھوٹا",
+      "meaningEn": "Small",
+      "kanji": "小",
+      "pos": "i-adjective",
+      "tags": ["adjective", "i-adjective"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "小",
+          "reading": "ちい"
+        },
+        {
+          "text": "さい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "小さい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u16-ookii",
+      "kind": "word",
+      "ja": "大きい",
+      "reading": "おおきい",
+      "romaji": "ookii",
+      "meaningUr": "بڑا",
+      "meaningEn": "Big",
+      "kanji": "大",
+      "pos": "i-adjective",
+      "tags": ["adjective", "i-adjective"],
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "大",
+          "reading": "おお"
+        },
+        {
+          "text": "きい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "大きい",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u16-s1",
+      "kind": "sentence",
+      "ja": "公園に犬と猫がいます。",
+      "reading": "こうえんにいぬとねこがいます。",
+      "romaji": "kouen ni inu to neko ga imasu",
+      "translationUr": "پارک میں کتے اور بلیاں ہیں۔",
+      "translationEn": "There are dogs and cats in the park.",
+      "tokens": [
+        {
+          "surface": "公園",
+          "reading": "こうえん",
+          "gloss": "park"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "犬",
+          "reading": "いぬ",
+          "gloss": "dog"
+        },
+        {
+          "surface": "と",
+          "reading": "と",
+          "gloss": "and"
+        },
+        {
+          "surface": "猫",
+          "reading": "ねこ",
+          "gloss": "cat"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "います",
+          "reading": "います",
+          "gloss": "there is (living)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-inu", "u16-neko"],
+      "grammarTags": ["particle-ni", "particle-to", "particle-ga", "polite"],
+      "tags": ["nature", "animal"],
+      "difficulty": 1,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l1-animals",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "公園",
+          "reading": "こうえん"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "犬",
+          "reading": "いぬ"
+        },
+        {
+          "text": "と",
+          "reading": "と"
+        },
+        {
+          "text": "猫",
+          "reading": "ねこ"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "います",
+          "reading": "います"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u16-s2",
+      "kind": "sentence",
+      "ja": "鳥が空を飛びます。",
+      "reading": "とりがそらをとびます。",
+      "romaji": "tori ga sora o tobimasu",
+      "translationUr": "پرندے آسمان میں اڑتے ہیں۔",
+      "translationEn": "Birds fly in the sky.",
+      "tokens": [
+        {
+          "surface": "鳥",
+          "reading": "とり",
+          "gloss": "bird"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "空",
+          "reading": "そら",
+          "gloss": "sky"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "飛びます",
+          "reading": "とびます",
+          "gloss": "fly (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-tori", "u16-sora", "u16-tobimasu"],
+      "grammarTags": ["particle-ga", "particle-wo", "polite"],
+      "tags": ["nature", "animal"],
+      "difficulty": 1,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l2-plants",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "鳥",
+          "reading": "とり"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "空",
+          "reading": "そら"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "飛びます",
+          "reading": "とびます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u16-s3",
+      "kind": "sentence",
+      "ja": "山の上に雪があります。",
+      "reading": "やまのうえにゆきがあります。",
+      "romaji": "yama no ue ni yuki ga arimasu",
+      "translationUr": "پہاڑ کی چوٹی پر برف ہے۔",
+      "translationEn": "There is snow on the mountain.",
+      "tokens": [
+        {
+          "surface": "山",
+          "reading": "やま",
+          "gloss": "mountain"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "上",
+          "reading": "うえ",
+          "gloss": "top"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "雪",
+          "reading": "ゆき",
+          "gloss": "snow"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "あります",
+          "reading": "あります",
+          "gloss": "there is"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-yama"],
+      "grammarTags": ["particle-no", "particle-ni", "particle-ga", "polite"],
+      "tags": ["nature", "weather"],
+      "difficulty": 1,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l3-sky",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "山",
+          "reading": "やま"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "上",
+          "reading": "うえ"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "雪",
+          "reading": "ゆき"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "あります",
+          "reading": "あります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u16-s4",
+      "kind": "sentence",
+      "ja": "海は広いです。",
+      "reading": "うみはひろいです。",
+      "romaji": "umi wa hiroi desu",
+      "translationUr": "سمندر وسیع ہے۔",
+      "translationEn": "The sea is wide.",
+      "tokens": [
+        {
+          "surface": "海",
+          "reading": "うみ",
+          "gloss": "sea"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "広い",
+          "reading": "ひろい",
+          "gloss": "wide"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-umi"],
+      "grammarTags": ["particle-wa", "i-adjective", "polite"],
+      "tags": ["nature"],
+      "difficulty": 1,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "海",
+          "reading": "うみ"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "広い",
+          "reading": "ひろい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u16-s5",
+      "kind": "sentence",
+      "ja": "夜、空に星が見えます。",
+      "reading": "よる、そらにほしがみえます。",
+      "romaji": "yoru sora ni hoshi ga miemasu",
+      "translationUr": "رات آسمان میں ستارے نظر آتے ہیں۔",
+      "translationEn": "At night, stars are visible in the sky.",
+      "tokens": [
+        {
+          "surface": "夜",
+          "reading": "よる",
+          "gloss": "night"
+        },
+        {
+          "surface": "、"
+        },
+        {
+          "surface": "空",
+          "reading": "そら",
+          "gloss": "sky"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "星",
+          "reading": "ほし",
+          "gloss": "star"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "見えます",
+          "reading": "みえます",
+          "gloss": "are visible (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-sora", "u16-hoshi"],
+      "grammarTags": ["particle-ni", "particle-ga", "polite"],
+      "tags": ["nature"],
+      "difficulty": 2,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "夜",
+          "reading": "よる"
+        },
+        {
+          "text": "、"
+        },
+        {
+          "text": "空",
+          "reading": "そら"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "星",
+          "reading": "ほし"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "見えます",
+          "reading": "みえます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u16-s6",
+      "kind": "sentence",
+      "ja": "森には木がたくさんあります。",
+      "reading": "もりにはきがたくさんあります。",
+      "romaji": "mori ni wa ki ga takusan arimasu",
+      "translationUr": "جنگل میں بہت سے درخت ہیں۔",
+      "translationEn": "There are many trees in the forest.",
+      "tokens": [
+        {
+          "surface": "森",
+          "reading": "もり",
+          "gloss": "forest"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "木",
+          "reading": "き",
+          "gloss": "tree"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "たくさん",
+          "reading": "たくさん",
+          "gloss": "many"
+        },
+        {
+          "surface": "あります",
+          "reading": "あります",
+          "gloss": "there are"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-mori", "u16-ki"],
+      "grammarTags": ["particle-ni", "particle-wa", "particle-ga", "polite"],
+      "tags": ["nature"],
+      "difficulty": 2,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "森",
+          "reading": "もり"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "木",
+          "reading": "き"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "たくさん",
+          "reading": "たくさん"
+        },
+        {
+          "text": "あります",
+          "reading": "あります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u16-s7",
+      "kind": "sentence",
+      "ja": "私は動物が好きです。",
+      "reading": "わたしはどうぶつがすきです。",
+      "romaji": "watashi wa doubutsu ga suki desu",
+      "translationUr": "مجھے جانور پسند ہیں۔",
+      "translationEn": "I like animals.",
+      "tokens": [
+        {
+          "surface": "私",
+          "reading": "わたし",
+          "gloss": "I"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "動物",
+          "reading": "どうぶつ",
+          "gloss": "animal"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "好き",
+          "reading": "すき",
+          "gloss": "like"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u16-doubutsu"],
+      "grammarTags": ["particle-wa", "particle-ga", "na-adjective", "polite"],
+      "tags": ["nature", "animal"],
+      "difficulty": 1,
+      "unitId": "unit-16-nature",
+      "lessonId": "u16-l4-size",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "私",
+          "reading": "わたし"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "動物",
+          "reading": "どうぶつ"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "好き",
+          "reading": "すき"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

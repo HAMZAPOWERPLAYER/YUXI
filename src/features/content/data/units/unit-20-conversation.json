@@ -1,0 +1,1052 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-20-conversation",
+    "order": 20,
+    "titleUr": "روزمرہ گفتگو",
+    "titleEn": "Everyday conversation",
+    "descriptionUr": "شائستہ جملے، تسلی، ربط اور زور دینے والے الفاظ کے ساتھ گفتگو مکمل کریں۔",
+    "descriptionEn": "Finish the course with polite phrases, reassurance, connectors and emphasis.",
+    "icon": "chatbubbles-outline",
+    "lessons": [
+      {
+        "id": "u20-l1-service"
+      },
+      {
+        "id": "u20-l2-reassurance"
+      },
+      {
+        "id": "u20-l3-connectors"
+      },
+      {
+        "id": "u20-l4-emphasis"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-19-language"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u20-l1-service",
+      "unitId": "unit-20-conversation",
+      "order": 1,
+      "titleUr": "شائستہ جملے",
+      "titleEn": "Polite phrases",
+      "items": [
+        {
+          "id": "u20-osewa",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-osaki",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-omatase",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-kashikomarimashita",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-shoushou",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-moushiwake",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u20-l2-reassurance",
+      "unitId": "unit-20-conversation",
+      "order": 2,
+      "titleUr": "تسلی اور یقین",
+      "titleEn": "Reassurance",
+      "items": [
+        {
+          "id": "u20-mondai",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-mochiron",
+          "kind": "word"
+        },
+        {
+          "id": "u20-tabun",
+          "kind": "word"
+        },
+        {
+          "id": "u20-kitto",
+          "kind": "word"
+        },
+        {
+          "id": "u20-zehi",
+          "kind": "word"
+        },
+        {
+          "id": "u20-yappari",
+          "kind": "word"
+        },
+        {
+          "id": "u20-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u20-l3-connectors",
+      "unitId": "unit-20-conversation",
+      "order": 3,
+      "titleUr": "جملے جوڑنے والے الفاظ",
+      "titleEn": "Connecting words",
+      "items": [
+        {
+          "id": "u20-tatoeba",
+          "kind": "word"
+        },
+        {
+          "id": "u20-demo",
+          "kind": "word"
+        },
+        {
+          "id": "u20-sorekara",
+          "kind": "word"
+        },
+        {
+          "id": "u20-dakara",
+          "kind": "word"
+        },
+        {
+          "id": "u20-shikashi",
+          "kind": "word"
+        },
+        {
+          "id": "u20-tsumari",
+          "kind": "word"
+        },
+        {
+          "id": "u20-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u20-l4-emphasis",
+      "unitId": "unit-20-conversation",
+      "order": 4,
+      "titleUr": "زور اور درخواست",
+      "titleEn": "Emphasis and requests",
+      "items": [
+        {
+          "id": "u20-hontou",
+          "kind": "word"
+        },
+        {
+          "id": "u20-yokattara",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-shitsurei",
+          "kind": "phrase"
+        },
+        {
+          "id": "u20-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u20-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u20-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u20-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u20-osewa",
+      "kind": "phrase",
+      "ja": "お世話になりました",
+      "reading": "おせわになりました",
+      "romaji": "osewa ni narimashita",
+      "meaningUr": "آپ کی مدد کا شکریہ",
+      "meaningEn": "Thank you for your help",
+      "kanji": "世話",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "お"
+        },
+        {
+          "text": "世話",
+          "reading": "せわ"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "なりました"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "お世話になりました",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-osaki",
+      "kind": "phrase",
+      "ja": "お先に失礼します",
+      "reading": "おさきにしつれいします",
+      "romaji": "osaki ni shitsurei shimasu",
+      "meaningUr": "میں پہلے اجازت چاہتا ہوں",
+      "meaningEn": "Excuse me for leaving first",
+      "kanji": "先失礼",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "お"
+        },
+        {
+          "text": "先",
+          "reading": "さき"
+        },
+        {
+          "text": "に"
+        },
+        {
+          "text": "失礼",
+          "reading": "しつれい"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "お先に失礼します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-omatase",
+      "kind": "phrase",
+      "ja": "お待たせしました",
+      "reading": "おまたせしました",
+      "romaji": "omatase shimashita",
+      "meaningUr": "معاف کیجیے، آپ کو انتظار کرایا",
+      "meaningEn": "Sorry to keep you waiting",
+      "kanji": "待",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "お"
+        },
+        {
+          "text": "待",
+          "reading": "ま"
+        },
+        {
+          "text": "たせしました"
+        }
+      ],
+      "exampleIds": ["u20-s1"],
+      "audioText": "お待たせしました",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-kashikomarimashita",
+      "kind": "phrase",
+      "ja": "かしこまりました",
+      "reading": "かしこまりました",
+      "romaji": "kashikomarimashita",
+      "meaningUr": "بہت اچھا، حکم کی تعمیل ہوگی",
+      "meaningEn": "Certainly",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "かしこまりました",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-shoushou",
+      "kind": "phrase",
+      "ja": "少々お待ちください",
+      "reading": "しょうしょうおまちください",
+      "romaji": "shoushou omachi kudasai",
+      "meaningUr": "براہ کرم تھوڑی دیر انتظار کریں",
+      "meaningEn": "Please wait a moment",
+      "kanji": "少待",
+      "pos": "expression",
+      "tags": ["courtesy", "request", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "少々",
+          "reading": "しょうしょう"
+        },
+        {
+          "text": "お"
+        },
+        {
+          "text": "待",
+          "reading": "ま"
+        },
+        {
+          "text": "ちください"
+        }
+      ],
+      "exampleIds": ["u20-s2"],
+      "audioText": "少々お待ちください",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-moushiwake",
+      "kind": "phrase",
+      "ja": "申し訳ありません",
+      "reading": "もうしわけありません",
+      "romaji": "moushiwake arimasen",
+      "meaningUr": "معافی چاہتا ہوں",
+      "meaningEn": "I am very sorry",
+      "kanji": "申訳",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "申し訳",
+          "reading": "もうしわけ"
+        },
+        {
+          "text": "ありません"
+        }
+      ],
+      "exampleIds": ["u20-s3"],
+      "audioText": "申し訳ありません",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-mondai",
+      "kind": "phrase",
+      "ja": "問題ありません",
+      "reading": "もんだいありません",
+      "romaji": "mondai arimasen",
+      "meaningUr": "کوئی مسئلہ نہیں",
+      "meaningEn": "No problem",
+      "kanji": "問題",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "問題",
+          "reading": "もんだい"
+        },
+        {
+          "text": "ありません"
+        }
+      ],
+      "exampleIds": ["u20-s3"],
+      "audioText": "問題ありません",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-mochiron",
+      "kind": "word",
+      "ja": "もちろん",
+      "reading": "もちろん",
+      "romaji": "mochiron",
+      "meaningUr": "بالکل",
+      "meaningEn": "Of course",
+      "pos": "adverb",
+      "tags": ["conversation", "adverb"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "exampleIds": ["u20-s4"],
+      "audioText": "もちろん",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-tabun",
+      "kind": "word",
+      "ja": "たぶん",
+      "reading": "たぶん",
+      "romaji": "tabun",
+      "meaningUr": "شاید",
+      "meaningEn": "Probably",
+      "pos": "adverb",
+      "tags": ["conversation", "adverb"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "exampleIds": ["u20-s5"],
+      "audioText": "たぶん",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-kitto",
+      "kind": "word",
+      "ja": "きっと",
+      "reading": "きっと",
+      "romaji": "kitto",
+      "meaningUr": "ضرور",
+      "meaningEn": "Surely",
+      "pos": "adverb",
+      "tags": ["conversation", "adverb"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "きっと",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-zehi",
+      "kind": "word",
+      "ja": "ぜひ",
+      "reading": "ぜひ",
+      "romaji": "zehi",
+      "meaningUr": "ضرور / ہر حال میں",
+      "meaningEn": "By all means",
+      "pos": "adverb",
+      "tags": ["conversation", "adverb"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "ぜひ",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-yappari",
+      "kind": "word",
+      "ja": "やっぱり",
+      "reading": "やっぱり",
+      "romaji": "yappari",
+      "meaningUr": "بہرحال / توقع کے مطابق",
+      "meaningEn": "After all; as expected",
+      "pos": "adverb",
+      "tags": ["conversation", "adverb"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "やっぱり",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-tatoeba",
+      "kind": "word",
+      "ja": "例えば",
+      "reading": "たとえば",
+      "romaji": "tatoeba",
+      "meaningUr": "مثال کے طور پر",
+      "meaningEn": "For example",
+      "kanji": "例",
+      "pos": "conjunction",
+      "tags": ["conversation", "conjunction"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "例",
+          "reading": "たと"
+        },
+        {
+          "text": "えば"
+        }
+      ],
+      "exampleIds": ["u20-s6"],
+      "audioText": "例えば",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-demo",
+      "kind": "word",
+      "ja": "でも",
+      "reading": "でも",
+      "romaji": "demo",
+      "meaningUr": "لیکن",
+      "meaningEn": "But",
+      "pos": "conjunction",
+      "tags": ["conversation", "conjunction"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "でも",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-sorekara",
+      "kind": "word",
+      "ja": "それから",
+      "reading": "それから",
+      "romaji": "sorekara",
+      "meaningUr": "اور پھر",
+      "meaningEn": "And then",
+      "pos": "conjunction",
+      "tags": ["conversation", "conjunction"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "それから",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-dakara",
+      "kind": "word",
+      "ja": "だから",
+      "reading": "だから",
+      "romaji": "dakara",
+      "meaningUr": "اسی لیے",
+      "meaningEn": "Therefore",
+      "pos": "conjunction",
+      "tags": ["conversation", "conjunction"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "だから",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-shikashi",
+      "kind": "word",
+      "ja": "しかし",
+      "reading": "しかし",
+      "romaji": "shikashi",
+      "meaningUr": "تاہم",
+      "meaningEn": "However",
+      "pos": "conjunction",
+      "tags": ["conversation", "conjunction"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "しかし",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-tsumari",
+      "kind": "word",
+      "ja": "つまり",
+      "reading": "つまり",
+      "romaji": "tsumari",
+      "meaningUr": "یعنی",
+      "meaningEn": "In other words",
+      "pos": "conjunction",
+      "tags": ["conversation", "conjunction"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "つまり",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-hontou",
+      "kind": "word",
+      "ja": "本当に",
+      "reading": "ほんとうに",
+      "romaji": "hontou ni",
+      "meaningUr": "واقعی",
+      "meaningEn": "Really",
+      "kanji": "本当",
+      "pos": "adverb",
+      "tags": ["conversation", "adverb"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "本当",
+          "reading": "ほんとう"
+        },
+        {
+          "text": "に"
+        }
+      ],
+      "exampleIds": ["u20-s7"],
+      "audioText": "本当に",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-yokattara",
+      "kind": "phrase",
+      "ja": "よかったら",
+      "reading": "よかったら",
+      "romaji": "yokattara",
+      "meaningUr": "اگر آپ چاہیں تو",
+      "meaningEn": "If you like",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "よかったら",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u20-shitsurei",
+      "kind": "phrase",
+      "ja": "失礼ですが",
+      "reading": "しつれいですが",
+      "romaji": "shitsurei desu ga",
+      "meaningUr": "معاف کیجیے، لیکن",
+      "meaningEn": "Excuse me, but",
+      "kanji": "失礼",
+      "pos": "expression",
+      "tags": ["courtesy", "polite", "expression"],
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "失礼",
+          "reading": "しつれい"
+        },
+        {
+          "text": "ですが"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "失礼ですが",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u20-s1",
+      "kind": "sentence",
+      "ja": "お待たせしました。どうぞお入りください。",
+      "reading": "おまたせしました。どうぞおはいりください。",
+      "romaji": "omatase shimashita douzo ohairi kudasai",
+      "translationUr": "معاف کیجیے، آپ کو انتظار کرایا۔ براہ کرم اندر تشریف لائیں۔",
+      "translationEn": "Sorry to keep you waiting. Please come in.",
+      "tokens": [
+        {
+          "surface": "お待たせしました",
+          "reading": "おまたせしました",
+          "gloss": "sorry to keep you waiting"
+        },
+        {
+          "surface": "。"
+        },
+        {
+          "surface": "どうぞ",
+          "reading": "どうぞ",
+          "gloss": "please"
+        },
+        {
+          "surface": "お入りください",
+          "reading": "おはいりください",
+          "gloss": "please come in"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-omatase"],
+      "grammarTags": ["courtesy", "request", "polite"],
+      "tags": ["conversation", "courtesy"],
+      "difficulty": 2,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l1-service",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "お待たせしました",
+          "reading": "おまたせしました"
+        },
+        {
+          "text": "。"
+        },
+        {
+          "text": "どうぞ",
+          "reading": "どうぞ"
+        },
+        {
+          "text": "お入りください",
+          "reading": "おはいりください"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u20-s2",
+      "kind": "sentence",
+      "ja": "少々お待ちください。",
+      "reading": "しょうしょうおまちください。",
+      "romaji": "shoushou omachi kudasai",
+      "translationUr": "براہ کرم تھوڑی دیر انتظار کریں۔",
+      "translationEn": "Please wait a moment.",
+      "tokens": [
+        {
+          "surface": "少々お待ちください",
+          "reading": "しょうしょうおまちください",
+          "gloss": "please wait a moment"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-shoushou"],
+      "grammarTags": ["request", "polite"],
+      "tags": ["conversation", "courtesy"],
+      "difficulty": 1,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l2-reassurance",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "少々お待ちください",
+          "reading": "しょうしょうおまちください"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u20-s3",
+      "kind": "sentence",
+      "ja": "申し訳ありません。問題ありません。",
+      "reading": "もうしわけありません。もんだいありません。",
+      "romaji": "moushiwake arimasen mondai arimasen",
+      "translationUr": "معافی چاہتا ہوں۔ کوئی مسئلہ نہیں۔",
+      "translationEn": "I am very sorry. There is no problem.",
+      "tokens": [
+        {
+          "surface": "申し訳ありません",
+          "reading": "もうしわけありません",
+          "gloss": "I am very sorry"
+        },
+        {
+          "surface": "。"
+        },
+        {
+          "surface": "問題ありません",
+          "reading": "もんだいありません",
+          "gloss": "no problem"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-moushiwake", "u20-mondai"],
+      "grammarTags": ["courtesy", "polite"],
+      "tags": ["conversation", "courtesy"],
+      "difficulty": 1,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l3-connectors",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "申し訳ありません",
+          "reading": "もうしわけありません"
+        },
+        {
+          "text": "。"
+        },
+        {
+          "text": "問題ありません",
+          "reading": "もんだいありません"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u20-s4",
+      "kind": "sentence",
+      "ja": "もちろん、手伝います。",
+      "reading": "もちろん、てつだいます。",
+      "romaji": "mochiron tetsudaimasu",
+      "translationUr": "بالکل، میں مدد کروں گا۔",
+      "translationEn": "Of course, I will help.",
+      "tokens": [
+        {
+          "surface": "もちろん",
+          "reading": "もちろん",
+          "gloss": "of course"
+        },
+        {
+          "surface": "、"
+        },
+        {
+          "surface": "手伝います",
+          "reading": "てつだいます",
+          "gloss": "help (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-mochiron"],
+      "grammarTags": ["polite"],
+      "tags": ["conversation", "courtesy"],
+      "difficulty": 1,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "もちろん",
+          "reading": "もちろん"
+        },
+        {
+          "text": "、"
+        },
+        {
+          "text": "手伝います",
+          "reading": "てつだいます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u20-s5",
+      "kind": "sentence",
+      "ja": "たぶん明日は雨です。",
+      "reading": "たぶんあしたはあめです。",
+      "romaji": "tabun ashita wa ame desu",
+      "translationUr": "شاید کل بارش ہوگی۔",
+      "translationEn": "It will probably rain tomorrow.",
+      "tokens": [
+        {
+          "surface": "たぶん",
+          "reading": "たぶん",
+          "gloss": "probably"
+        },
+        {
+          "surface": "明日",
+          "reading": "あした",
+          "gloss": "tomorrow"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "雨",
+          "reading": "あめ",
+          "gloss": "rain"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-tabun"],
+      "grammarTags": ["particle-wa", "copula", "polite"],
+      "tags": ["conversation", "weather"],
+      "difficulty": 1,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "たぶん",
+          "reading": "たぶん"
+        },
+        {
+          "text": "明日",
+          "reading": "あした"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "雨",
+          "reading": "あめ"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u20-s6",
+      "kind": "sentence",
+      "ja": "例えば、この本は面白いです。",
+      "reading": "たとえば、このほんはおもしろいです。",
+      "romaji": "tatoeba kono hon wa omoshiroi desu",
+      "translationUr": "مثال کے طور پر، یہ کتاب دلچسپ ہے۔",
+      "translationEn": "For example, this book is interesting.",
+      "tokens": [
+        {
+          "surface": "例えば",
+          "reading": "たとえば",
+          "gloss": "for example"
+        },
+        {
+          "surface": "、"
+        },
+        {
+          "surface": "この",
+          "reading": "この",
+          "gloss": "this"
+        },
+        {
+          "surface": "本",
+          "reading": "ほん",
+          "gloss": "book"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "面白い",
+          "reading": "おもしろい",
+          "gloss": "interesting"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-tatoeba"],
+      "grammarTags": ["particle-wa", "i-adjective", "polite"],
+      "tags": ["conversation", "study"],
+      "difficulty": 2,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "例えば",
+          "reading": "たとえば"
+        },
+        {
+          "text": "、"
+        },
+        {
+          "text": "この",
+          "reading": "この"
+        },
+        {
+          "text": "本",
+          "reading": "ほん"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "面白い",
+          "reading": "おもしろい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u20-s7",
+      "kind": "sentence",
+      "ja": "本当にありがとうございます。",
+      "reading": "ほんとうにありがとうございます。",
+      "romaji": "hontou ni arigatou gozaimasu",
+      "translationUr": "واقعی بہت شکریہ۔",
+      "translationEn": "Thank you very much indeed.",
+      "tokens": [
+        {
+          "surface": "本当に",
+          "reading": "ほんとうに",
+          "gloss": "really"
+        },
+        {
+          "surface": "ありがとうございます",
+          "reading": "ありがとうございます",
+          "gloss": "thank you very much"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u20-hontou"],
+      "grammarTags": ["courtesy", "polite"],
+      "tags": ["conversation", "courtesy"],
+      "difficulty": 1,
+      "unitId": "unit-20-conversation",
+      "lessonId": "u20-l4-emphasis",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "本当に",
+          "reading": "ほんとうに"
+        },
+        {
+          "text": "ありがとうございます",
+          "reading": "ありがとうございます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1164 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-19-language",
+    "order": 19,
+    "titleUr": "زبان اور بات چیت",
+    "titleEn": "Language and communication",
+    "descriptionUr": "زبان، معنی، تلفظ، لکھائی اور وضاحت کے الفاظ سیکھیں۔",
+    "descriptionEn": "Learn words for language, meaning, pronunciation, scripts and clarification.",
+    "icon": "chatbubble-ellipses-outline",
+    "lessons": [
+      {
+        "id": "u19-l1-language"
+      },
+      {
+        "id": "u19-l2-scripts"
+      },
+      {
+        "id": "u19-l3-verbs"
+      },
+      {
+        "id": "u19-l4-practice"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-18-feelings"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u19-l1-language",
+      "unitId": "unit-19-language",
+      "order": 1,
+      "titleUr": "زبان اور معنی",
+      "titleEn": "Language and meaning",
+      "items": [
+        {
+          "id": "u19-kaiwa",
+          "kind": "word"
+        },
+        {
+          "id": "u19-bunshou",
+          "kind": "word"
+        },
+        {
+          "id": "u19-imi",
+          "kind": "word"
+        },
+        {
+          "id": "u19-hatsuon",
+          "kind": "word"
+        },
+        {
+          "id": "u19-bunpou",
+          "kind": "word"
+        },
+        {
+          "id": "u19-tango",
+          "kind": "word"
+        },
+        {
+          "id": "u19-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u19-l2-scripts",
+      "unitId": "unit-19-language",
+      "order": 2,
+      "titleUr": "لکھائی اور آواز",
+      "titleEn": "Scripts and voice",
+      "items": [
+        {
+          "id": "u19-kanji",
+          "kind": "word"
+        },
+        {
+          "id": "u19-hiragana",
+          "kind": "word"
+        },
+        {
+          "id": "u19-katakana",
+          "kind": "word"
+        },
+        {
+          "id": "u19-koe",
+          "kind": "word"
+        },
+        {
+          "id": "u19-kotoba",
+          "kind": "word"
+        },
+        {
+          "id": "u19-hanashi",
+          "kind": "word"
+        },
+        {
+          "id": "u19-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u19-l3-verbs",
+      "unitId": "unit-19-language",
+      "order": 3,
+      "titleUr": "زبان کے کام",
+      "titleEn": "Language actions",
+      "items": [
+        {
+          "id": "u19-tsutaemasu",
+          "kind": "word"
+        },
+        {
+          "id": "u19-setsumei-shimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u19-tsuujimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u19-naoshimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u19-renshuu-shimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u19-honyaku",
+          "kind": "word"
+        },
+        {
+          "id": "u19-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u19-l4-practice",
+      "unitId": "unit-19-language",
+      "order": 4,
+      "titleUr": "مشق اور وضاحت",
+      "titleEn": "Practice and clarification",
+      "items": [
+        {
+          "id": "u19-rei",
+          "kind": "word"
+        },
+        {
+          "id": "u19-yukkuri",
+          "kind": "word"
+        },
+        {
+          "id": "u19-mou-ichido",
+          "kind": "word"
+        },
+        {
+          "id": "u19-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u19-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u19-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u19-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u19-kaiwa",
+      "kind": "word",
+      "ja": "会話",
+      "reading": "かいわ",
+      "romaji": "kaiwa",
+      "meaningUr": "گفتگو",
+      "meaningEn": "Conversation",
+      "kanji": "会話",
+      "pos": "noun",
+      "tags": ["language", "communication", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "会話",
+          "reading": "かいわ"
+        }
+      ],
+      "exampleIds": ["u19-s1"],
+      "audioText": "会話",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-bunshou",
+      "kind": "word",
+      "ja": "文章",
+      "reading": "ぶんしょう",
+      "romaji": "bunshou",
+      "meaningUr": "جملہ / تحریر",
+      "meaningEn": "Sentence; writing",
+      "kanji": "文章",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "文章",
+          "reading": "ぶんしょう"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "文章",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-imi",
+      "kind": "word",
+      "ja": "意味",
+      "reading": "いみ",
+      "romaji": "imi",
+      "meaningUr": "معنی",
+      "meaningEn": "Meaning",
+      "kanji": "意味",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "意味",
+          "reading": "いみ"
+        }
+      ],
+      "exampleIds": ["u19-s2"],
+      "audioText": "意味",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-hatsuon",
+      "kind": "word",
+      "ja": "発音",
+      "reading": "はつおん",
+      "romaji": "hatsuon",
+      "meaningUr": "تلفظ",
+      "meaningEn": "Pronunciation",
+      "kanji": "発音",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "発音",
+          "reading": "はつおん"
+        }
+      ],
+      "exampleIds": ["u19-s4"],
+      "audioText": "発音",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-bunpou",
+      "kind": "word",
+      "ja": "文法",
+      "reading": "ぶんぽう",
+      "romaji": "bunpou",
+      "meaningUr": "گرامر",
+      "meaningEn": "Grammar",
+      "kanji": "文法",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "文法",
+          "reading": "ぶんぽう"
+        }
+      ],
+      "exampleIds": ["u19-s5"],
+      "audioText": "文法",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-tango",
+      "kind": "word",
+      "ja": "単語",
+      "reading": "たんご",
+      "romaji": "tango",
+      "meaningUr": "لفظ",
+      "meaningEn": "Word",
+      "kanji": "単語",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "単語",
+          "reading": "たんご"
+        }
+      ],
+      "exampleIds": ["u19-s2"],
+      "audioText": "単語",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-kanji",
+      "kind": "word",
+      "ja": "漢字",
+      "reading": "かんじ",
+      "romaji": "kanji",
+      "meaningUr": "کانجی",
+      "meaningEn": "Kanji",
+      "kanji": "漢字",
+      "pos": "noun",
+      "tags": ["language", "writing", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "漢字",
+          "reading": "かんじ"
+        }
+      ],
+      "exampleIds": ["u19-s3"],
+      "audioText": "漢字",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-hiragana",
+      "kind": "word",
+      "ja": "ひらがな",
+      "reading": "ひらがな",
+      "romaji": "hiragana",
+      "meaningUr": "ہیراگانا",
+      "meaningEn": "Hiragana",
+      "pos": "noun",
+      "tags": ["language", "writing", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "ひらがな",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-katakana",
+      "kind": "word",
+      "ja": "カタカナ",
+      "reading": "カタカナ",
+      "romaji": "katakana",
+      "meaningUr": "کاتاکانا",
+      "meaningEn": "Katakana",
+      "pos": "noun",
+      "tags": ["language", "writing", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "カタカナ",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-koe",
+      "kind": "word",
+      "ja": "声",
+      "reading": "こえ",
+      "romaji": "koe",
+      "meaningUr": "آواز",
+      "meaningEn": "Voice",
+      "kanji": "声",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "声",
+          "reading": "こえ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "声",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-kotoba",
+      "kind": "word",
+      "ja": "言葉",
+      "reading": "ことば",
+      "romaji": "kotoba",
+      "meaningUr": "لفظ / زبان",
+      "meaningEn": "Word; language",
+      "kanji": "言葉",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "言葉",
+          "reading": "ことば"
+        }
+      ],
+      "exampleIds": ["u19-s7"],
+      "audioText": "言葉",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-hanashi",
+      "kind": "word",
+      "ja": "話",
+      "reading": "はなし",
+      "romaji": "hanashi",
+      "meaningUr": "بات / کہانی",
+      "meaningEn": "Talk; story",
+      "kanji": "話",
+      "pos": "noun",
+      "tags": ["language", "communication", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "話",
+          "reading": "はなし"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "話",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-tsutaemasu",
+      "kind": "word",
+      "ja": "伝えます",
+      "reading": "つたえます",
+      "romaji": "tsutaemasu",
+      "meaningUr": "پہنچانا / بتانا",
+      "meaningEn": "To convey (polite)",
+      "kanji": "伝",
+      "pos": "verb",
+      "tags": ["language", "verb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "伝",
+          "reading": "つた"
+        },
+        {
+          "text": "えます"
+        }
+      ],
+      "exampleIds": ["u19-s7"],
+      "audioText": "伝えます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-setsumei-shimasu",
+      "kind": "word",
+      "ja": "説明します",
+      "reading": "せつめいします",
+      "romaji": "setsumei shimasu",
+      "meaningUr": "وضاحت کرنا",
+      "meaningEn": "To explain (polite)",
+      "kanji": "説明",
+      "pos": "verb",
+      "tags": ["language", "verb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "説明",
+          "reading": "せつめい"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": ["u19-s5"],
+      "audioText": "説明します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-tsuujimasu",
+      "kind": "word",
+      "ja": "通じます",
+      "reading": "つうじます",
+      "romaji": "tsuujimasu",
+      "meaningUr": "سمجھ میں آنا",
+      "meaningEn": "To be understood (polite)",
+      "kanji": "通",
+      "pos": "verb",
+      "tags": ["language", "verb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "通",
+          "reading": "つう"
+        },
+        {
+          "text": "じます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "通じます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-naoshimasu",
+      "kind": "word",
+      "ja": "直します",
+      "reading": "なおします",
+      "romaji": "naoshimasu",
+      "meaningUr": "درست کرنا",
+      "meaningEn": "To correct (polite)",
+      "kanji": "直",
+      "pos": "verb",
+      "tags": ["language", "verb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "直",
+          "reading": "なお"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": ["u19-s4"],
+      "audioText": "直します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-renshuu-shimasu",
+      "kind": "word",
+      "ja": "練習します",
+      "reading": "れんしゅうします",
+      "romaji": "renshuu shimasu",
+      "meaningUr": "مشق کرنا",
+      "meaningEn": "To practice (polite)",
+      "kanji": "練習",
+      "pos": "verb",
+      "tags": ["language", "verb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "練習",
+          "reading": "れんしゅう"
+        },
+        {
+          "text": "します"
+        }
+      ],
+      "exampleIds": ["u19-s1"],
+      "audioText": "練習します",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-honyaku",
+      "kind": "word",
+      "ja": "翻訳",
+      "reading": "ほんやく",
+      "romaji": "honyaku",
+      "meaningUr": "ترجمہ",
+      "meaningEn": "Translation",
+      "kanji": "翻訳",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "翻訳",
+          "reading": "ほんやく"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "翻訳",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-rei",
+      "kind": "word",
+      "ja": "例",
+      "reading": "れい",
+      "romaji": "rei",
+      "meaningUr": "مثال",
+      "meaningEn": "Example",
+      "kanji": "例",
+      "pos": "noun",
+      "tags": ["language", "noun"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "例",
+          "reading": "れい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "例",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-yukkuri",
+      "kind": "word",
+      "ja": "ゆっくり",
+      "reading": "ゆっくり",
+      "romaji": "yukkuri",
+      "meaningUr": "آہستہ",
+      "meaningEn": "Slowly",
+      "pos": "adverb",
+      "tags": ["language", "adverb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "exampleIds": ["u19-s3"],
+      "audioText": "ゆっくり",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u19-mou-ichido",
+      "kind": "word",
+      "ja": "もう一度",
+      "reading": "もういちど",
+      "romaji": "mou ichido",
+      "meaningUr": "ایک بار پھر",
+      "meaningEn": "Once more",
+      "kanji": "一度",
+      "pos": "adverb",
+      "tags": ["language", "adverb"],
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "もう"
+        },
+        {
+          "text": "一度",
+          "reading": "いちど"
+        }
+      ],
+      "exampleIds": ["u19-s6"],
+      "audioText": "もう一度",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u19-s1",
+      "kind": "sentence",
+      "ja": "日本語の会話を練習します。",
+      "reading": "にほんごのかいわをれんしゅうします。",
+      "romaji": "nihongo no kaiwa o renshuu shimasu",
+      "translationUr": "میں جاپانی گفتگو کی مشق کرتا ہوں۔",
+      "translationEn": "I practice Japanese conversation.",
+      "tokens": [
+        {
+          "surface": "日本語",
+          "reading": "にほんご",
+          "gloss": "Japanese language"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "会話",
+          "reading": "かいわ",
+          "gloss": "conversation"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "練習します",
+          "reading": "れんしゅうします",
+          "gloss": "practice (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-kaiwa", "u19-renshuu-shimasu"],
+      "grammarTags": ["particle-no", "particle-wo", "polite"],
+      "tags": ["language", "study"],
+      "difficulty": 1,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l1-language",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "日本語",
+          "reading": "にほんご"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "会話",
+          "reading": "かいわ"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "練習します",
+          "reading": "れんしゅうします"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u19-s2",
+      "kind": "sentence",
+      "ja": "この単語の意味がわかりません。",
+      "reading": "このたんごのいみがわかりません。",
+      "romaji": "kono tango no imi ga wakarimasen",
+      "translationUr": "میں اس لفظ کا معنی نہیں سمجھتا۔",
+      "translationEn": "I do not understand the meaning of this word.",
+      "tokens": [
+        {
+          "surface": "この",
+          "reading": "この",
+          "gloss": "this"
+        },
+        {
+          "surface": "単語",
+          "reading": "たんご",
+          "gloss": "word"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "意味",
+          "reading": "いみ",
+          "gloss": "meaning"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "わかりません",
+          "reading": "わかりません",
+          "gloss": "do not understand"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-tango", "u19-imi"],
+      "grammarTags": ["demonstrative", "particle-no", "particle-ga", "negative", "polite"],
+      "tags": ["language"],
+      "difficulty": 2,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l2-scripts",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "この",
+          "reading": "この"
+        },
+        {
+          "text": "単語",
+          "reading": "たんご"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "意味",
+          "reading": "いみ"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "わかりません",
+          "reading": "わかりません"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u19-s3",
+      "kind": "sentence",
+      "ja": "漢字をゆっくり書きます。",
+      "reading": "かんじをゆっくりかきます。",
+      "romaji": "kanji o yukkuri kakimasu",
+      "translationUr": "میں کانجی آہستہ لکھتا ہوں۔",
+      "translationEn": "I write kanji slowly.",
+      "tokens": [
+        {
+          "surface": "漢字",
+          "reading": "かんじ",
+          "gloss": "kanji"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "ゆっくり",
+          "reading": "ゆっくり",
+          "gloss": "slowly"
+        },
+        {
+          "surface": "書きます",
+          "reading": "かきます",
+          "gloss": "write (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-kanji", "u19-yukkuri"],
+      "grammarTags": ["particle-wo", "polite"],
+      "tags": ["language", "study"],
+      "difficulty": 1,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l3-verbs",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "漢字",
+          "reading": "かんじ"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "ゆっくり",
+          "reading": "ゆっくり"
+        },
+        {
+          "text": "書きます",
+          "reading": "かきます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u19-s4",
+      "kind": "sentence",
+      "ja": "発音を直してください。",
+      "reading": "はつおんをなおしてください。",
+      "romaji": "hatsuon o naoshite kudasai",
+      "translationUr": "براہ کرم میرا تلفظ درست کریں۔",
+      "translationEn": "Please correct my pronunciation.",
+      "tokens": [
+        {
+          "surface": "発音",
+          "reading": "はつおん",
+          "gloss": "pronunciation"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "直して",
+          "reading": "なおして",
+          "gloss": "correct and"
+        },
+        {
+          "surface": "ください",
+          "reading": "ください",
+          "gloss": "please"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-hatsuon", "u19-naoshimasu"],
+      "grammarTags": ["particle-wo", "te-form", "request", "polite"],
+      "tags": ["language"],
+      "difficulty": 1,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "発音",
+          "reading": "はつおん"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "直して",
+          "reading": "なおして"
+        },
+        {
+          "text": "ください",
+          "reading": "ください"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u19-s5",
+      "kind": "sentence",
+      "ja": "先生に文法を説明してもらいます。",
+      "reading": "せんせいにぶんぽうをせつめいしてもらいます。",
+      "romaji": "sensei ni bunpou o setsumei shite moraimasu",
+      "translationUr": "میں استاد سے گرامر کی وضاحت کرواتا ہوں۔",
+      "translationEn": "I have the teacher explain the grammar.",
+      "tokens": [
+        {
+          "surface": "先生",
+          "reading": "せんせい",
+          "gloss": "teacher"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "target particle"
+        },
+        {
+          "surface": "文法",
+          "reading": "ぶんぽう",
+          "gloss": "grammar"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "説明して",
+          "reading": "せつめいして",
+          "gloss": "explain and"
+        },
+        {
+          "surface": "もらいます",
+          "reading": "もらいます",
+          "gloss": "receive (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-bunpou", "u19-setsumei-shimasu"],
+      "grammarTags": ["particle-ni", "particle-wo", "te-form", "polite"],
+      "tags": ["language", "study"],
+      "difficulty": 2,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "先生",
+          "reading": "せんせい"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "文法",
+          "reading": "ぶんぽう"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "説明して",
+          "reading": "せつめいして"
+        },
+        {
+          "text": "もらいます",
+          "reading": "もらいます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u19-s6",
+      "kind": "sentence",
+      "ja": "もう一度言ってください。",
+      "reading": "もういちどいってください。",
+      "romaji": "mou ichido itte kudasai",
+      "translationUr": "براہ کرم ایک بار پھر کہیں۔",
+      "translationEn": "Please say it once more.",
+      "tokens": [
+        {
+          "surface": "もう一度",
+          "reading": "もういちど",
+          "gloss": "once more"
+        },
+        {
+          "surface": "言って",
+          "reading": "いって",
+          "gloss": "say and"
+        },
+        {
+          "surface": "ください",
+          "reading": "ください",
+          "gloss": "please"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-mou-ichido"],
+      "grammarTags": ["te-form", "request", "polite"],
+      "tags": ["language", "communication"],
+      "difficulty": 1,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "もう一度",
+          "reading": "もういちど"
+        },
+        {
+          "text": "言って",
+          "reading": "いって"
+        },
+        {
+          "text": "ください",
+          "reading": "ください"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u19-s7",
+      "kind": "sentence",
+      "ja": "言葉で気持ちを伝えます。",
+      "reading": "ことばできもちをつたえます。",
+      "romaji": "kotoba de kimochi o tsutaemasu",
+      "translationUr": "میں الفاظ سے اپنے جذبات بتاتا ہوں۔",
+      "translationEn": "I convey my feelings with words.",
+      "tokens": [
+        {
+          "surface": "言葉",
+          "reading": "ことば",
+          "gloss": "words"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "means particle"
+        },
+        {
+          "surface": "気持ち",
+          "reading": "きもち",
+          "gloss": "feelings"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "伝えます",
+          "reading": "つたえます",
+          "gloss": "convey (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u19-kotoba", "u19-tsutaemasu"],
+      "grammarTags": ["particle-de", "particle-wo", "polite"],
+      "tags": ["language", "feeling"],
+      "difficulty": 2,
+      "unitId": "unit-19-language",
+      "lessonId": "u19-l4-practice",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "言葉",
+          "reading": "ことば"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "気持ち",
+          "reading": "きもち"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "伝えます",
+          "reading": "つたえます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

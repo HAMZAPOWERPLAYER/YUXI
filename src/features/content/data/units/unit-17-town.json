@@ -1,0 +1,1253 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-17-town",
+    "order": 17,
+    "titleUr": "شہر اور راستے",
+    "titleEn": "Town and directions",
+    "descriptionUr": "سڑکیں، سمت، نقشہ اور راستہ پوچھنے کے الفاظ سیکھیں۔",
+    "descriptionEn": "Learn roads, directions, maps and how to talk about getting around town.",
+    "icon": "map-outline",
+    "lessons": [
+      {
+        "id": "u17-l1-roads"
+      },
+      {
+        "id": "u17-l2-turns"
+      },
+      {
+        "id": "u17-l3-move"
+      },
+      {
+        "id": "u17-l4-town"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-16-nature"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u17-l1-roads",
+      "unitId": "unit-17-town",
+      "order": 1,
+      "titleUr": "سڑکیں",
+      "titleEn": "Roads",
+      "items": [
+        {
+          "id": "u17-michi",
+          "kind": "word"
+        },
+        {
+          "id": "u17-kado",
+          "kind": "word"
+        },
+        {
+          "id": "u17-shingou",
+          "kind": "word"
+        },
+        {
+          "id": "u17-hashi",
+          "kind": "word"
+        },
+        {
+          "id": "u17-kousaten",
+          "kind": "word"
+        },
+        {
+          "id": "u17-toori",
+          "kind": "word"
+        },
+        {
+          "id": "u17-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u17-l2-turns",
+      "unitId": "unit-17-town",
+      "order": 2,
+      "titleUr": "سمت اور موڑ",
+      "titleEn": "Directions and turns",
+      "items": [
+        {
+          "id": "u17-chizu",
+          "kind": "word"
+        },
+        {
+          "id": "u17-hidari",
+          "kind": "word"
+        },
+        {
+          "id": "u17-migi",
+          "kind": "word"
+        },
+        {
+          "id": "u17-massugu",
+          "kind": "word"
+        },
+        {
+          "id": "u17-magarimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u17-watarimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u17-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u17-l3-move",
+      "unitId": "unit-17-town",
+      "order": 3,
+      "titleUr": "چلنا اور رکنا",
+      "titleEn": "Moving and stopping",
+      "items": [
+        {
+          "id": "u17-tomarimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u17-susumimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u17-chikaku",
+          "kind": "word"
+        },
+        {
+          "id": "u17-tooku",
+          "kind": "word"
+        },
+        {
+          "id": "u17-mukou",
+          "kind": "word"
+        },
+        {
+          "id": "u17-iriguchi",
+          "kind": "word"
+        },
+        {
+          "id": "u17-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u17-l4-town",
+      "unitId": "unit-17-town",
+      "order": 4,
+      "titleUr": "شہر اور گاؤں",
+      "titleEn": "Town and village",
+      "items": [
+        {
+          "id": "u17-deguchi",
+          "kind": "word"
+        },
+        {
+          "id": "u17-machi",
+          "kind": "word"
+        },
+        {
+          "id": "u17-mura",
+          "kind": "word"
+        },
+        {
+          "id": "u17-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u17-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u17-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u17-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u17-michi",
+      "kind": "word",
+      "ja": "道",
+      "reading": "みち",
+      "romaji": "michi",
+      "meaningUr": "سڑک / راستہ",
+      "meaningEn": "Road; way",
+      "kanji": "道",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "道",
+          "reading": "みち"
+        }
+      ],
+      "exampleIds": ["u17-s1"],
+      "audioText": "道",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-kado",
+      "kind": "word",
+      "ja": "角",
+      "reading": "かど",
+      "romaji": "kado",
+      "meaningUr": "کونا",
+      "meaningEn": "Corner",
+      "kanji": "角",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "角",
+          "reading": "かど"
+        }
+      ],
+      "exampleIds": ["u17-s2"],
+      "audioText": "角",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-shingou",
+      "kind": "word",
+      "ja": "信号",
+      "reading": "しんごう",
+      "romaji": "shingou",
+      "meaningUr": "ٹریفک سگنل",
+      "meaningEn": "Traffic light",
+      "kanji": "信号",
+      "pos": "noun",
+      "tags": ["town", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "信号",
+          "reading": "しんごう"
+        }
+      ],
+      "exampleIds": ["u17-s4"],
+      "audioText": "信号",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-hashi",
+      "kind": "word",
+      "ja": "橋",
+      "reading": "はし",
+      "romaji": "hashi",
+      "meaningUr": "پل",
+      "meaningEn": "Bridge",
+      "kanji": "橋",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "橋",
+          "reading": "はし"
+        }
+      ],
+      "exampleIds": ["u17-s3"],
+      "audioText": "橋",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-kousaten",
+      "kind": "word",
+      "ja": "交差点",
+      "reading": "こうさてん",
+      "romaji": "kousaten",
+      "meaningUr": "چوک / چوراہا",
+      "meaningEn": "Intersection",
+      "kanji": "交差点",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "交差点",
+          "reading": "こうさてん"
+        }
+      ],
+      "exampleIds": ["u17-s4"],
+      "audioText": "交差点",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-toori",
+      "kind": "word",
+      "ja": "通り",
+      "reading": "とおり",
+      "romaji": "toori",
+      "meaningUr": "گلی / سڑک",
+      "meaningEn": "Street",
+      "kanji": "通",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "通",
+          "reading": "とお"
+        },
+        {
+          "text": "り"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "通り",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-chizu",
+      "kind": "word",
+      "ja": "地図",
+      "reading": "ちず",
+      "romaji": "chizu",
+      "meaningUr": "نقشہ",
+      "meaningEn": "Map",
+      "kanji": "地図",
+      "pos": "noun",
+      "tags": ["town", "object", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "地図",
+          "reading": "ちず"
+        }
+      ],
+      "exampleIds": ["u17-s6"],
+      "audioText": "地図",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-hidari",
+      "kind": "word",
+      "ja": "左",
+      "reading": "ひだり",
+      "romaji": "hidari",
+      "meaningUr": "بائیں",
+      "meaningEn": "Left",
+      "kanji": "左",
+      "pos": "noun",
+      "tags": ["direction", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "左",
+          "reading": "ひだり"
+        }
+      ],
+      "exampleIds": ["u17-s2"],
+      "audioText": "左",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-migi",
+      "kind": "word",
+      "ja": "右",
+      "reading": "みぎ",
+      "romaji": "migi",
+      "meaningUr": "دائیں",
+      "meaningEn": "Right",
+      "kanji": "右",
+      "pos": "noun",
+      "tags": ["direction", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "右",
+          "reading": "みぎ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "右",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-massugu",
+      "kind": "word",
+      "ja": "まっすぐ",
+      "reading": "まっすぐ",
+      "romaji": "massugu",
+      "meaningUr": "سیدھا",
+      "meaningEn": "Straight",
+      "pos": "adverb",
+      "tags": ["direction", "adverb"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "まっすぐ",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-magarimasu",
+      "kind": "word",
+      "ja": "曲がります",
+      "reading": "まがります",
+      "romaji": "magarimasu",
+      "meaningUr": "مڑنا",
+      "meaningEn": "To turn (polite)",
+      "kanji": "曲",
+      "pos": "verb",
+      "tags": ["direction", "verb"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "曲",
+          "reading": "ま"
+        },
+        {
+          "text": "がります"
+        }
+      ],
+      "exampleIds": ["u17-s2"],
+      "audioText": "曲がります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-watarimasu",
+      "kind": "word",
+      "ja": "渡ります",
+      "reading": "わたります",
+      "romaji": "watarimasu",
+      "meaningUr": "پار کرنا",
+      "meaningEn": "To cross (polite)",
+      "kanji": "渡",
+      "pos": "verb",
+      "tags": ["direction", "verb"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "渡",
+          "reading": "わた"
+        },
+        {
+          "text": "ります"
+        }
+      ],
+      "exampleIds": ["u17-s3"],
+      "audioText": "渡ります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-tomarimasu",
+      "kind": "word",
+      "ja": "止まります",
+      "reading": "とまります",
+      "romaji": "tomarimasu",
+      "meaningUr": "رکنا",
+      "meaningEn": "To stop (polite)",
+      "kanji": "止",
+      "pos": "verb",
+      "tags": ["direction", "verb"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "止",
+          "reading": "と"
+        },
+        {
+          "text": "まります"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "止まります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-susumimasu",
+      "kind": "word",
+      "ja": "進みます",
+      "reading": "すすみます",
+      "romaji": "susumimasu",
+      "meaningUr": "آگے بڑھنا",
+      "meaningEn": "To proceed (polite)",
+      "kanji": "進",
+      "pos": "verb",
+      "tags": ["direction", "verb"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "進",
+          "reading": "すす"
+        },
+        {
+          "text": "みます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "進みます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-chikaku",
+      "kind": "word",
+      "ja": "近く",
+      "reading": "ちかく",
+      "romaji": "chikaku",
+      "meaningUr": "قریب",
+      "meaningEn": "Nearby",
+      "kanji": "近",
+      "pos": "noun",
+      "tags": ["direction", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "近",
+          "reading": "ちか"
+        },
+        {
+          "text": "く"
+        }
+      ],
+      "exampleIds": ["u17-s7"],
+      "audioText": "近く",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-tooku",
+      "kind": "word",
+      "ja": "遠く",
+      "reading": "とおく",
+      "romaji": "tooku",
+      "meaningUr": "دور",
+      "meaningEn": "Far away",
+      "kanji": "遠",
+      "pos": "noun",
+      "tags": ["direction", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "遠",
+          "reading": "とお"
+        },
+        {
+          "text": "く"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "遠く",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-mukou",
+      "kind": "word",
+      "ja": "向こう",
+      "reading": "むこう",
+      "romaji": "mukou",
+      "meaningUr": "اس طرف / پار",
+      "meaningEn": "The other side; beyond",
+      "kanji": "向",
+      "pos": "noun",
+      "tags": ["direction", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "向",
+          "reading": "む"
+        },
+        {
+          "text": "こう"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "向こう",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-iriguchi",
+      "kind": "word",
+      "ja": "入口",
+      "reading": "いりぐち",
+      "romaji": "iriguchi",
+      "meaningUr": "داخل ہونے کی جگہ",
+      "meaningEn": "Entrance",
+      "kanji": "入口",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "入口",
+          "reading": "いりぐち"
+        }
+      ],
+      "exampleIds": ["u17-s5"],
+      "audioText": "入口",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-deguchi",
+      "kind": "word",
+      "ja": "出口",
+      "reading": "でぐち",
+      "romaji": "deguchi",
+      "meaningUr": "باہر نکلنے کی جگہ",
+      "meaningEn": "Exit",
+      "kanji": "出口",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "出口",
+          "reading": "でぐち"
+        }
+      ],
+      "exampleIds": ["u17-s6"],
+      "audioText": "出口",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-machi",
+      "kind": "word",
+      "ja": "町",
+      "reading": "まち",
+      "romaji": "machi",
+      "meaningUr": "شہر / قصبہ",
+      "meaningEn": "Town",
+      "kanji": "町",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "町",
+          "reading": "まち"
+        }
+      ],
+      "exampleIds": ["u17-s7"],
+      "audioText": "町",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u17-mura",
+      "kind": "word",
+      "ja": "村",
+      "reading": "むら",
+      "romaji": "mura",
+      "meaningUr": "گاؤں",
+      "meaningEn": "Village",
+      "kanji": "村",
+      "pos": "noun",
+      "tags": ["town", "place", "noun"],
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "村",
+          "reading": "むら"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "村",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u17-s1",
+      "kind": "sentence",
+      "ja": "この道をまっすぐ行きます。",
+      "reading": "このみちをまっすぐいきます。",
+      "romaji": "kono michi o massugu ikimasu",
+      "translationUr": "اس سڑک پر سیدھا جائیں۔",
+      "translationEn": "Go straight along this road.",
+      "tokens": [
+        {
+          "surface": "この",
+          "reading": "この",
+          "gloss": "this"
+        },
+        {
+          "surface": "道",
+          "reading": "みち",
+          "gloss": "road"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "まっすぐ",
+          "reading": "まっすぐ",
+          "gloss": "straight"
+        },
+        {
+          "surface": "行きます",
+          "reading": "いきます",
+          "gloss": "go (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-michi"],
+      "grammarTags": ["demonstrative", "particle-wo", "polite"],
+      "tags": ["town", "direction"],
+      "difficulty": 1,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l1-roads",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "この",
+          "reading": "この"
+        },
+        {
+          "text": "道",
+          "reading": "みち"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "まっすぐ",
+          "reading": "まっすぐ"
+        },
+        {
+          "text": "行きます",
+          "reading": "いきます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u17-s2",
+      "kind": "sentence",
+      "ja": "次の角を左に曲がります。",
+      "reading": "つぎのかどをひだりにまがります。",
+      "romaji": "tsugi no kado o hidari ni magarimasu",
+      "translationUr": "اگلے کونے سے بائیں مڑیں۔",
+      "translationEn": "Turn left at the next corner.",
+      "tokens": [
+        {
+          "surface": "次",
+          "reading": "つぎ",
+          "gloss": "next"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "角",
+          "reading": "かど",
+          "gloss": "corner"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "左",
+          "reading": "ひだり",
+          "gloss": "left"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "direction particle"
+        },
+        {
+          "surface": "曲がります",
+          "reading": "まがります",
+          "gloss": "turn (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-kado", "u17-hidari", "u17-magarimasu"],
+      "grammarTags": ["particle-no", "particle-wo", "particle-ni", "polite"],
+      "tags": ["town", "direction"],
+      "difficulty": 2,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l2-turns",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "次",
+          "reading": "つぎ"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "角",
+          "reading": "かど"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "左",
+          "reading": "ひだり"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "曲がります",
+          "reading": "まがります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u17-s3",
+      "kind": "sentence",
+      "ja": "橋を渡ります。",
+      "reading": "はしをわたります。",
+      "romaji": "hashi o watarimasu",
+      "translationUr": "میں پل پار کرتا ہوں۔",
+      "translationEn": "I cross the bridge.",
+      "tokens": [
+        {
+          "surface": "橋",
+          "reading": "はし",
+          "gloss": "bridge"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "渡ります",
+          "reading": "わたります",
+          "gloss": "cross (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-hashi", "u17-watarimasu"],
+      "grammarTags": ["particle-wo", "polite"],
+      "tags": ["town", "direction"],
+      "difficulty": 1,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l3-move",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "橋",
+          "reading": "はし"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "渡ります",
+          "reading": "わたります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u17-s4",
+      "kind": "sentence",
+      "ja": "交差点に信号があります。",
+      "reading": "こうさてんにしんごうがあります。",
+      "romaji": "kousaten ni shingou ga arimasu",
+      "translationUr": "چوراہے پر ٹریفک سگنل ہے۔",
+      "translationEn": "There is a traffic light at the intersection.",
+      "tokens": [
+        {
+          "surface": "交差点",
+          "reading": "こうさてん",
+          "gloss": "intersection"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "信号",
+          "reading": "しんごう",
+          "gloss": "traffic light"
+        },
+        {
+          "surface": "が",
+          "reading": "が",
+          "gloss": "subject particle"
+        },
+        {
+          "surface": "あります",
+          "reading": "あります",
+          "gloss": "there is"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-kousaten", "u17-shingou"],
+      "grammarTags": ["particle-ni", "particle-ga", "polite"],
+      "tags": ["town"],
+      "difficulty": 1,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "交差点",
+          "reading": "こうさてん"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "信号",
+          "reading": "しんごう"
+        },
+        {
+          "text": "が",
+          "reading": "が"
+        },
+        {
+          "text": "あります",
+          "reading": "あります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u17-s5",
+      "kind": "sentence",
+      "ja": "入口は建物の右側です。",
+      "reading": "いりぐちはたてもののみぎがわです。",
+      "romaji": "iriguchi wa tatemono no migigawa desu",
+      "translationUr": "داخل ہونے کی جگہ عمارت کے دائیں طرف ہے۔",
+      "translationEn": "The entrance is on the right side of the building.",
+      "tokens": [
+        {
+          "surface": "入口",
+          "reading": "いりぐち",
+          "gloss": "entrance"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "建物",
+          "reading": "たてもの",
+          "gloss": "building"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "右側",
+          "reading": "みぎがわ",
+          "gloss": "right side"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-iriguchi"],
+      "grammarTags": ["particle-wa", "particle-no", "copula", "polite"],
+      "tags": ["town", "direction"],
+      "difficulty": 2,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "入口",
+          "reading": "いりぐち"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "建物",
+          "reading": "たてもの"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "右側",
+          "reading": "みぎがわ"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u17-s6",
+      "kind": "sentence",
+      "ja": "地図を見て、出口を探します。",
+      "reading": "ちずをみて、でぐちをさがします。",
+      "romaji": "chizu o mite deguchi o sagashimasu",
+      "translationUr": "نقشہ دیکھ کر باہر نکلنے کی جگہ تلاش کریں۔",
+      "translationEn": "Look at the map and find the exit.",
+      "tokens": [
+        {
+          "surface": "地図",
+          "reading": "ちず",
+          "gloss": "map"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "見て",
+          "reading": "みて",
+          "gloss": "look and"
+        },
+        {
+          "surface": "、"
+        },
+        {
+          "surface": "出口",
+          "reading": "でぐち",
+          "gloss": "exit"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "探します",
+          "reading": "さがします",
+          "gloss": "search (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-chizu", "u17-deguchi"],
+      "grammarTags": ["particle-wo", "te-form", "polite"],
+      "tags": ["town", "direction"],
+      "difficulty": 2,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "地図",
+          "reading": "ちず"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "見て",
+          "reading": "みて"
+        },
+        {
+          "text": "、"
+        },
+        {
+          "text": "出口",
+          "reading": "でぐち"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "探します",
+          "reading": "さがします"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u17-s7",
+      "kind": "sentence",
+      "ja": "私の町は駅の近くです。",
+      "reading": "わたしのまちはえきのちかくです。",
+      "romaji": "watashi no machi wa eki no chikaku desu",
+      "translationUr": "میرا شہر اسٹیشن کے قریب ہے۔",
+      "translationEn": "My town is near the station.",
+      "tokens": [
+        {
+          "surface": "私",
+          "reading": "わたし",
+          "gloss": "I"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "町",
+          "reading": "まち",
+          "gloss": "town"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "駅",
+          "reading": "えき",
+          "gloss": "station"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "近く",
+          "reading": "ちかく",
+          "gloss": "nearby"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u17-machi", "u17-chikaku"],
+      "grammarTags": ["particle-no", "particle-wa", "copula", "polite"],
+      "tags": ["town", "place"],
+      "difficulty": 1,
+      "unitId": "unit-17-town",
+      "lessonId": "u17-l4-town",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "私",
+          "reading": "わたし"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "町",
+          "reading": "まち"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "駅",
+          "reading": "えき"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "近く",
+          "reading": "ちかく"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

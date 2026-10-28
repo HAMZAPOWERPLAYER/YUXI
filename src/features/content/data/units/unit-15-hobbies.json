@@ -1,0 +1,1208 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-15-hobbies",
+    "order": 15,
+    "titleUr": "مشغلے اور فرصت",
+    "titleEn": "Hobbies and free time",
+    "descriptionUr": "مشغلوں، کھیل، سیر اور فرصت کے وقت کی بات چیت سیکھیں۔",
+    "descriptionEn": "Talk about hobbies, outings, exercise and free time.",
+    "icon": "happy-outline",
+    "lessons": [
+      {
+        "id": "u15-l1-hobbies"
+      },
+      {
+        "id": "u15-l2-quiet"
+      },
+      {
+        "id": "u15-l3-actions"
+      },
+      {
+        "id": "u15-l4-time"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-14-work"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u15-l1-hobbies",
+      "unitId": "unit-15-hobbies",
+      "order": 1,
+      "titleUr": "مشغلے",
+      "titleEn": "Hobbies",
+      "items": [
+        {
+          "id": "u15-shumi",
+          "kind": "word"
+        },
+        {
+          "id": "u15-eiga",
+          "kind": "word"
+        },
+        {
+          "id": "u15-shashin",
+          "kind": "word"
+        },
+        {
+          "id": "u15-ryokou",
+          "kind": "word"
+        },
+        {
+          "id": "u15-sanpo",
+          "kind": "word"
+        },
+        {
+          "id": "u15-tsuri",
+          "kind": "word"
+        },
+        {
+          "id": "u15-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u15-l2-quiet",
+      "unitId": "unit-15-hobbies",
+      "order": 2,
+      "titleUr": "پرسکون مشغلے",
+      "titleEn": "Quiet pastimes",
+      "items": [
+        {
+          "id": "u15-e",
+          "kind": "word"
+        },
+        {
+          "id": "u15-dokusho",
+          "kind": "word"
+        },
+        {
+          "id": "u15-terebi",
+          "kind": "word"
+        },
+        {
+          "id": "u15-shuumatsu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-undou",
+          "kind": "word"
+        },
+        {
+          "id": "u15-asobimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u15-l3-actions",
+      "unitId": "unit-15-hobbies",
+      "order": 3,
+      "titleUr": "مشغلے کے کام",
+      "titleEn": "Hobby actions",
+      "items": [
+        {
+          "id": "u15-oyogimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-hashirimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-atsumemasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-tsukurimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-torimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-mimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u15-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u15-l4-time",
+      "unitId": "unit-15-hobbies",
+      "order": 4,
+      "titleUr": "فرصت اور خوشی",
+      "titleEn": "Free time and fun",
+      "items": [
+        {
+          "id": "u15-hima",
+          "kind": "word"
+        },
+        {
+          "id": "u15-tanoshii",
+          "kind": "word"
+        },
+        {
+          "id": "u15-issho-ni",
+          "kind": "word"
+        },
+        {
+          "id": "u15-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u15-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u15-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u15-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u15-shumi",
+      "kind": "word",
+      "ja": "趣味",
+      "reading": "しゅみ",
+      "romaji": "shumi",
+      "meaningUr": "مشغلہ",
+      "meaningEn": "Hobby",
+      "kanji": "趣味",
+      "pos": "noun",
+      "tags": ["hobby", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "趣味",
+          "reading": "しゅみ"
+        }
+      ],
+      "exampleIds": ["u15-s1"],
+      "audioText": "趣味",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-eiga",
+      "kind": "word",
+      "ja": "映画",
+      "reading": "えいが",
+      "romaji": "eiga",
+      "meaningUr": "فلم",
+      "meaningEn": "Movie",
+      "kanji": "映画",
+      "pos": "noun",
+      "tags": ["hobby", "media", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "映画",
+          "reading": "えいが"
+        }
+      ],
+      "exampleIds": ["u15-s5"],
+      "audioText": "映画",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-shashin",
+      "kind": "word",
+      "ja": "写真",
+      "reading": "しゃしん",
+      "romaji": "shashin",
+      "meaningUr": "تصویر",
+      "meaningEn": "Photograph",
+      "kanji": "写真",
+      "pos": "noun",
+      "tags": ["hobby", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "写真",
+          "reading": "しゃしん"
+        }
+      ],
+      "exampleIds": ["u15-s1", "u15-s3"],
+      "audioText": "写真",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-ryokou",
+      "kind": "word",
+      "ja": "旅行",
+      "reading": "りょこう",
+      "romaji": "ryokou",
+      "meaningUr": "سفر",
+      "meaningEn": "Travel",
+      "kanji": "旅行",
+      "pos": "noun",
+      "tags": ["hobby", "travel", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "旅行",
+          "reading": "りょこう"
+        }
+      ],
+      "exampleIds": ["u15-s6"],
+      "audioText": "旅行",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-sanpo",
+      "kind": "word",
+      "ja": "散歩",
+      "reading": "さんぽ",
+      "romaji": "sanpo",
+      "meaningUr": "سیر",
+      "meaningEn": "Walk; stroll",
+      "kanji": "散歩",
+      "pos": "noun",
+      "tags": ["hobby", "daily", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "散歩",
+          "reading": "さんぽ"
+        }
+      ],
+      "exampleIds": ["u15-s2"],
+      "audioText": "散歩",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-tsuri",
+      "kind": "word",
+      "ja": "釣り",
+      "reading": "つり",
+      "romaji": "tsuri",
+      "meaningUr": "مچھلی پکڑنا",
+      "meaningEn": "Fishing",
+      "kanji": "釣",
+      "pos": "noun",
+      "tags": ["hobby", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "釣",
+          "reading": "つ"
+        },
+        {
+          "text": "り"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "釣り",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-e",
+      "kind": "word",
+      "ja": "絵",
+      "reading": "え",
+      "romaji": "e",
+      "meaningUr": "تصویر / نقش",
+      "meaningEn": "Picture; drawing",
+      "kanji": "絵",
+      "pos": "noun",
+      "tags": ["hobby", "art", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "絵",
+          "reading": "え"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "絵",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-dokusho",
+      "kind": "word",
+      "ja": "読書",
+      "reading": "どくしょ",
+      "romaji": "dokusho",
+      "meaningUr": "کتاب خوانی",
+      "meaningEn": "Reading books",
+      "kanji": "読書",
+      "pos": "noun",
+      "tags": ["hobby", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "読書",
+          "reading": "どくしょ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "読書",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-terebi",
+      "kind": "word",
+      "ja": "テレビ",
+      "reading": "テレビ",
+      "romaji": "terebi",
+      "meaningUr": "ٹیلی ویژن",
+      "meaningEn": "Television",
+      "pos": "noun",
+      "tags": ["hobby", "media", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "exampleIds": [],
+      "audioText": "テレビ",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-shuumatsu",
+      "kind": "word",
+      "ja": "週末",
+      "reading": "しゅうまつ",
+      "romaji": "shuumatsu",
+      "meaningUr": "ہفتے کا اختتام",
+      "meaningEn": "Weekend",
+      "kanji": "週末",
+      "pos": "noun",
+      "tags": ["time", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "週末",
+          "reading": "しゅうまつ"
+        }
+      ],
+      "exampleIds": ["u15-s2"],
+      "audioText": "週末",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-undou",
+      "kind": "word",
+      "ja": "運動",
+      "reading": "うんどう",
+      "romaji": "undou",
+      "meaningUr": "ورزش",
+      "meaningEn": "Exercise",
+      "kanji": "運動",
+      "pos": "noun",
+      "tags": ["hobby", "health", "noun"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "運動",
+          "reading": "うんどう"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "運動",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-asobimasu",
+      "kind": "word",
+      "ja": "遊びます",
+      "reading": "あそびます",
+      "romaji": "asobimasu",
+      "meaningUr": "کھیلنا / تفریح کرنا",
+      "meaningEn": "To play; to enjoy (polite)",
+      "kanji": "遊",
+      "pos": "verb",
+      "tags": ["hobby", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "遊",
+          "reading": "あそ"
+        },
+        {
+          "text": "びます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "遊びます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-oyogimasu",
+      "kind": "word",
+      "ja": "泳ぎます",
+      "reading": "およぎます",
+      "romaji": "oyogimasu",
+      "meaningUr": "تیرنا",
+      "meaningEn": "To swim (polite)",
+      "kanji": "泳",
+      "pos": "verb",
+      "tags": ["hobby", "sport", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "泳",
+          "reading": "およ"
+        },
+        {
+          "text": "ぎます"
+        }
+      ],
+      "exampleIds": ["u15-s4"],
+      "audioText": "泳ぎます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-hashirimasu",
+      "kind": "word",
+      "ja": "走ります",
+      "reading": "はしります",
+      "romaji": "hashirimasu",
+      "meaningUr": "دوڑنا",
+      "meaningEn": "To run (polite)",
+      "kanji": "走",
+      "pos": "verb",
+      "tags": ["hobby", "sport", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "走",
+          "reading": "はし"
+        },
+        {
+          "text": "ります"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "走ります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-atsumemasu",
+      "kind": "word",
+      "ja": "集めます",
+      "reading": "あつめます",
+      "romaji": "atsumemasu",
+      "meaningUr": "جمع کرنا",
+      "meaningEn": "To collect (polite)",
+      "kanji": "集",
+      "pos": "verb",
+      "tags": ["hobby", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "集",
+          "reading": "あつ"
+        },
+        {
+          "text": "めます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "集めます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-tsukurimasu",
+      "kind": "word",
+      "ja": "作ります",
+      "reading": "つくります",
+      "romaji": "tsukurimasu",
+      "meaningUr": "بنانا",
+      "meaningEn": "To make (polite)",
+      "kanji": "作",
+      "pos": "verb",
+      "tags": ["hobby", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "作",
+          "reading": "つく"
+        },
+        {
+          "text": "ります"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "作ります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-torimasu",
+      "kind": "word",
+      "ja": "撮ります",
+      "reading": "とります",
+      "romaji": "torimasu",
+      "meaningUr": "تصویر لینا",
+      "meaningEn": "To take (a photo) (polite)",
+      "kanji": "撮",
+      "pos": "verb",
+      "tags": ["hobby", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "撮",
+          "reading": "と"
+        },
+        {
+          "text": "ります"
+        }
+      ],
+      "exampleIds": ["u15-s3"],
+      "audioText": "撮ります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-mimasu",
+      "kind": "word",
+      "ja": "見ます",
+      "reading": "みます",
+      "romaji": "mimasu",
+      "meaningUr": "دیکھنا",
+      "meaningEn": "To see; to watch (polite)",
+      "kanji": "見",
+      "pos": "verb",
+      "tags": ["hobby", "verb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "見",
+          "reading": "み"
+        },
+        {
+          "text": "ます"
+        }
+      ],
+      "exampleIds": ["u15-s5"],
+      "audioText": "見ます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-hima",
+      "kind": "word",
+      "ja": "暇",
+      "reading": "ひま",
+      "romaji": "hima",
+      "meaningUr": "فرصت / فارغ",
+      "meaningEn": "Free time; free",
+      "kanji": "暇",
+      "pos": "na-adjective",
+      "tags": ["time", "na-adjective"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "暇",
+          "reading": "ひま"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "暇",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-tanoshii",
+      "kind": "word",
+      "ja": "楽しい",
+      "reading": "たのしい",
+      "romaji": "tanoshii",
+      "meaningUr": "مزیدار",
+      "meaningEn": "Fun; enjoyable",
+      "kanji": "楽",
+      "pos": "i-adjective",
+      "tags": ["feeling", "i-adjective"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "楽",
+          "reading": "たの"
+        },
+        {
+          "text": "しい"
+        }
+      ],
+      "exampleIds": ["u15-s6"],
+      "audioText": "楽しい",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u15-issho-ni",
+      "kind": "word",
+      "ja": "一緒に",
+      "reading": "いっしょに",
+      "romaji": "issho ni",
+      "meaningUr": "ایک ساتھ",
+      "meaningEn": "Together",
+      "kanji": "一緒",
+      "pos": "adverb",
+      "tags": ["time", "adverb"],
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "一緒",
+          "reading": "いっしょ"
+        },
+        {
+          "text": "に"
+        }
+      ],
+      "exampleIds": ["u15-s7"],
+      "audioText": "一緒に",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u15-s1",
+      "kind": "sentence",
+      "ja": "私の趣味は写真です。",
+      "reading": "わたしのしゅみはしゃしんです。",
+      "romaji": "watashi no shumi wa shashin desu",
+      "translationUr": "میرا مشغلہ تصویر لینا ہے۔",
+      "translationEn": "My hobby is photography.",
+      "tokens": [
+        {
+          "surface": "私",
+          "reading": "わたし",
+          "gloss": "I"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "趣味",
+          "reading": "しゅみ",
+          "gloss": "hobby"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "写真",
+          "reading": "しゃしん",
+          "gloss": "photograph"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-shumi", "u15-shashin"],
+      "grammarTags": ["particle-no", "particle-wa", "copula", "polite"],
+      "tags": ["hobby"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l1-hobbies",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "私",
+          "reading": "わたし"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "趣味",
+          "reading": "しゅみ"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "写真",
+          "reading": "しゃしん"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u15-s2",
+      "kind": "sentence",
+      "ja": "週末は家族と散歩します。",
+      "reading": "しゅうまつはかぞくとさんぽします。",
+      "romaji": "shuumatsu wa kazoku to sanpo shimasu",
+      "translationUr": "ہفتے کے اختتام پر میں خاندان کے ساتھ سیر کرتا ہوں۔",
+      "translationEn": "On weekends I take a walk with my family.",
+      "tokens": [
+        {
+          "surface": "週末",
+          "reading": "しゅうまつ",
+          "gloss": "weekend"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "家族",
+          "reading": "かぞく",
+          "gloss": "family"
+        },
+        {
+          "surface": "と",
+          "reading": "と",
+          "gloss": "and"
+        },
+        {
+          "surface": "散歩します",
+          "reading": "さんぽします",
+          "gloss": "take a walk (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-shuumatsu", "u15-sanpo"],
+      "grammarTags": ["particle-wa", "particle-to", "polite"],
+      "tags": ["hobby", "family"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l2-quiet",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "週末",
+          "reading": "しゅうまつ"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "家族",
+          "reading": "かぞく"
+        },
+        {
+          "text": "と",
+          "reading": "と"
+        },
+        {
+          "text": "散歩します",
+          "reading": "さんぽします"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u15-s3",
+      "kind": "sentence",
+      "ja": "公園で写真を撮ります。",
+      "reading": "こうえんでしゃしんをとります。",
+      "romaji": "kouen de shashin o torimasu",
+      "translationUr": "میں پارک میں تصویر لیتا ہوں۔",
+      "translationEn": "I take photos in the park.",
+      "tokens": [
+        {
+          "surface": "公園",
+          "reading": "こうえん",
+          "gloss": "park"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "写真",
+          "reading": "しゃしん",
+          "gloss": "photograph"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "撮ります",
+          "reading": "とります",
+          "gloss": "take a photo (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-shashin", "u15-torimasu"],
+      "grammarTags": ["particle-de", "particle-wo", "polite"],
+      "tags": ["hobby"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "公園",
+          "reading": "こうえん"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "写真",
+          "reading": "しゃしん"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "撮ります",
+          "reading": "とります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u15-s4",
+      "kind": "sentence",
+      "ja": "夏は海で泳ぎます。",
+      "reading": "なつはうみでおよぎます。",
+      "romaji": "natsu wa umi de oyogimasu",
+      "translationUr": "میں گرمیوں میں سمندر میں تیرتا ہوں۔",
+      "translationEn": "In summer I swim in the sea.",
+      "tokens": [
+        {
+          "surface": "夏",
+          "reading": "なつ",
+          "gloss": "summer"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "海",
+          "reading": "うみ",
+          "gloss": "sea"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "泳ぎます",
+          "reading": "およぎます",
+          "gloss": "swim (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-oyogimasu"],
+      "grammarTags": ["particle-wa", "particle-de", "polite"],
+      "tags": ["hobby", "season"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "夏",
+          "reading": "なつ"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "海",
+          "reading": "うみ"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "泳ぎます",
+          "reading": "およぎます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u15-s5",
+      "kind": "sentence",
+      "ja": "家族と映画を見ます。",
+      "reading": "かぞくとえいがをみます。",
+      "romaji": "kazoku to eiga o mimasu",
+      "translationUr": "میں خاندان کے ساتھ فلم دیکھتا ہوں۔",
+      "translationEn": "I watch a movie with my family.",
+      "tokens": [
+        {
+          "surface": "家族",
+          "reading": "かぞく",
+          "gloss": "family"
+        },
+        {
+          "surface": "と",
+          "reading": "と",
+          "gloss": "with"
+        },
+        {
+          "surface": "映画",
+          "reading": "えいが",
+          "gloss": "movie"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "見ます",
+          "reading": "みます",
+          "gloss": "watch (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-eiga", "u15-mimasu"],
+      "grammarTags": ["particle-to", "particle-wo", "polite"],
+      "tags": ["hobby", "family"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "家族",
+          "reading": "かぞく"
+        },
+        {
+          "text": "と",
+          "reading": "と"
+        },
+        {
+          "text": "映画",
+          "reading": "えいが"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "見ます",
+          "reading": "みます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u15-s6",
+      "kind": "sentence",
+      "ja": "旅行はとても楽しいです。",
+      "reading": "りょこうはとてもたのしいです。",
+      "romaji": "ryokou wa totemo tanoshii desu",
+      "translationUr": "سفر بہت مزیدار ہوتا ہے۔",
+      "translationEn": "Travel is very fun.",
+      "tokens": [
+        {
+          "surface": "旅行",
+          "reading": "りょこう",
+          "gloss": "travel"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "とても",
+          "reading": "とても",
+          "gloss": "very"
+        },
+        {
+          "surface": "楽しい",
+          "reading": "たのしい",
+          "gloss": "fun"
+        },
+        {
+          "surface": "です",
+          "reading": "です",
+          "gloss": "to be (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-ryokou", "u15-tanoshii"],
+      "grammarTags": ["particle-wa", "i-adjective", "polite"],
+      "tags": ["hobby", "travel"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "旅行",
+          "reading": "りょこう"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "とても",
+          "reading": "とても"
+        },
+        {
+          "text": "楽しい",
+          "reading": "たのしい"
+        },
+        {
+          "text": "です",
+          "reading": "です"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u15-s7",
+      "kind": "sentence",
+      "ja": "一緒に公園へ行きます。",
+      "reading": "いっしょにこうえんへいきます。",
+      "romaji": "issho ni kouen e ikimasu",
+      "translationUr": "ہم ایک ساتھ پارک جاتے ہیں۔",
+      "translationEn": "We go to the park together.",
+      "tokens": [
+        {
+          "surface": "一緒に",
+          "reading": "いっしょに",
+          "gloss": "together"
+        },
+        {
+          "surface": "公園",
+          "reading": "こうえん",
+          "gloss": "park"
+        },
+        {
+          "surface": "へ",
+          "reading": "へ",
+          "gloss": "direction particle"
+        },
+        {
+          "surface": "行きます",
+          "reading": "いきます",
+          "gloss": "go (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u15-issho-ni"],
+      "grammarTags": ["particle-he", "polite"],
+      "tags": ["hobby", "daily"],
+      "difficulty": 1,
+      "unitId": "unit-15-hobbies",
+      "lessonId": "u15-l4-time",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "一緒に",
+          "reading": "いっしょに"
+        },
+        {
+          "text": "公園",
+          "reading": "こうえん"
+        },
+        {
+          "text": "へ",
+          "reading": "へ"
+        },
+        {
+          "text": "行きます",
+          "reading": "いきます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

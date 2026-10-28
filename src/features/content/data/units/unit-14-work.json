@@ -1,0 +1,1178 @@
+{
+  "needsHumanReview": true,
+  "schemaVersion": 1,
+  "unit": {
+    "id": "unit-14-work",
+    "order": 14,
+    "titleUr": "کام اور دفتر",
+    "titleEn": "Work and community",
+    "descriptionUr": "دفتر، بینک، ڈاک خانے، ملازمت اور کام کے آداب کے الفاظ سیکھیں۔",
+    "descriptionEn": "Learn workplaces, colleagues, work actions and polite work habits.",
+    "icon": "briefcase-outline",
+    "lessons": [
+      {
+        "id": "u14-l1-places"
+      },
+      {
+        "id": "u14-l2-people"
+      },
+      {
+        "id": "u14-l3-actions"
+      },
+      {
+        "id": "u14-l4-qualities"
+      }
+    ],
+    "unlock": {
+      "requiresUnitId": "unit-13-school"
+    }
+  },
+  "lessons": [
+    {
+      "id": "u14-l1-places",
+      "unitId": "unit-14-work",
+      "order": 1,
+      "titleUr": "کام کی جگہیں",
+      "titleEn": "Workplaces",
+      "items": [
+        {
+          "id": "u14-kaisha",
+          "kind": "word"
+        },
+        {
+          "id": "u14-ginkou",
+          "kind": "word"
+        },
+        {
+          "id": "u14-yuubinkyoku",
+          "kind": "word"
+        },
+        {
+          "id": "u14-kouban",
+          "kind": "word"
+        },
+        {
+          "id": "u14-shiyakusho",
+          "kind": "word"
+        },
+        {
+          "id": "u14-shokuba",
+          "kind": "word"
+        },
+        {
+          "id": "u14-s1",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u14-l2-people",
+      "unitId": "unit-14-work",
+      "order": 2,
+      "titleUr": "کام کے لوگ",
+      "titleEn": "People at work",
+      "items": [
+        {
+          "id": "u14-shachou",
+          "kind": "word"
+        },
+        {
+          "id": "u14-tenin",
+          "kind": "word"
+        },
+        {
+          "id": "u14-kyuuryou",
+          "kind": "word"
+        },
+        {
+          "id": "u14-kyuukei",
+          "kind": "word"
+        },
+        {
+          "id": "u14-kaigi",
+          "kind": "word"
+        },
+        {
+          "id": "u14-meeru",
+          "kind": "word"
+        },
+        {
+          "id": "u14-s2",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u14-l3-actions",
+      "unitId": "unit-14-work",
+      "order": 3,
+      "titleUr": "کام کے کام",
+      "titleEn": "Work actions",
+      "items": [
+        {
+          "id": "u14-dekakemasu",
+          "kind": "word"
+        },
+        {
+          "id": "u14-hajimarimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u14-owarimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u14-tetsudaimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u14-okurimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u14-todokimasu",
+          "kind": "word"
+        },
+        {
+          "id": "u14-s3",
+          "kind": "sentence"
+        }
+      ]
+    },
+    {
+      "id": "u14-l4-qualities",
+      "unitId": "unit-14-work",
+      "order": 4,
+      "titleUr": "کام کی عادتیں",
+      "titleEn": "Work qualities",
+      "items": [
+        {
+          "id": "u14-teinei",
+          "kind": "word"
+        },
+        {
+          "id": "u14-majime",
+          "kind": "word"
+        },
+        {
+          "id": "u14-isshoukenmei",
+          "kind": "word"
+        },
+        {
+          "id": "u14-s4",
+          "kind": "sentence"
+        },
+        {
+          "id": "u14-s5",
+          "kind": "sentence"
+        },
+        {
+          "id": "u14-s6",
+          "kind": "sentence"
+        },
+        {
+          "id": "u14-s7",
+          "kind": "sentence"
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "u14-kaisha",
+      "kind": "word",
+      "ja": "会社",
+      "reading": "かいしゃ",
+      "romaji": "kaisha",
+      "meaningUr": "کمپنی",
+      "meaningEn": "Company",
+      "kanji": "会社",
+      "pos": "noun",
+      "tags": ["work", "place", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "会社",
+          "reading": "かいしゃ"
+        }
+      ],
+      "exampleIds": ["u14-s1"],
+      "audioText": "会社",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-ginkou",
+      "kind": "word",
+      "ja": "銀行",
+      "reading": "ぎんこう",
+      "romaji": "ginkou",
+      "meaningUr": "بینک",
+      "meaningEn": "Bank",
+      "kanji": "銀行",
+      "pos": "noun",
+      "tags": ["work", "place", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "銀行",
+          "reading": "ぎんこう"
+        }
+      ],
+      "exampleIds": ["u14-s2"],
+      "audioText": "銀行",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-yuubinkyoku",
+      "kind": "word",
+      "ja": "郵便局",
+      "reading": "ゆうびんきょく",
+      "romaji": "yuubinkyoku",
+      "meaningUr": "ڈاک خانہ",
+      "meaningEn": "Post office",
+      "kanji": "郵便局",
+      "pos": "noun",
+      "tags": ["work", "place", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "郵便局",
+          "reading": "ゆうびんきょく"
+        }
+      ],
+      "exampleIds": ["u14-s2"],
+      "audioText": "郵便局",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-kouban",
+      "kind": "word",
+      "ja": "交番",
+      "reading": "こうばん",
+      "romaji": "kouban",
+      "meaningUr": "پولیس چوکی",
+      "meaningEn": "Police box",
+      "kanji": "交番",
+      "pos": "noun",
+      "tags": ["work", "place", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "交番",
+          "reading": "こうばん"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "交番",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-shiyakusho",
+      "kind": "word",
+      "ja": "市役所",
+      "reading": "しやくしょ",
+      "romaji": "shiyakusho",
+      "meaningUr": "میونسپلٹی دفتر",
+      "meaningEn": "City hall",
+      "kanji": "市役所",
+      "pos": "noun",
+      "tags": ["work", "place", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "市役所",
+          "reading": "しやくしょ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "市役所",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-shokuba",
+      "kind": "word",
+      "ja": "職場",
+      "reading": "しょくば",
+      "romaji": "shokuba",
+      "meaningUr": "کام کی جگہ",
+      "meaningEn": "Workplace",
+      "kanji": "職場",
+      "pos": "noun",
+      "tags": ["work", "place", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "職場",
+          "reading": "しょくば"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "職場",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-shachou",
+      "kind": "word",
+      "ja": "社長",
+      "reading": "しゃちょう",
+      "romaji": "shachou",
+      "meaningUr": "کمپنی کا سربراہ",
+      "meaningEn": "Company president",
+      "kanji": "社長",
+      "pos": "noun",
+      "tags": ["work", "person", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "社長",
+          "reading": "しゃちょう"
+        }
+      ],
+      "exampleIds": ["u14-s7"],
+      "audioText": "社長",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-tenin",
+      "kind": "word",
+      "ja": "店員",
+      "reading": "てんいん",
+      "romaji": "tenin",
+      "meaningUr": "دکان کا ملازم",
+      "meaningEn": "Shop staff",
+      "kanji": "店員",
+      "pos": "noun",
+      "tags": ["work", "person", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "店員",
+          "reading": "てんいん"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "店員",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-kyuuryou",
+      "kind": "word",
+      "ja": "給料",
+      "reading": "きゅうりょう",
+      "romaji": "kyuuryou",
+      "meaningUr": "تنخواہ",
+      "meaningEn": "Salary",
+      "kanji": "給料",
+      "pos": "noun",
+      "tags": ["work", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "給料",
+          "reading": "きゅうりょう"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "給料",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-kyuukei",
+      "kind": "word",
+      "ja": "休憩",
+      "reading": "きゅうけい",
+      "romaji": "kyuukei",
+      "meaningUr": "وقفہ",
+      "meaningEn": "Break",
+      "kanji": "休憩",
+      "pos": "noun",
+      "tags": ["work", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "休憩",
+          "reading": "きゅうけい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "休憩",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-kaigi",
+      "kind": "word",
+      "ja": "会議",
+      "reading": "かいぎ",
+      "romaji": "kaigi",
+      "meaningUr": "میٹنگ",
+      "meaningEn": "Meeting",
+      "kanji": "会議",
+      "pos": "noun",
+      "tags": ["work", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "会議",
+          "reading": "かいぎ"
+        }
+      ],
+      "exampleIds": ["u14-s3"],
+      "audioText": "会議",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-meeru",
+      "kind": "word",
+      "ja": "メール",
+      "reading": "メール",
+      "romaji": "meeru",
+      "meaningUr": "ای میل",
+      "meaningEn": "Email",
+      "pos": "noun",
+      "tags": ["work", "communication", "noun"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "exampleIds": ["u14-s4"],
+      "audioText": "メール",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-dekakemasu",
+      "kind": "word",
+      "ja": "出かけます",
+      "reading": "でかけます",
+      "romaji": "dekakemasu",
+      "meaningUr": "باہر جانا",
+      "meaningEn": "To go out (polite)",
+      "kanji": "出",
+      "pos": "verb",
+      "tags": ["work", "daily", "verb"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "出",
+          "reading": "で"
+        },
+        {
+          "text": "かけます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "出かけます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-hajimarimasu",
+      "kind": "word",
+      "ja": "始まります",
+      "reading": "はじまります",
+      "romaji": "hajimarimasu",
+      "meaningUr": "شروع ہونا",
+      "meaningEn": "To begin (polite)",
+      "kanji": "始",
+      "pos": "verb",
+      "tags": ["work", "verb"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "始",
+          "reading": "はじ"
+        },
+        {
+          "text": "まります"
+        }
+      ],
+      "exampleIds": ["u14-s3"],
+      "audioText": "始まります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-owarimasu",
+      "kind": "word",
+      "ja": "終わります",
+      "reading": "おわります",
+      "romaji": "owarimasu",
+      "meaningUr": "ختم ہونا",
+      "meaningEn": "To end (polite)",
+      "kanji": "終",
+      "pos": "verb",
+      "tags": ["work", "verb"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "終",
+          "reading": "お"
+        },
+        {
+          "text": "わります"
+        }
+      ],
+      "exampleIds": ["u14-s6"],
+      "audioText": "終わります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-tetsudaimasu",
+      "kind": "word",
+      "ja": "手伝います",
+      "reading": "てつだいます",
+      "romaji": "tetsudaimasu",
+      "meaningUr": "مدد کرنا",
+      "meaningEn": "To help (polite)",
+      "kanji": "手伝",
+      "pos": "verb",
+      "tags": ["work", "verb"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "手伝",
+          "reading": "てつだ"
+        },
+        {
+          "text": "います"
+        }
+      ],
+      "exampleIds": ["u14-s5"],
+      "audioText": "手伝います",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-okurimasu",
+      "kind": "word",
+      "ja": "送ります",
+      "reading": "おくります",
+      "romaji": "okurimasu",
+      "meaningUr": "بھیجنا",
+      "meaningEn": "To send (polite)",
+      "kanji": "送",
+      "pos": "verb",
+      "tags": ["work", "communication", "verb"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "送",
+          "reading": "おく"
+        },
+        {
+          "text": "ります"
+        }
+      ],
+      "exampleIds": ["u14-s4"],
+      "audioText": "送ります",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-todokimasu",
+      "kind": "word",
+      "ja": "届きます",
+      "reading": "とどきます",
+      "romaji": "todokimasu",
+      "meaningUr": "پہنچنا",
+      "meaningEn": "To arrive; to be delivered (polite)",
+      "kanji": "届",
+      "pos": "verb",
+      "tags": ["work", "verb"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "届",
+          "reading": "とど"
+        },
+        {
+          "text": "きます"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "届きます",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-teinei",
+      "kind": "word",
+      "ja": "丁寧",
+      "reading": "ていねい",
+      "romaji": "teinei",
+      "meaningUr": "شائستہ / محتاط",
+      "meaningEn": "Polite; careful",
+      "kanji": "丁寧",
+      "pos": "na-adjective",
+      "tags": ["work", "adjective", "na-adjective"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "丁寧",
+          "reading": "ていねい"
+        }
+      ],
+      "exampleIds": ["u14-s7"],
+      "audioText": "丁寧",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-majime",
+      "kind": "word",
+      "ja": "真面目",
+      "reading": "まじめ",
+      "romaji": "majime",
+      "meaningUr": "سنجیدہ / محنتی",
+      "meaningEn": "Serious; diligent",
+      "kanji": "真面目",
+      "pos": "na-adjective",
+      "tags": ["work", "adjective", "na-adjective"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "真面目",
+          "reading": "まじめ"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "真面目",
+      "level": "N5-ish"
+    },
+    {
+      "id": "u14-isshoukenmei",
+      "kind": "word",
+      "ja": "一生懸命",
+      "reading": "いっしょうけんめい",
+      "romaji": "isshoukenmei",
+      "meaningUr": "پوری لگن سے",
+      "meaningEn": "With great effort",
+      "kanji": "一生懸命",
+      "pos": "na-adjective",
+      "tags": ["work", "adjective", "na-adjective"],
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "一生懸命",
+          "reading": "いっしょうけんめい"
+        }
+      ],
+      "exampleIds": [],
+      "audioText": "一生懸命",
+      "level": "N5-ish"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "u14-s1",
+      "kind": "sentence",
+      "ja": "父は会社で働きます。",
+      "reading": "ちちはかいしゃではたらきます。",
+      "romaji": "chichi wa kaisha de hatarakimasu",
+      "translationUr": "میرے والد کمپنی میں کام کرتے ہیں۔",
+      "translationEn": "My father works at a company.",
+      "tokens": [
+        {
+          "surface": "父",
+          "reading": "ちち",
+          "gloss": "father"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "会社",
+          "reading": "かいしゃ",
+          "gloss": "company"
+        },
+        {
+          "surface": "で",
+          "reading": "で",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "働きます",
+          "reading": "はたらきます",
+          "gloss": "work (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-kaisha"],
+      "grammarTags": ["particle-wa", "particle-de", "polite"],
+      "tags": ["work", "family"],
+      "difficulty": 1,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l1-places",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "父",
+          "reading": "ちち"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "会社",
+          "reading": "かいしゃ"
+        },
+        {
+          "text": "で",
+          "reading": "で"
+        },
+        {
+          "text": "働きます",
+          "reading": "はたらきます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u14-s2",
+      "kind": "sentence",
+      "ja": "銀行は郵便局の隣にあります。",
+      "reading": "ぎんこうはゆうびんきょくのとなりにあります。",
+      "romaji": "ginkou wa yuubinkyoku no tonari ni arimasu",
+      "translationUr": "بینک ڈاک خانے کے ساتھ ہے۔",
+      "translationEn": "The bank is next to the post office.",
+      "tokens": [
+        {
+          "surface": "銀行",
+          "reading": "ぎんこう",
+          "gloss": "bank"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "郵便局",
+          "reading": "ゆうびんきょく",
+          "gloss": "post office"
+        },
+        {
+          "surface": "の",
+          "reading": "の",
+          "gloss": "possessive particle"
+        },
+        {
+          "surface": "隣",
+          "reading": "となり",
+          "gloss": "next to"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "location particle"
+        },
+        {
+          "surface": "あります",
+          "reading": "あります",
+          "gloss": "there is (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-ginkou", "u14-yuubinkyoku"],
+      "grammarTags": ["particle-wa", "particle-no", "particle-ni", "polite"],
+      "tags": ["work", "place"],
+      "difficulty": 2,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l2-people",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "銀行",
+          "reading": "ぎんこう"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "郵便局",
+          "reading": "ゆうびんきょく"
+        },
+        {
+          "text": "の",
+          "reading": "の"
+        },
+        {
+          "text": "隣",
+          "reading": "となり"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "あります",
+          "reading": "あります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u14-s3",
+      "kind": "sentence",
+      "ja": "会議は九時に始まります。",
+      "reading": "かいぎはくじにはじまります。",
+      "romaji": "kaigi wa kuji ni hajimarimasu",
+      "translationUr": "میٹنگ نو بجے شروع ہوتی ہے۔",
+      "translationEn": "The meeting starts at nine.",
+      "tokens": [
+        {
+          "surface": "会議",
+          "reading": "かいぎ",
+          "gloss": "meeting"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "九時",
+          "reading": "くじ",
+          "gloss": "nine o clock"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "time particle"
+        },
+        {
+          "surface": "始まります",
+          "reading": "はじまります",
+          "gloss": "begin (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-kaigi", "u14-hajimarimasu"],
+      "grammarTags": ["particle-wa", "particle-ni", "polite"],
+      "tags": ["work", "time"],
+      "difficulty": 1,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l3-actions",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "会議",
+          "reading": "かいぎ"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "九時",
+          "reading": "くじ"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "始まります",
+          "reading": "はじまります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u14-s4",
+      "kind": "sentence",
+      "ja": "メールを送ります。",
+      "reading": "めーるをおくります。",
+      "romaji": "meeru o okurimasu",
+      "translationUr": "میں ای میل بھیجتا ہوں۔",
+      "translationEn": "I send an email.",
+      "tokens": [
+        {
+          "surface": "メール",
+          "reading": "メール",
+          "gloss": "email"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "送ります",
+          "reading": "おくります",
+          "gloss": "send (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-meeru", "u14-okurimasu"],
+      "grammarTags": ["particle-wo", "polite"],
+      "tags": ["work", "communication"],
+      "difficulty": 1,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "メール",
+          "reading": "メール"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "送ります",
+          "reading": "おくります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u14-s5",
+      "kind": "sentence",
+      "ja": "母を手伝います。",
+      "reading": "ははをてつだいます。",
+      "romaji": "haha o tetsudaimasu",
+      "translationUr": "میں اپنی والدہ کی مدد کرتا ہوں۔",
+      "translationEn": "I help my mother.",
+      "tokens": [
+        {
+          "surface": "母",
+          "reading": "はは",
+          "gloss": "mother"
+        },
+        {
+          "surface": "を",
+          "reading": "を",
+          "gloss": "object particle"
+        },
+        {
+          "surface": "手伝います",
+          "reading": "てつだいます",
+          "gloss": "help (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-tetsudaimasu"],
+      "grammarTags": ["particle-wo", "polite"],
+      "tags": ["work", "family"],
+      "difficulty": 1,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "母",
+          "reading": "はは"
+        },
+        {
+          "text": "を",
+          "reading": "を"
+        },
+        {
+          "text": "手伝います",
+          "reading": "てつだいます"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u14-s6",
+      "kind": "sentence",
+      "ja": "仕事は五時に終わります。",
+      "reading": "しごとはごじにおわります。",
+      "romaji": "shigoto wa goji ni owarimasu",
+      "translationUr": "کام پانچ بجے ختم ہوتا ہے۔",
+      "translationEn": "Work ends at five.",
+      "tokens": [
+        {
+          "surface": "仕事",
+          "reading": "しごと",
+          "gloss": "work"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "五時",
+          "reading": "ごじ",
+          "gloss": "five o clock"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "time particle"
+        },
+        {
+          "surface": "終わります",
+          "reading": "おわります",
+          "gloss": "end (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-owarimasu"],
+      "grammarTags": ["particle-wa", "particle-ni", "polite"],
+      "tags": ["work", "time"],
+      "difficulty": 1,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "仕事",
+          "reading": "しごと"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "五時",
+          "reading": "ごじ"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "終わります",
+          "reading": "おわります"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    },
+    {
+      "id": "u14-s7",
+      "kind": "sentence",
+      "ja": "社長は丁寧に話します。",
+      "reading": "しゃちょうはていねいにはなします。",
+      "romaji": "shachou wa teinei ni hanashimasu",
+      "translationUr": "کمپنی کے سربراہ شائستگی سے بات کرتے ہیں۔",
+      "translationEn": "The company president speaks politely.",
+      "tokens": [
+        {
+          "surface": "社長",
+          "reading": "しゃちょう",
+          "gloss": "company president"
+        },
+        {
+          "surface": "は",
+          "reading": "は",
+          "gloss": "topic particle"
+        },
+        {
+          "surface": "丁寧",
+          "reading": "ていねい",
+          "gloss": "polite"
+        },
+        {
+          "surface": "に",
+          "reading": "に",
+          "gloss": "adverb particle"
+        },
+        {
+          "surface": "話します",
+          "reading": "はなします",
+          "gloss": "speak (polite)"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "vocabIds": ["u14-shachou", "u14-teinei"],
+      "grammarTags": ["particle-wa", "particle-ni", "polite"],
+      "tags": ["work", "communication"],
+      "difficulty": 2,
+      "unitId": "unit-14-work",
+      "lessonId": "u14-l4-qualities",
+      "needsHumanReview": true,
+      "segments": [
+        {
+          "text": "社長",
+          "reading": "しゃちょう"
+        },
+        {
+          "text": "は",
+          "reading": "は"
+        },
+        {
+          "text": "丁寧",
+          "reading": "ていねい"
+        },
+        {
+          "text": "に",
+          "reading": "に"
+        },
+        {
+          "text": "話します",
+          "reading": "はなします"
+        },
+        {
+          "text": "。"
+        }
+      ]
+    }
+  ]
+}

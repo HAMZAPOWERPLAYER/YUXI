@@ -219,7 +219,7 @@ draft rather than a published curriculum.
 
 ## Part 2: Vocabulary, lessons and sentences
 
-**Status:** authoring in progress (10 of 20 units authored); **no unit is approved for release**
+**Status:** authoring complete (20 of 20 units authored); **no unit is approved for release**
 **Data root:** `src/features/content/data/`
 **Reviewers required:** a Japanese-language teacher, a native Urdu speaker and a
 content-safety reviewer familiar with the halal constraints.
@@ -242,14 +242,23 @@ Update this table as each unit is authored. Every file and every item carries
 | `units/unit-08-places.json`        | Places and transport   |       4 |            21 |         7 | `true`      |
 | `units/unit-09-weather.json`       | Weather and seasons    |       4 |            21 |         7 | `true`      |
 | `units/unit-10-shopping.json`      | Shopping and money     |       4 |            21 |         7 | `true`      |
-| **Total**                          | **10 units**           |  **40** |       **210** |    **70** |             |
+| `units/unit-11-health.json`        | Health and the body    |       4 |            21 |         7 | `true`      |
+| `units/unit-12-clothing.json`      | Clothing and dressing  |       4 |            21 |         7 | `true`      |
+| `units/unit-13-school.json`        | School and study       |       4 |            21 |         7 | `true`      |
+| `units/unit-14-work.json`          | Work and community     |       4 |            21 |         7 | `true`      |
+| `units/unit-15-hobbies.json`       | Hobbies and free time  |       4 |            21 |         7 | `true`      |
+| `units/unit-16-nature.json`        | Nature and animals     |       4 |            21 |         7 | `true`      |
+| `units/unit-17-town.json`          | Town and directions    |       4 |            21 |         7 | `true`      |
+| `units/unit-18-feelings.json`      | Feelings and character |       4 |            21 |         7 | `true`      |
+| `units/unit-19-language.json`      | Language and talk      |       4 |            21 |         7 | `true`      |
+| `units/unit-20-conversation.json`  | Everyday conversation  |       4 |            21 |         7 | `true`      |
+| **Total**                          | **20 units**           |  **80** |       **420** |   **140** |             |
 
-The target for Part 2 is 20 units, 3–5 lessons per unit, 6–10 items per lesson,
-about 420 vocabulary items/phrases and about 140 sentences. The ten authored
+The Part 2 target is 20 units, 3–5 lessons per unit, 6–10 items per lesson,
+about 420 vocabulary items/phrases and about 140 sentences. All 20 authored
 units follow a uniform 21 vocabulary + 7 sentences shape (28 items per unit,
-7 per lesson); the remaining units may vary within the schema limits. The
-machine-readable contract is in `src/features/content/schema.ts` and
-`docs/content-schema/unit.schema.json`.
+7 per lesson). The machine-readable contract is in
+`src/features/content/schema.ts` and `docs/content-schema/unit.schema.json`.
 
 ### Automated checks (must be green before review)
 
