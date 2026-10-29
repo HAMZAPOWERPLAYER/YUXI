@@ -60,7 +60,7 @@ Useful commands:
 npm run typecheck        # tsc --noEmit
 npm run lint             # eslint .
 npm run format:check     # prettier --check .
-npm test                 # 423 Jest tests
+npm test                 # 435 Jest tests
 npm run test:coverage    # coverage report with thresholds
 npm run validate:content # course schema, references, safety and size checks
 npm run content:schema   # regenerate docs/content-schema/*.json
@@ -275,28 +275,36 @@ All randomness flows through `src/utils/random.ts`; all time access flows throug
 
 Surfaces use logical `Row`/`Stack` primitives rather than hand-written left/right
 styles. The app reads the language direction explicitly and does **not** call
-`I18nManager.forceRTL`, so switching language does not require a restart. Directional
-icons (such as the back chevron) are chosen from the current direction.
+`I18nManager.forceRTL`, so switching language does not require a restart. The
+`expo-localization` config plugin sets `supportsRTL: false` so native RTL cannot
+double-mirror the app's own direction handling. Japanese sequences (kana charts,
+sentence builders and quiz prompts) force an LTR row and text direction inside the
+Urdu UI. Directional icons (such as the back chevron) are chosen from the current
+direction.
 
-Text sizes are driven by a single scale in the theme provider, and interactive controls
-use accessible labels and state. The reduced-motion hook is available for screens that
-add animation in Part 2.
+Text size uses one in-app scale multiplied by the OS font scale exactly once, with
+`allowFontScaling` disabled so line height and glyph size stay in the same coordinate
+space. Interactive controls use accessible labels and state, answer and completion
+feedback is announced to screen readers, and mastery charts add dot/ring/check cues
+so level is not conveyed by color alone. The reduced-motion hook disables stack
+transitions when the OS asks for it.
 
 ## Testing
 
 The test suite covers the domain logic, SQLite migrations and repositories, backup
 round-trips, study persistence, notifications, TTS voice selection, date/random helpers,
-i18n key parity and theme contrast.
+i18n key parity, theme contrast, text scaling and RTL row primitives.
 
 Latest local run:
 
-- **423 tests passing** across 36 suites
+- **435 tests passing** across 39 suites
 - Statements **97.97%**, branches **92.26%**, functions **99.78%**, lines **99.36%**
 - Coverage thresholds: statements 85%, branches 80%, functions 90%, lines 85%
 - Content validator, JSON Schema freshness and offline privacy gates pass
 
-UI screens are exercised by TypeScript and lint but do not yet have component-level
-render tests. The app was not launched on a physical device or emulator in the build
+UI screens are exercised by TypeScript and lint, with focused component tests for
+`AppText` scaling and `Row` direction. Full screen flows still rely on manual device
+verification. The app was not launched on a physical device or emulator in the build
 environment used for this milestone; see `docs/content-review.md` and the final
 milestone report for the exact verification boundary.
 
