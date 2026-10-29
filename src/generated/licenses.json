@@ -1,7 +1,7 @@
 {
   "generatedBy": "scripts/generate-licenses.mjs",
   "app": "yuxi",
-  "licenseCount": 34,
+  "licenseCount": 37,
   "licenses": [
     {
       "name": "@expo-google-fonts/noto-nastaliq-urdu",
@@ -12,6 +12,12 @@
     {
       "name": "@expo-google-fonts/noto-sans-jp",
       "version": "0.4.4",
+      "license": "MIT AND OFL-1.1",
+      "repository": "git+https://github.com/expo/google-fonts.git"
+    },
+    {
+      "name": "@expo-google-fonts/nunito",
+      "version": "0.4.2",
       "license": "MIT AND OFL-1.1",
       "repository": "git+https://github.com/expo/google-fonts.git"
     },
@@ -66,6 +72,12 @@
     {
       "name": "expo-haptics",
       "version": "58.0.7",
+      "license": "MIT",
+      "repository": "https://github.com/expo/expo.git"
+    },
+    {
+      "name": "expo-linear-gradient",
+      "version": "58.0.3",
       "license": "MIT",
       "repository": "https://github.com/expo/expo.git"
     },
@@ -142,6 +154,13 @@
       "license": "OFL-1.1",
       "repository": "https://github.com/notofonts/noto-cjk",
       "note": "Japanese kana and UI glyphs."
+    },
+    {
+      "name": "Nunito",
+      "version": "bundled",
+      "license": "OFL-1.1",
+      "repository": "https://github.com/googlefonts/nunito",
+      "note": "Latin headings, semi-bold and extra-bold weights."
     },
     {
       "name": "react",

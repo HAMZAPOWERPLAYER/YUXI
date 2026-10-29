@@ -25,6 +25,13 @@ const FONT_LICENSES = [
     repository: 'https://github.com/notofonts/nastaliq',
     note: 'Urdu script rendering.',
   },
+  {
+    name: 'Nunito',
+    version: 'bundled',
+    license: 'OFL-1.1',
+    repository: 'https://github.com/googlefonts/nunito',
+    note: 'Latin headings, semi-bold and extra-bold weights.',
+  },
 ];
 
 function normalizeLicense(value) {

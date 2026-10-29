@@ -4,7 +4,7 @@ This file records the decisions that shape Yuxi. It is the reference future
 milestones (and future maintainers) should read before changing architecture.
 Each entry lists the context, the decision, and the consequences we accept.
 
-**Last updated:** 2026-10-28 (Part 2, milestone P2-M6)
+**Last updated:** 2026-10-29 (UI redesign, milestone D-M1)
 
 ## ADR-001: Expo with Continuous Native Generation
 
@@ -294,6 +294,81 @@ read model reflects the most recent run stored for that lesson. There is no
 resume-interrupted-run state: an unfinished run records its answers and the
 next visit starts a fresh seeded run. The UI must show a locked lesson as
 unavailable rather than trusting a direct route.
+
+## ADR-020: Glow is a static layer, never Android elevation or blur
+
+**Context.** The redesign calls for crimson glow on the progress ring, the
+current path node, the primary CTA and the correct-answer highlight. Android's
+`elevation` renders a grey drop shadow and `BlurView` is expensive on mid-range
+devices. Both would break the look and the performance budget.
+
+**Decision.** Build glow from static layers: a low-opacity border/ring, an SVG
+radial gradient (`GlowView` in D-M2) or a linear-gradient wash. Do not use
+`elevation`, `shadowColor` or `BlurView` for glow. Cap glow elements at three
+per screen.
+
+**Consequences.** Glow is predictable across Android GPU tiers and adds no
+continuous animation. It must be contrast-checked as part of the surface; a glow
+layer may never be the only thing separating a control from its background.
+
+## ADR-021: Nunito for Latin headings, system font for Latin body
+
+**Context.** The redesign asks for a friendly rounded heading face while keeping
+long-form reading comfortable and the asset budget small. The app already
+bundles Noto Sans JP and Noto Nastaliq Urdu.
+
+**Decision.** Bundle only Nunito SemiBold (600) and ExtraBold (800) through
+`@expo-google-fonts/nunito`; both files total about 264 KB. `AppText` selects
+Nunito for `display`, `title`, `heading`, `subtitle`, `label`, `button` and
+`brand` in English, and keeps Latin body copy on the platform font. Japanese and
+Urdu keep their existing bundled families. Display sizes get `maxScale` caps;
+body text keeps full accessibility scaling.
+
+**Consequences.** Two extra font files increase the bundle by under 400 KB. A
+third Nunito weight requires a new decision and an asset-budget check. Font
+selection must be tested because it is based on the resolved script language,
+not on UI direction.
+
+## ADR-022: One icon family (Ionicons)
+
+**Context.** Mixed icon styles make the interface feel assembled from different
+apps and increase the bundle.
+
+**Decision.** Ionicons is the single icon family. Screens use the `Icon` wrapper
+with size tokens. Outline variants are preferred where Ionicons provides one.
+No emoji or second icon package is added for decoration.
+
+**Consequences.** A missing glyph must be solved inside Ionicons or with a small
+local SVG illustration, not by adding another icon library.
+
+## ADR-023: Western digits for Urdu, and an accessible unseen-mastery grey
+
+**Context.** The redesign specifies Western digits as the default for Urdu and a
+new-mastery grey of `#5B5B6B`. The requested grey measures 2.73:1 on `surface`
+and 2.95:1 on `background`, below the 3:1 requirement for a non-text indicator.
+
+**Decision.** Keep Western digits in both locales and document the choice. Use
+`#6B6B7C` for `masteryUnseen` (3.48:1 on `surface`) and pair every mastery tier
+with a shape cue: none, dot, ring, check. The requested `#5B5B6B` is recorded as
+a rejected value rather than shipped silently.
+
+**Consequences.** The unseen state is slightly lighter than the visual brief.
+Localisation must not convert counters to Arabic-Indic digits without a new
+decision. Mastery remains understandable without colour.
+
+## ADR-024: Core primitives move behind temporary re-export shims
+
+**Context.** Moving every screen in one commit would mix visual changes with
+routing, data and content risk. The redesign is staged in milestones.
+
+**Decision.** New primitives live in `src/components/ui/`. Old import paths stay
+as one-line re-export shims while screens migrate. D-M10 deletes the shims and
+any superseded component. Tests that mocked a legacy implementation path are
+updated to mock the new implementation module.
+
+**Consequences.** There are temporarily two import paths for the same component;
+they must not diverge. A shim is not a place for new styling. The final cleanup
+milestone must prove no legacy path remains.
 
 ## Open questions
 

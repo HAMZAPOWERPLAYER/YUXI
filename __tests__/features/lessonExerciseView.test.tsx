@@ -13,7 +13,7 @@ import {
 import { I18nProvider } from '@/i18n';
 import { AppThemeProvider } from '@/theme/ThemeProvider';
 
-jest.mock('@/components/Icon', () => ({
+jest.mock('@/components/ui/Icon', () => ({
   Icon: () => null,
 }));
 

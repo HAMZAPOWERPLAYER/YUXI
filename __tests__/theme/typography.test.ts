@@ -61,4 +61,30 @@ describe('resolveTextMetrics', () => {
     expect(japanese.lineHeight).toBe(typography.kana.lineHeight);
     expect(english.lineHeight).toBe(typography.body.lineHeight);
   });
+
+  it('caps display and kana sizes at 200% combined scaling', () => {
+    for (const variant of ['display', 'title', 'kanaHero'] as const) {
+      const token = typography[variant];
+      const result = resolveTextMetrics(token, {
+        textScale: 2,
+        fontScale: 2,
+        language: 'en',
+        urduFontsLoaded: true,
+      });
+      expect(result.fontSize).toBeCloseTo(token.fontSize * (token.maxScale ?? 4));
+      expect(result.fontSize).toBeLessThan(token.fontSize * 4);
+    }
+  });
+
+  it('keeps body text uncapped so it reaches the full accessibility scale', () => {
+    const result = resolveTextMetrics(typography.body, {
+      textScale: 1.6,
+      fontScale: 2,
+      language: 'en',
+      urduFontsLoaded: true,
+    });
+
+    expect(result.fontSize).toBeCloseTo(16 * 3.2);
+    expect(result.lineHeight).toBeCloseTo(24 * 3.2);
+  });
 });
