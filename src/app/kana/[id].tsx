@@ -102,10 +102,10 @@ export default function KanaDetailScreen() {
             <AppText align="center" variant="kanaHero">
               {kana.kana}
             </AppText>
-            <AppText color="primaryText" variant="title">
+            <AppText color="primaryText" lang="en" variant="title">
               {kana.romaji}
             </AppText>
-            <AppText align="center" color="textMuted" variant="body">
+            <AppText align="center" color="textMuted" lang="ur" variant="body">
               {kana.urduHint}
             </AppText>
           </Stack>
@@ -187,9 +187,9 @@ export default function KanaDetailScreen() {
                   onPress={() => router.push(`/kana/${item.id}`)}
                 >
                   <Card padding={theme.spacing.xs} style={styles.confusable} tone="surface2">
-                    <Row align="center" gap={6}>
+                    <Row align="center" dir="ltr" gap={6}>
                       <AppText variant="kanaLarge">{item.kana}</AppText>
-                      <AppText color="textMuted" variant="caption">
+                      <AppText color="textMuted" lang="en" variant="caption">
                         {item.romaji}
                       </AppText>
                     </Row>

@@ -11,7 +11,7 @@ import { Mascot } from '@/components/Mascot';
 import { MascotBubble } from '@/components/MascotBubble';
 import { ProgressRing } from '@/components/ProgressRing';
 import { Row } from '@/components/Row';
-import { Screen } from '@/components/Screen';
+import { Screen, TAB_SCREEN_EDGES } from '@/components/Screen';
 import { Stack } from '@/components/Stack';
 import { ErrorState, LoadingState } from '@/components/StateViews';
 import { getDailyGoalProgress } from '@/features/progress';
@@ -87,7 +87,7 @@ export default function HomeScreen() {
 
   if (progress.status === 'loading') {
     return (
-      <Screen>
+      <Screen edges={TAB_SCREEN_EDGES}>
         <LoadingState />
       </Screen>
     );
@@ -95,7 +95,7 @@ export default function HomeScreen() {
 
   if (progress.status === 'error') {
     return (
-      <Screen>
+      <Screen edges={TAB_SCREEN_EDGES}>
         <ErrorState body={t('errors.loadBody')} onAction={() => void progress.refresh()} />
       </Screen>
     );
@@ -121,6 +121,7 @@ export default function HomeScreen() {
 
   return (
     <Screen
+      edges={TAB_SCREEN_EDGES}
       header={
         <Row
           align="center"

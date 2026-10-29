@@ -15,7 +15,7 @@ import { EmptyState, ErrorState, LoadingState } from '@/components/StateViews';
 import { buildCourseOverview, loadCourseContent } from '@/features/lessons';
 import type { LessonStatus } from '@/features/lessons';
 import { localizedDescription, localizedTitle } from '@/features/lessons/labels';
-import { useI18n, useT } from '@/i18n';
+import { useDirection, useI18n, useT } from '@/i18n';
 import { useProgress } from '@/providers/useProgress';
 import { useAppTheme } from '@/theme/ThemeProvider';
 
@@ -30,6 +30,7 @@ export default function UnitScreen() {
   const t = useT();
   const theme = useAppTheme();
   const { language } = useI18n();
+  const { isRTL } = useDirection();
   const { lessonProgress, status, refresh } = useProgress();
   const content = useMemo(() => loadCourseContent(), []);
 
@@ -203,7 +204,7 @@ export default function UnitScreen() {
 
                 <Icon
                   color="textMuted"
-                  name={locked ? 'lock-closed' : 'chevron-forward'}
+                  name={locked ? 'lock-closed' : isRTL ? 'chevron-back' : 'chevron-forward'}
                   size={18}
                 />
               </Row>

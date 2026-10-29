@@ -2,12 +2,14 @@ import { Pressable, StyleSheet, View } from 'react-native';
 
 import { useAppTheme } from '@/theme/ThemeProvider';
 
-import { AppText } from './AppText';
+import { AppText, type AppTextLang } from './AppText';
 import { Row } from './Row';
 
 export type SegmentedOption<T extends string | number> = {
   value: T;
   label: string;
+  /** Override the font/direction for labels written in another script. */
+  lang?: AppTextLang;
   disabled?: boolean;
 };
 
@@ -69,7 +71,8 @@ export function Segmented<T extends string | number>({
               <AppText
                 align="center"
                 color={selected ? 'text' : 'textMuted'}
-                numberOfLines={1}
+                lang={option.lang ?? 'auto'}
+                numberOfLines={2}
                 variant={selected ? 'bodyStrong' : 'label'}
               >
                 {option.label}
@@ -92,7 +95,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     flex: 1,
     justifyContent: 'center',
-    minHeight: 40,
+    minHeight: 44,
     paddingHorizontal: 6,
     paddingVertical: 6,
   },

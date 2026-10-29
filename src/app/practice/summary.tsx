@@ -1,4 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect } from 'react';
+import { AccessibilityInfo } from 'react-native';
 
 import { AppText } from '@/components/AppText';
 import { Button } from '@/components/Button';
@@ -61,6 +63,15 @@ export default function SummaryScreen() {
     accuracy >= 0.8 ? t('summary.great') : accuracy >= 0.5 ? t('summary.good') : t('summary.low');
 
   const goPractice = () => router.replace('/(tabs)/practice');
+
+  useEffect(() => {
+    AccessibilityInfo.announceForAccessibility(
+      `${t('summary.title')}. ${t('summary.correctCount', {
+        correct,
+        total: answered,
+      })}. ${t('summary.xp')}: ${xp}`,
+    );
+  }, [answered, correct, t, xp]);
 
   const practiceAgain = () => {
     router.replace({

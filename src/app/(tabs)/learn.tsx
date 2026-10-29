@@ -7,11 +7,11 @@ import { Icon } from '@/components/Icon';
 import { MascotBubble } from '@/components/MascotBubble';
 import { ProgressBar } from '@/components/ProgressBar';
 import { Row } from '@/components/Row';
-import { Screen } from '@/components/Screen';
+import { Screen, TAB_SCREEN_EDGES } from '@/components/Screen';
 import { Stack } from '@/components/Stack';
 import { buildMasteryBreakdown } from '@/features/kana/mastery';
 import { getByScript } from '@/features/kana/selectors';
-import { useT } from '@/i18n';
+import { useDirection, useT } from '@/i18n';
 import { useProgress } from '@/providers/useProgress';
 import { useAppTheme } from '@/theme/ThemeProvider';
 import type { KanaScript } from '@/types/kana';
@@ -26,10 +26,11 @@ function titleKey(script: KanaScript): 'learn.hiragana' | 'learn.katakana' {
 export default function LearnScreen() {
   const t = useT();
   const theme = useAppTheme();
+  const { isRTL } = useDirection();
   const { progress } = useProgress();
 
   return (
-    <Screen>
+    <Screen edges={TAB_SCREEN_EDGES}>
       <Stack gap={theme.spacing.lg}>
         <Stack gap={2}>
           <AppText variant="title">{t('learn.title')}</AppText>
@@ -61,7 +62,7 @@ export default function LearnScreen() {
                 {t('course.subtitle')}
               </AppText>
             </Stack>
-            <Icon color="textMuted" name="chevron-forward" size={20} />
+            <Icon color="textMuted" name={isRTL ? 'chevron-back' : 'chevron-forward'} size={20} />
           </Row>
         </Card>
 
@@ -105,10 +106,14 @@ export default function LearnScreen() {
                         </AppText>
                       </Stack>
                     </Row>
-                    <Icon color="textMuted" name="chevron-forward" size={20} />
+                    <Icon
+                      color="textMuted"
+                      name={isRTL ? 'chevron-back' : 'chevron-forward'}
+                      size={20}
+                    />
                   </Row>
 
-                  <Row gap={6} justify="start" wrap>
+                  <Row dir="ltr" gap={6} justify="start" wrap>
                     {pool.slice(0, SAMPLE_COUNT).map((kana) => (
                       <View
                         key={kana.id}

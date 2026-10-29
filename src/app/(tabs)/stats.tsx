@@ -5,8 +5,9 @@ import { StyleSheet, View } from 'react-native';
 import { AppText } from '@/components/AppText';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
+import { MasteryMark } from '@/components/MasteryMark';
 import { Row } from '@/components/Row';
-import { Screen } from '@/components/Screen';
+import { Screen, TAB_SCREEN_EDGES } from '@/components/Screen';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Stack } from '@/components/Stack';
 import { ErrorState, LoadingState } from '@/components/StateViews';
@@ -61,7 +62,7 @@ export default function StatsScreen() {
 
   if (progress.status === 'loading') {
     return (
-      <Screen>
+      <Screen edges={TAB_SCREEN_EDGES}>
         <LoadingState />
       </Screen>
     );
@@ -69,14 +70,14 @@ export default function StatsScreen() {
 
   if (progress.status === 'error') {
     return (
-      <Screen>
+      <Screen edges={TAB_SCREEN_EDGES}>
         <ErrorState body={t('errors.loadBody')} onAction={() => void progress.refresh()} />
       </Screen>
     );
   }
 
   return (
-    <Screen>
+    <Screen edges={TAB_SCREEN_EDGES}>
       <Stack gap={theme.spacing.lg}>
         <Stack gap={2}>
           <AppText variant="title">{t('stats.title')}</AppText>
@@ -117,13 +118,17 @@ export default function StatsScreen() {
                 color="warning"
                 icon="flame"
                 label={t('stats.currentStreak')}
-                value={t('stats.streakValue', { count: streak.current })}
+                value={t(streak.current === 1 ? 'common.dayCount' : 'common.daysCount', {
+                  count: streak.current,
+                })}
               />
               <StatTile
                 color="warning"
                 icon="trophy-outline"
                 label={t('stats.bestStreak')}
-                value={t('stats.streakValue', { count: streak.longest })}
+                value={t(streak.longest === 1 ? 'common.dayCount' : 'common.daysCount', {
+                  count: streak.longest,
+                })}
               />
               <StatTile
                 color="success"
@@ -219,7 +224,9 @@ export default function StatsScreen() {
                               styles.heatCell,
                               { backgroundColor: theme.colors[LEVEL_COLORS[levelKey]] },
                             ]}
-                          />
+                          >
+                            <MasteryMark level={levelKey} size={7} />
+                          </View>
                         );
                       })}
                     </View>
@@ -230,10 +237,12 @@ export default function StatsScreen() {
                     <Row align="center" gap={4} key={levelKey}>
                       <View
                         style={[
-                          styles.legendDot,
+                          styles.legendSwatch,
                           { backgroundColor: theme.colors[LEVEL_COLORS[levelKey]] },
                         ]}
-                      />
+                      >
+                        <MasteryMark level={levelKey} size={6} />
+                      </View>
                       <AppText color="textMuted" variant="caption">
                         {t(LEVEL_KEYS[levelKey])}
                       </AppText>
@@ -271,13 +280,17 @@ const styles = StyleSheet.create({
     gap: 3,
   },
   heatCell: {
+    alignItems: 'center',
     borderRadius: 2,
     height: 14,
+    justifyContent: 'center',
     width: 14,
   },
-  legendDot: {
-    borderRadius: 999,
-    height: 8,
-    width: 8,
+  legendSwatch: {
+    alignItems: 'center',
+    borderRadius: 3,
+    height: 12,
+    justifyContent: 'center',
+    width: 12,
   },
 });

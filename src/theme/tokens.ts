@@ -50,7 +50,7 @@ export const darkColors: ColorTokens = {
   dangerSoft: '#32141A',
   overlay: 'rgba(0, 0, 0, 0.62)',
   transparent: 'transparent',
-  masteryUnseen: '#5C5C6B',
+  masteryUnseen: '#6B6B7C',
   masteryLearning: '#F5A524',
   masteryFamiliar: '#5B9DFF',
   masteryMastered: '#2FBF71',
@@ -138,4 +138,14 @@ export const masteryColorTokens: Record<MasteryLevel, keyof ColorTokens> = {
   learning: 'masteryLearning',
   familiar: 'masteryFamiliar',
   mastered: 'masteryMastered',
+};
+
+/** Non-color cue paired with each tier so level is not conveyed by color alone. */
+export type MasteryCue = 'none' | 'dot' | 'ring' | 'check';
+
+export const masteryCues: Record<MasteryLevel, MasteryCue> = {
+  unseen: 'none',
+  learning: 'dot',
+  familiar: 'ring',
+  mastered: 'check',
 };

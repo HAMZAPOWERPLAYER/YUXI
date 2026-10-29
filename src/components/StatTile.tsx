@@ -43,7 +43,7 @@ export function StatTile({
       <Stack gap={2}>
         <Row align="center" gap={6}>
           {icon ? <Icon color={color} name={icon} size={16} /> : null}
-          <AppText color="textMuted" numberOfLines={1} variant="caption">
+          <AppText color="textMuted" variant="caption">
             {label}
           </AppText>
           {right}
@@ -52,7 +52,7 @@ export function StatTile({
           {value}
         </AppText>
         {subtitle ? (
-          <AppText color="textMuted" numberOfLines={1} variant="caption">
+          <AppText color="textMuted" variant="caption">
             {subtitle}
           </AppText>
         ) : null}

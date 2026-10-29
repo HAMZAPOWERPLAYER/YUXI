@@ -12,6 +12,7 @@ export type CardProps = {
   onPress?: () => void;
   accessibilityLabel?: string;
   accessibilityHint?: string;
+  accessibilityLiveRegion?: 'none' | 'polite' | 'assertive';
   padding?: number;
   style?: StyleProp<ViewStyle>;
   testID?: string;
@@ -32,6 +33,7 @@ export function Card({
   onPress,
   accessibilityLabel,
   accessibilityHint,
+  accessibilityLiveRegion,
   padding,
   style,
   testID,
@@ -50,7 +52,14 @@ export function Card({
 
   if (!onPress) {
     return (
-      <View style={cardStyle} testID={testID}>
+      <View
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessibilityLiveRegion={accessibilityLiveRegion}
+        accessible={Boolean(accessibilityLabel)}
+        style={cardStyle}
+        testID={testID}
+      >
         {children}
       </View>
     );
@@ -60,6 +69,7 @@ export function Card({
     <Pressable
       accessibilityHint={accessibilityHint}
       accessibilityLabel={accessibilityLabel}
+      accessibilityLiveRegion={accessibilityLiveRegion}
       accessibilityRole="button"
       onPress={onPress}
       testID={testID}

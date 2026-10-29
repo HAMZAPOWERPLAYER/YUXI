@@ -64,7 +64,7 @@ export function ScreenHeader({
         />
       ) : null}
       <View style={styles.titleWrap}>
-        <AppText accessibilityRole="header" variant={large ? 'title' : 'heading'} numberOfLines={2}>
+        <AppText accessibilityRole="header" variant={large ? 'title' : 'heading'} numberOfLines={3}>
           {title}
         </AppText>
         {subtitle ? (

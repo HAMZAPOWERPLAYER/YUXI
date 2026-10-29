@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from '@/components/AppText';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
+import { MasteryMark } from '@/components/MasteryMark';
 import { Row } from '@/components/Row';
 import { Screen } from '@/components/Screen';
 import { ScreenHeader } from '@/components/ScreenHeader';
@@ -74,12 +75,13 @@ function KanaCell({ kana, level, showRomaji, onPress }: CellProps) {
         },
       ]}
     >
-      <AppText variant="kanaLarge">{kana.kana}</AppText>
+      <AppText variant="kana">{kana.kana}</AppText>
       {showRomaji ? (
-        <AppText color="textMuted" variant="caption">
+        <AppText color="textMuted" lang="en" variant="caption">
           {kana.romaji}
         </AppText>
       ) : null}
+      <MasteryMark color={LEVEL_COLORS[level]} level={level} size={7} />
     </Pressable>
   );
 }
@@ -151,7 +153,7 @@ export default function ChartScreen() {
                       {label}
                     </AppText>
                   </View>
-                  <Row gap={6} wrap>
+                  <Row dir="ltr" gap={4} wrap>
                     {row.kana.map((kana) => {
                       const level = masteryFor(progress.find((item) => item.kanaId === kana.id));
                       return (
@@ -180,8 +182,13 @@ export default function ChartScreen() {
           {(Object.keys(LEVEL_KEYS) as MasteryLevel[]).map((level) => (
             <Row align="center" gap={4} key={level}>
               <View
-                style={[styles.legendDot, { backgroundColor: theme.colors[LEVEL_COLORS[level]] }]}
-              />
+                style={[
+                  styles.legendSwatch,
+                  { backgroundColor: theme.colors[LEVEL_COLORS[level]] },
+                ]}
+              >
+                <MasteryMark level={level} size={7} />
+              </View>
               <AppText color="textMuted" variant="caption">
                 {t(LEVEL_KEYS[level])}
               </AppText>
@@ -220,17 +227,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: 3,
     borderWidth: 1,
-    height: 62,
     justifyContent: 'center',
-    width: 54,
+    minHeight: 48,
+    minWidth: 44,
+    paddingHorizontal: 4,
+    paddingVertical: 4,
   },
   rowLabel: {
     alignItems: 'center',
     width: 18,
   },
-  legendDot: {
-    borderRadius: 999,
-    height: 8,
-    width: 8,
+  legendSwatch: {
+    alignItems: 'center',
+    borderRadius: 3,
+    height: 12,
+    justifyContent: 'center',
+    width: 12,
   },
 });

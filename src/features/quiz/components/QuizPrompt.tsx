@@ -36,7 +36,7 @@ export function QuizPrompt({ question, voiceAvailable, ttsOutcome, onReplay }: Q
 
         {question.mode === 'kana-to-romaji' ? (
           <>
-            <AppText align="center" variant="kanaHero">
+            <AppText align="center" lang="ja" variant="kanaHero">
               {question.prompt}
             </AppText>
             <AppText color="textMuted" variant="body">
@@ -47,7 +47,7 @@ export function QuizPrompt({ question, voiceAvailable, ttsOutcome, onReplay }: Q
 
         {question.mode === 'romaji-to-kana' ? (
           <>
-            <AppText align="center" variant="display">
+            <AppText align="center" lang="en" variant="display">
               {question.prompt}
             </AppText>
             <AppText align="center" color="textMuted" variant="body">

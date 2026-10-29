@@ -41,3 +41,38 @@ export const typography: Record<TextVariant, TypographyToken> = {
 /** Nastaliq has tall ascenders and deep descenders; 1.9x avoids clipping. */
 export const URDU_LINE_HEIGHT_RATIO = 1.9;
 export const URDU_TOP_PADDING_RATIO = 0.12;
+
+export type ResolvedTextMetrics = {
+  fontSize: number;
+  lineHeight: number;
+  paddingTop: number;
+};
+
+/**
+ * Applies the in-app text scale and the OS font scale exactly once. AppText
+ * disables React Native's automatic font scaling and uses these values, which
+ * keeps line height and font size in the same coordinate space.
+ */
+export function resolveTextMetrics(
+  token: TypographyToken,
+  options: {
+    textScale: number;
+    fontScale: number;
+    language: 'en' | 'ur' | 'ja';
+    urduFontsLoaded: boolean;
+  },
+): ResolvedTextMetrics {
+  const fontSize = token.fontSize * options.textScale * options.fontScale;
+  let lineHeight = token.lineHeight * options.textScale * options.fontScale;
+  let paddingTop = 0;
+
+  if (options.language === 'ur') {
+    const ratio = options.urduFontsLoaded ? URDU_LINE_HEIGHT_RATIO : 1.7;
+    lineHeight = Math.max(lineHeight, fontSize * ratio);
+    if (options.urduFontsLoaded) {
+      paddingTop = Math.round(fontSize * URDU_TOP_PADDING_RATIO);
+    }
+  }
+
+  return { fontSize, lineHeight, paddingTop };
+}

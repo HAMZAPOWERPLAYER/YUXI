@@ -8,7 +8,7 @@ import { Card } from '@/components/Card';
 import { SettingsRow } from '@/components/SettingsRow';
 import { Stack } from '@/components/Stack';
 import { isValidReminderTime } from '@/features/settings/settingsModel';
-import { useT } from '@/i18n';
+import { useI18n, useT } from '@/i18n';
 import { useAppTheme } from '@/theme/ThemeProvider';
 
 export type ReminderTimeRowProps = {
@@ -34,6 +34,7 @@ function dateToTime(date: Date): string {
 export function ReminderTimeRow({ value, disabled = false, onChange }: ReminderTimeRowProps) {
   const t = useT();
   const theme = useAppTheme();
+  const { language } = useI18n();
   const [show, setShow] = useState(false);
 
   const handleChange = (event: DateTimePickerEvent, date?: Date) => {
@@ -43,6 +44,7 @@ export function ReminderTimeRow({ value, disabled = false, onChange }: ReminderT
 
   const row = (
     <SettingsRow
+      accessibilityLabel={`${t('settings.reminderTime')}, ${value}`}
       icon="time-outline"
       onPress={Platform.OS === 'web' || disabled ? undefined : () => setShow((current) => !current)}
       right={<AppText variant="label">{value}</AppText>}
@@ -60,8 +62,10 @@ export function ReminderTimeRow({ value, disabled = false, onChange }: ReminderT
           <Stack gap={theme.spacing.xs}>
             <DateTimePicker
               display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+              locale={language === 'ur' ? 'ur-PK' : 'en-US'}
               mode="time"
               onChange={handleChange}
+              themeVariant={theme.mode}
               value={timeToDate(isValidReminderTime(value) ? value : '19:00')}
             />
             {Platform.OS === 'ios' ? (

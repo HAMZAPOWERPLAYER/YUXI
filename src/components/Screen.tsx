@@ -17,7 +17,10 @@ export type ScreenProps = {
   testID?: string;
 };
 
-const DEFAULT_EDGES: readonly Edge[] = ['top', 'left', 'right'];
+const DEFAULT_EDGES: readonly Edge[] = ['top', 'bottom', 'left', 'right'];
+
+/** Tab screens sit above the custom tab bar, which owns the bottom inset. */
+export const TAB_SCREEN_EDGES: readonly Edge[] = ['top', 'left', 'right'];
 
 export function Screen({
   children,

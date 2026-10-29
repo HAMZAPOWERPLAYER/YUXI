@@ -5,7 +5,7 @@ import { Switch, View } from 'react-native';
 import { AppText } from '@/components/AppText';
 import { Card } from '@/components/Card';
 import { Row } from '@/components/Row';
-import { Screen } from '@/components/Screen';
+import { Screen, TAB_SCREEN_EDGES } from '@/components/Screen';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Segmented } from '@/components/Segmented';
 import { SettingsGroup } from '@/components/SettingsGroup';
@@ -57,7 +57,7 @@ export default function SettingsScreen() {
   };
 
   return (
-    <Screen>
+    <Screen edges={TAB_SCREEN_EDGES}>
       <Stack gap={theme.spacing.lg}>
         <Stack gap={2}>
           <AppText variant="title">{t('settings.title')}</AppText>
@@ -77,8 +77,8 @@ export default function SettingsScreen() {
                 label={t('settings.language')}
                 onChange={(language) => void apply({ language })}
                 options={[
-                  { label: LANGUAGE_LABELS.ur.native, value: 'ur' },
-                  { label: LANGUAGE_LABELS.en.native, value: 'en' },
+                  { label: LANGUAGE_LABELS.ur.native, lang: 'ur', value: 'ur' },
+                  { label: LANGUAGE_LABELS.en.native, lang: 'en', value: 'en' },
                 ]}
                 value={settings.language}
               />

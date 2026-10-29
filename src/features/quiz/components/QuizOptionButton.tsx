@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, View } from 'react-native';
 
-import { AppText } from '@/components/AppText';
+import { AppText, type AppTextLang } from '@/components/AppText';
 import { Icon } from '@/components/Icon';
 import { useAppTheme } from '@/theme/ThemeProvider';
 
@@ -8,7 +8,7 @@ export type OptionState = 'idle' | 'correct' | 'wrong' | 'muted';
 
 export type QuizOptionButtonProps = {
   label: string;
-  lang: 'auto' | 'ja';
+  lang: AppTextLang;
   state: OptionState;
   disabled: boolean;
   accessibilityLabel: string;
@@ -58,7 +58,7 @@ export function QuizOptionButton({
           },
         ]}
       >
-        <AppText align="center" lang={lang} variant="kanaLarge">
+        <AppText align="center" lang={lang} variant={lang === 'ja' ? 'kanaLarge' : 'heading'}>
           {label}
         </AppText>
         {state === 'correct' ? (

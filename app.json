@@ -57,7 +57,7 @@
           "useSQLCipher": false
         }
       ],
-      "expo-localization",
+      ["expo-localization", { "supportsRTL": false }],
       "expo-sharing",
       "expo-document-picker",
       "@react-native-community/datetimepicker"

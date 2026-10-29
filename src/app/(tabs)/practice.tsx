@@ -9,7 +9,7 @@ import { Card } from '@/components/Card';
 import { Icon } from '@/components/Icon';
 import { IconButton } from '@/components/IconButton';
 import { Row } from '@/components/Row';
-import { Screen } from '@/components/Screen';
+import { Screen, TAB_SCREEN_EDGES } from '@/components/Screen';
 import { Segmented } from '@/components/Segmented';
 import { Stack } from '@/components/Stack';
 import { getAllKana } from '@/features/kana/selectors';
@@ -139,7 +139,7 @@ function PracticeSetup({ initialScript, initialGroup }: PracticeSetupProps) {
   };
 
   return (
-    <Screen>
+    <Screen edges={TAB_SCREEN_EDGES}>
       <Stack gap={theme.spacing.lg}>
         <Stack gap={2}>
           <AppText variant="title">{t('practice.title')}</AppText>

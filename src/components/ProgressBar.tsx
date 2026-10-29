@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 
+import { useDirection } from '@/i18n';
 import { useAppTheme } from '@/theme/ThemeProvider';
 import type { ColorTokens } from '@/theme/tokens';
 
@@ -18,6 +19,7 @@ export function ProgressBar({
   accessibilityLabel,
 }: ProgressBarProps) {
   const theme = useAppTheme();
+  const { isRTL } = useDirection();
   const clamped = Math.max(0, Math.min(1, Number.isFinite(progress) ? progress : 0));
 
   return (
@@ -29,6 +31,7 @@ export function ProgressBar({
     >
       <View
         style={{
+          alignSelf: isRTL ? 'flex-end' : 'flex-start',
           backgroundColor: theme.colors[color],
           borderRadius: height / 2,
           height,

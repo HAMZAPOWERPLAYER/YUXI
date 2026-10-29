@@ -12,7 +12,7 @@ import {
   type BackupPayload,
 } from '@/features/backup';
 import { APP_VERSION } from '@/config/app';
-import { useT } from '@/i18n';
+import { translate, useT } from '@/i18n';
 import { useProgress } from '@/providers/useProgress';
 import { useSettings } from '@/providers/useSettings';
 import { exportBackupFile, pickBackupFile } from '@/services/backupFiles';
@@ -64,7 +64,10 @@ export function useDataActions() {
       } catch (error) {
         logEvent('warn', 'Imported settings but could not sync the reminder', error);
       }
-      Alert.alert(t('settings.import'), t('settings.importSuccess'));
+      Alert.alert(
+        translate(payload.settings.language, 'settings.import'),
+        translate(payload.settings.language, 'settings.importSuccess'),
+      );
       if (!payload.settings.onboardingDone) {
         router.replace('/onboarding');
       }

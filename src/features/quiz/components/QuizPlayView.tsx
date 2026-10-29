@@ -1,10 +1,11 @@
-import { StyleSheet, View } from 'react-native';
+import { useEffect, useRef } from 'react';
+import { AccessibilityInfo, StyleSheet, View } from 'react-native';
 
 import { AppText } from '@/components/AppText';
 import { Button } from '@/components/Button';
 import { Row } from '@/components/Row';
 import { Stack } from '@/components/Stack';
-import { useT } from '@/i18n';
+import { useDirection, useT } from '@/i18n';
 import type { SpeakOutcome } from '@/services/tts';
 import { useAppTheme } from '@/theme/ThemeProvider';
 import type { QuizQuestion } from '@/types/quiz';
@@ -54,6 +55,20 @@ export function QuizPlayView({
 }: QuizPlayViewProps) {
   const t = useT();
   const theme = useAppTheme();
+  const { isRTL } = useDirection();
+  const announcedRef = useRef(false);
+
+  useEffect(() => {
+    if (!feedback) {
+      announcedRef.current = false;
+      return;
+    }
+    if (announcedRef.current) return;
+    announcedRef.current = true;
+    const result = feedback.correct ? t('quiz.correct') : t('quiz.wrong');
+    const answer = `${t('quiz.correctAnswer')}: ${feedback.question.answer} (${feedback.question.kana.kana})`;
+    AccessibilityInfo.announceForAccessibility(`${result}. ${answer}`);
+  }, [feedback, t]);
 
   return (
     <Stack gap={theme.spacing.md}>
@@ -86,7 +101,7 @@ export function QuizPlayView({
               disabled={feedback !== null}
               key={`${question.id}-${option.kanaId}`}
               label={option.text}
-              lang={question.mode === 'kana-to-romaji' ? 'auto' : 'ja'}
+              lang={question.mode === 'kana-to-romaji' ? 'en' : 'ja'}
               onPress={() => onSelectOption(option.kanaId)}
               state={state}
             />
@@ -103,7 +118,7 @@ export function QuizPlayView({
             saveError={saveError}
           />
           <Button
-            icon={isLast ? 'flag' : 'arrow-forward'}
+            icon={isLast ? 'flag' : isRTL ? 'arrow-back' : 'arrow-forward'}
             iconPosition={isLast ? 'start' : 'end'}
             label={isLast ? t('quiz.finish') : t('quiz.next')}
             loading={saving}

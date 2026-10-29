@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { AccessibilityInfo, Pressable, StyleSheet, View } from 'react-native';
 
 import { AppText } from '@/components/AppText';
 import { Button } from '@/components/Button';
@@ -10,7 +10,7 @@ import { Stack } from '@/components/Stack';
 import type { FuriganaSegment } from '@/features/content';
 import type { ExerciseAttempt, GeneratedExercise } from '@/features/exercises';
 import { FuriganaText } from '@/features/exercises/components/FuriganaText';
-import { useI18n, useT } from '@/i18n';
+import { useDirection, useI18n, useT } from '@/i18n';
 import { useAppTheme } from '@/theme/ThemeProvider';
 
 import { ExerciseChoiceButton, type ExerciseChoiceState } from './ExerciseChoiceButton';
@@ -119,6 +119,8 @@ export function LessonExerciseView({
   const t = useT();
   const theme = useAppTheme();
   const { language } = useI18n();
+  const { isRTL } = useDirection();
+  const announcedRef = useRef(false);
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [orderedTileIds, setOrderedTileIds] = useState<string[]>([]);
   const [selectedParticle, setSelectedParticle] = useState<string | null>(null);
@@ -139,6 +141,20 @@ export function LessonExerciseView({
 
   const canSubmit = feedback === null && buildAttempt() !== null;
   const answer = feedback ? correctAnswerDisplay(exercise, language) : null;
+
+  useEffect(() => {
+    if (!feedback) {
+      announcedRef.current = false;
+      return;
+    }
+    if (announcedRef.current) return;
+    announcedRef.current = true;
+    const display = correctAnswerDisplay(exercise, language);
+    const result = feedback.correct ? t('lesson.correct') : t('lesson.wrong');
+    AccessibilityInfo.announceForAccessibility(
+      `${result}. ${t('lesson.correctAnswer')}: ${display.text}`,
+    );
+  }, [exercise, feedback, language, t]);
 
   const choiceState = (optionId: string): ExerciseChoiceState => {
     if (!feedback) return selectedOptionId === optionId ? 'selected' : 'idle';
@@ -250,7 +266,7 @@ export function LessonExerciseView({
                 {t('lesson.tileHint')}
               </AppText>
             ) : (
-              <Row gap={6} justify="center" wrap>
+              <Row dir="ltr" gap={6} justify="center" wrap>
                 {orderedTiles.map((tile) => (
                   <Pressable
                     accessibilityLabel={t('lesson.removeTile', { text: tile.surface })}
@@ -286,7 +302,7 @@ export function LessonExerciseView({
             />
           ) : null}
 
-          <Row gap={6} justify="center" wrap>
+          <Row dir="ltr" gap={6} justify="center" wrap>
             {exercise.tiles
               .filter((tile) => !orderedTileIds.includes(tile.id))
               .map((tile) => (
@@ -317,7 +333,7 @@ export function LessonExerciseView({
 
       {exercise.kind === 'particle-cloze' ? (
         <Stack gap={theme.spacing.md}>
-          <Row align="center" gap={2} justify="center" wrap>
+          <Row align="center" dir="ltr" gap={2} justify="center" wrap>
             {exercise.pieces.map((piece, index) => {
               if (piece.kind === 'text') {
                 return (
@@ -336,6 +352,11 @@ export function LessonExerciseView({
                 : (selectedParticle ?? '');
               return (
                 <View
+                  accessibilityLabel={
+                    filled ? `${t('a11y.particleBlank')}: ${filled}` : t('a11y.particleBlank')
+                  }
+                  accessibilityRole="text"
+                  accessible
                   key={`blank:${index}`}
                   style={[
                     styles.blank,
@@ -388,7 +409,10 @@ export function LessonExerciseView({
       ) : null}
 
       {feedback && answer ? (
-        <Card tone={feedback.correct ? 'successSoft' : 'dangerSoft'}>
+        <Card
+          accessibilityLiveRegion="polite"
+          tone={feedback.correct ? 'successSoft' : 'dangerSoft'}
+        >
           <Stack gap={theme.spacing.xs}>
             <Row align="center" gap={theme.spacing.xs}>
               <Icon
@@ -425,7 +449,7 @@ export function LessonExerciseView({
 
       {feedback ? (
         <Button
-          icon={isLast ? 'flag' : 'arrow-forward'}
+          icon={isLast ? 'flag' : isRTL ? 'arrow-back' : 'arrow-forward'}
           iconPosition={isLast ? 'start' : 'end'}
           label={isLast ? t('lesson.finish') : t('lesson.next')}
           loading={saving}
@@ -456,10 +480,11 @@ const styles = StyleSheet.create({
   blank: {
     alignItems: 'center',
     borderWidth: 1.5,
-    height: 48,
     justifyContent: 'center',
+    minHeight: 48,
     minWidth: 48,
     paddingHorizontal: 6,
+    paddingVertical: 2,
   },
   tile: {
     alignItems: 'center',

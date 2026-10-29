@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
-import { useT } from '@/i18n';
+import { useDirection, useT } from '@/i18n';
 import { useAppTheme } from '@/theme/ThemeProvider';
 
 import { IconButton } from './IconButton';
@@ -37,6 +37,7 @@ export function TextSizeSlider({
 }: TextSizeSliderProps) {
   const theme = useAppTheme();
   const t = useT();
+  const { isRTL } = useDirection();
   const [trackWidth, setTrackWidth] = useState(0);
   const ratio = clamp((value - min) / (max - min), 0, 1);
   const percent = Math.round(value * 100);
@@ -75,7 +76,8 @@ export function TextSizeSlider({
         onLayout={(event) => setTrackWidth(event.nativeEvent.layout.width)}
         onPress={(event) => {
           if (trackWidth <= 0) return;
-          const nextRatio = clamp(event.nativeEvent.locationX / trackWidth, 0, 1);
+          const locationRatio = clamp(event.nativeEvent.locationX / trackWidth, 0, 1);
+          const nextRatio = isRTL ? 1 - locationRatio : locationRatio;
           commit(min + nextRatio * (max - min));
         }}
         style={styles.touchArea}
@@ -85,6 +87,7 @@ export function TextSizeSlider({
             style={[
               styles.fill,
               {
+                alignSelf: isRTL ? 'flex-end' : 'flex-start',
                 backgroundColor: theme.colors.primary,
                 width: `${ratio * 100}%`,
               },
@@ -98,7 +101,7 @@ export function TextSizeSlider({
               backgroundColor: theme.colors.primary,
               borderColor: theme.colors.background,
               height: knobSize,
-              left: ratio * knobTravel,
+              ...(isRTL ? { right: ratio * knobTravel } : { left: ratio * knobTravel }),
               width: knobSize,
             },
           ]}
@@ -119,7 +122,7 @@ export function TextSizeSlider({
 const styles = StyleSheet.create({
   touchArea: {
     flex: 1,
-    height: 40,
+    height: 44,
     justifyContent: 'center',
     position: 'relative',
   },
@@ -136,6 +139,6 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     borderWidth: 2,
     position: 'absolute',
-    top: 8,
+    top: 10,
   },
 });

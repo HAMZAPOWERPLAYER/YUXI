@@ -1,5 +1,5 @@
 import { contrastRatio, hexToRgb, meetsContrast, relativeLuminance } from '@/theme/contrast';
-import { darkColors, lightColors, masteryColorTokens } from '@/theme/tokens';
+import { darkColors, lightColors, masteryColorTokens, masteryCues } from '@/theme/tokens';
 import type { ColorTokens } from '@/theme/tokens';
 
 describe('contrast helpers', () => {
@@ -69,6 +69,18 @@ describe.each([
   it('keeps the four mastery colors visually distinct', () => {
     const values = Object.values(masteryColorTokens).map((token) => colors[token]);
     expect(new Set(values).size).toBe(4);
+  });
+
+  it('keeps every mastery tier at 3:1 against the card surface', () => {
+    for (const token of Object.values(masteryColorTokens)) {
+      expect(contrastRatio(colors[token], colors.surface)).toBeGreaterThanOrEqual(3);
+    }
+  });
+});
+
+describe('mastery cues', () => {
+  it('uses a different non-color shape for every tier', () => {
+    expect(new Set(Object.values(masteryCues)).size).toBe(4);
   });
 });
 

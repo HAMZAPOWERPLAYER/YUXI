@@ -70,7 +70,7 @@ export function AppTabBar({ state, navigateToTab }: BottomTabBarProps) {
             <AppText
               align="center"
               color={focused ? 'primaryText' : 'textMuted'}
-              numberOfLines={1}
+              numberOfLines={2}
               variant="caption"
             >
               {label}
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     minHeight: 52,
     paddingHorizontal: 2,
+    paddingVertical: 2,
   },
   iconPill: {
     alignItems: 'center',

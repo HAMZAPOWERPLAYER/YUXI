@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
+import { useDirection } from '@/i18n';
 import { useAppTheme } from '@/theme/ThemeProvider';
 import type { ColorTokens } from '@/theme/tokens';
 
@@ -36,6 +37,7 @@ export function SettingsRow({
   testID,
 }: SettingsRowProps) {
   const theme = useAppTheme();
+  const { isRTL } = useDirection();
   const tint: keyof ColorTokens = danger ? 'danger' : 'textMuted';
 
   const content = (
@@ -79,14 +81,19 @@ export function SettingsRow({
       ) : null}
       {right}
       {onPress && !right && !busy ? (
-        <Icon color="textMuted" name="chevron-forward" size={18} />
+        <Icon color="textMuted" name={isRTL ? 'chevron-back' : 'chevron-forward'} size={18} />
       ) : null}
     </Row>
   );
 
   if (!onPress) {
     return (
-      <View accessibilityLabel={accessibilityLabel} testID={testID}>
+      <View
+        accessibilityHint={description}
+        accessibilityLabel={accessibilityLabel}
+        accessible={Boolean(accessibilityLabel)}
+        testID={testID}
+      >
         {content}
       </View>
     );

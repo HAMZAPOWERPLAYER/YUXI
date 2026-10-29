@@ -40,7 +40,7 @@ function goalHintKey(
 export default function OnboardingScreen() {
   const t = useT();
   const theme = useAppTheme();
-  const { language, setLanguage } = useI18n();
+  const { isRTL, language, setLanguage } = useI18n();
   const { settings, updateSettings } = useSettings();
   const [step, setStep] = useState<Step>(0);
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(language);
@@ -236,7 +236,7 @@ export default function OnboardingScreen() {
             />
           ) : (
             <Button
-              icon="arrow-forward"
+              icon={isRTL ? 'arrow-back' : 'arrow-forward'}
               iconPosition="end"
               label={step === 0 ? t('onboarding.welcomeCta') : t('common.continue')}
               onPress={next}

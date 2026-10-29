@@ -46,7 +46,7 @@ export function Button({
 }: ButtonProps) {
   const theme = useAppTheme();
   const isDisabled = disabled || loading;
-  const height =
+  const minHeight =
     size === 'sm'
       ? theme.sizes.buttonHeightSmall
       : size === 'lg'
@@ -111,7 +111,7 @@ export function Button({
           backgroundColor: pressed && !isDisabled ? palette.pressed : palette.background,
           borderColor: palette.border,
           borderRadius: theme.radii.md,
-          height,
+          minHeight,
           opacity: isDisabled ? 0.55 : 1,
           width: fullWidth ? '100%' : undefined,
         },
@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     minHeight: 48,
     paddingHorizontal: 20,
+    paddingVertical: 10,
   },
   content: {
     width: '100%',

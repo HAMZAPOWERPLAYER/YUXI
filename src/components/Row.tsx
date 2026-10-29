@@ -13,6 +13,11 @@ export type RowProps = ViewProps & {
   wrap?: boolean;
   /** Flip the logical order in addition to the language direction. */
   reverse?: boolean;
+  /**
+   * Force left-to-right sibling order. Use for Japanese sequences (sentences,
+   * kana charts) even when the surrounding UI language is Urdu.
+   */
+  dir?: 'auto' | 'ltr';
 };
 
 const alignMap = {
@@ -43,12 +48,13 @@ export function Row({
   justify = 'start',
   wrap = false,
   reverse = false,
+  dir = 'auto',
   style,
   children,
   ...rest
 }: PropsWithChildren<RowProps>) {
   const { isRTL } = useDirection();
-  const flip = isRTL !== reverse;
+  const flip = dir === 'auto' && isRTL !== reverse;
   return (
     <View
       {...rest}
@@ -56,6 +62,7 @@ export function Row({
         styles.base,
         {
           alignItems: alignMap[align],
+          direction: dir === 'ltr' ? 'ltr' : undefined,
           flexDirection: flip ? 'row-reverse' : 'row',
           flexWrap: wrap ? 'wrap' : 'nowrap',
           gap,

@@ -23,7 +23,7 @@ export function QuizFeedback({ question, correct, index, saveError }: QuizFeedba
     : t('quiz.wrong');
 
   return (
-    <Card tone={correct ? 'successSoft' : 'dangerSoft'}>
+    <Card accessibilityLiveRegion="polite" tone={correct ? 'successSoft' : 'dangerSoft'}>
       <Stack gap={theme.spacing.xs}>
         <Row align="center" gap={theme.spacing.sm}>
           <Mascot decorative expression={correct ? 'happy' : 'thinking'} size={56} />
@@ -31,19 +31,26 @@ export function QuizFeedback({ question, correct, index, saveError }: QuizFeedba
             <AppText color={correct ? 'success' : 'danger'} variant="bodyStrong">
               {message}
             </AppText>
-            <AppText color="textMuted" variant="caption">
-              {t('quiz.urduHint')}: {question.kana.urduHint}
-            </AppText>
+            <Row align="center" gap={4} wrap>
+              <AppText color="textMuted" variant="caption">
+                {t('quiz.urduHint')}:
+              </AppText>
+              <AppText color="textMuted" lang="ur" variant="caption">
+                {question.kana.urduHint}
+              </AppText>
+            </Row>
           </Stack>
         </Row>
 
         {!correct ? (
-          <Row align="center" gap={6}>
+          <Row align="center" gap={6} wrap>
             <AppText color="textMuted" variant="caption">
               {t('quiz.correctAnswer')}:
             </AppText>
-            <AppText variant="bodyStrong">{question.answer}</AppText>
-            <AppText color="textMuted" variant="caption">
+            <AppText lang={question.mode === 'kana-to-romaji' ? 'en' : 'ja'} variant="bodyStrong">
+              {question.answer}
+            </AppText>
+            <AppText color="textMuted" lang="ja" variant="caption">
               ({question.kana.kana})
             </AppText>
           </Row>

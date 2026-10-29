@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { AccessibilityInfo } from 'react-native';
+
 import { AppText } from '@/components/AppText';
 import { Button } from '@/components/Button';
 import { MascotBubble } from '@/components/MascotBubble';
@@ -29,6 +32,15 @@ export function LessonCompleteView({
   const theme = useAppTheme();
   const { isRTL } = useDirection();
   const percent = Math.round(stats.accuracy * 100);
+
+  useEffect(() => {
+    AccessibilityInfo.announceForAccessibility(
+      `${t('lesson.completeBody', { lesson: lessonTitle })} ${t('summary.correctCount', {
+        correct: stats.correct,
+        total: stats.answered,
+      })}. ${t('lesson.xpEarned')}: ${xp}`,
+    );
+  }, [lessonTitle, stats.answered, stats.correct, t, xp]);
 
   return (
     <Stack gap={theme.spacing.lg}>

@@ -364,8 +364,10 @@ export default function LessonScreen() {
   const locked = lessonOverview?.status === 'locked';
 
   const backToUnit = () => {
-    if (match) router.replace(`/course/${match.file.unit.id}`);
-    else router.replace('/course');
+    // POP_TO returns to the unit screen when the lesson was opened from it and
+    // falls back to navigating there for deep links, avoiding a duplicate unit.
+    if (match) router.dismissTo(`/course/${match.file.unit.id}`);
+    else router.dismissTo('/course');
   };
 
   if (content.error) {

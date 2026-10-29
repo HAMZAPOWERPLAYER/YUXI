@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Alert } from 'react-native';
+import { Alert, BackHandler, Platform } from 'react-native';
 
 import { Screen } from '@/components/Screen';
 import { ScreenHeader } from '@/components/ScreenHeader';
@@ -151,6 +151,22 @@ export default function QuizSessionScreen() {
       },
     ]);
   };
+
+  const quitRef = useRef(quit);
+  useEffect(() => {
+    quitRef.current = quit;
+  });
+
+  useEffect(() => {
+    if (Platform.OS === 'web') return undefined;
+    // Hardware back must use the same guarded exit as the header button so the
+    // session is not popped without confirmation and study-time persistence.
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+      quitRef.current();
+      return true;
+    });
+    return () => subscription.remove();
+  }, []);
 
   const selectOption = async (optionId: string) => {
     if (!session || !question || feedback || saving) return;
