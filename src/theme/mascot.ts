@@ -2,14 +2,13 @@ import type { ImageSourcePropType } from 'react-native';
 
 /**
  * Single source of truth for mascot artwork.
- * Replace these five PNGs (keep names/sizes) to swap in final artwork.
+ * Replace these WebP assets (keep names/sizes) to swap in final artwork.
  */
 export const mascotImages = {
-  happy: require('../../assets/mascot/yuxi-happy.png') as ImageSourcePropType,
-  thinking: require('../../assets/mascot/yuxi-thinking.png') as ImageSourcePropType,
-  sleepy: require('../../assets/mascot/yuxi-sleepy.png') as ImageSourcePropType,
-  cheer: require('../../assets/mascot/yuxi-cheer.png') as ImageSourcePropType,
-  faceIcon: require('../../assets/mascot/yuxi-face-icon.png') as ImageSourcePropType,
+  happy: require('../../assets/mascot/yuxi-happy.webp') as ImageSourcePropType,
+  thinking: require('../../assets/mascot/yuxi-thinking.webp') as ImageSourcePropType,
+  sleepy: require('../../assets/mascot/yuxi-sleepy.webp') as ImageSourcePropType,
+  cheer: require('../../assets/mascot/yuxi-cheer.webp') as ImageSourcePropType,
 };
 
 export type MascotExpression = 'happy' | 'thinking' | 'sleepy' | 'cheer';
