@@ -30,6 +30,7 @@
 
 - [Project status](#project-status)
 - [Overview](#overview)
+- [Mascot](#mascot)
 - [At a glance](#at-a-glance)
 - [Product principles](#product-principles)
 - [Features](#features)
@@ -96,6 +97,36 @@ The visual system is a calm dark theme with a crimson accent (`#E11D2E`), bundle
 Nunito, Noto Sans JP and Noto Nastaliq Urdu fonts, and a centralized mascot asset map.
 The current redesign moves screens onto shared Neon Night tokens and primitives in
 staged milestones rather than one risky rewrite.
+
+## Mascot
+
+Yuxi is accompanied by a small companion mascot rendered from artwork bundled with the
+app. The expression map in `src/theme/mascot.ts` is the single source of truth and pairs
+each asset in `assets/mascot/` with a documented learning context: onboarding and success
+states use `happy`, quiz prompts and loading or error states use `thinking`, empty states
+and long absences use `sleepy`, streak milestones and session completions use `cheer`,
+first-run calm moments use `calm`, and recoverable failures use `encourage`.
+
+| Expression  | Artwork               | Primary usage                             |
+| ----------- | --------------------- | ----------------------------------------- |
+| `happy`     | `yuxi-happy.webp`     | Correct answers, goal reached, onboarding |
+| `thinking`  | `yuxi-thinking.webp`  | Quiz prompts, loading, error states       |
+| `sleepy`    | `yuxi-sleepy.webp`    | Empty states, long absence                |
+| `cheer`     | `yuxi-cheer.webp`     | Streak milestone, session complete        |
+| `calm`      | `yuxi-calm.webp`      | First-run calm, neutral home state        |
+| `encourage` | `yuxi-encourage.webp` | Wrong answers, recoverable failures       |
+
+![Yuxi mascot expressing joy on a correct answer](assets/mascot/yuxi-happy.webp)
+
+![Yuxi mascot thinking during a quiz question](assets/mascot/yuxi-thinking.webp)
+
+![Yuxi mascot sleepy during an empty state](assets/mascot/yuxi-sleepy.webp)
+
+![Yuxi mascot cheering a streak milestone](assets/mascot/yuxi-cheer.webp)
+
+![Yuxi mascot calm on first run](assets/mascot/yuxi-calm.webp)
+
+![Yuxi mascot encouraging after a wrong answer](assets/mascot/yuxi-encourage.webp)
 
 ## At a glance
 
