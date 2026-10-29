@@ -20,8 +20,7 @@
     "src/**/*.tsx",
     "__tests__/**/*.ts",
     "__tests__/**/*.tsx",
-    "scripts/**/*.ts",
-    "expo-env.d.ts"
+    "scripts/**/*.ts"
   ],
   "exclude": ["node_modules", "android", "ios", "coverage", "dist"]
 }

@@ -279,6 +279,20 @@ describe('content bundle validator', () => {
     expect(warnings(allowed)).toContain('forbidden-term-allowed');
   });
 
+  it('rejects forbidden terms in unit metadata and lesson titles', () => {
+    const unitTitle = cloneBundle();
+    unitOf(unitTitle).unit.titleEn = 'Beer unit';
+    expect(codes(unitTitle)).toContain('forbidden-term');
+
+    const unitDescription = cloneBundle();
+    unitOf(unitDescription).unit.descriptionEn = 'A quiet place with wine.';
+    expect(codes(unitDescription)).toContain('forbidden-term');
+
+    const lessonTitle = cloneBundle();
+    lessonOf(lessonTitle, 0).titleUr = 'شراب سبق';
+    expect(codes(lessonTitle)).toContain('forbidden-term');
+  });
+
   it('validates course and unit metadata links', () => {
     const mismatch = cloneBundle();
     mismatch.course.course.units[0]!.titleEn = 'Other title';

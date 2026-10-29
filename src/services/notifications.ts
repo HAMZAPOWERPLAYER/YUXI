@@ -1,5 +1,4 @@
-import * as Notifications from 'expo-notifications';
-import { AndroidImportance } from 'expo-notifications';
+import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { Platform } from 'react-native';
 
 import {
@@ -13,6 +12,42 @@ import { logEvent } from '@/utils/logger';
 
 export const REMINDER_CHANNEL_ID = 'yuxi-daily-reminder';
 export const REMINDER_DATA_KIND = 'daily-reminder';
+
+type NotificationsModule = typeof import('expo-notifications');
+
+let notificationsModule: NotificationsModule | null | undefined;
+
+/**
+ * Expo Go for Android does not ship the native ExpoTopicSubscriptionModule,
+ * but expo-notifications imports it eagerly. Requiring the package lazily keeps
+ * the app bootable there; reminders report "unsupported" until a development
+ * build is installed.
+ */
+function isExpoGoAndroid(): boolean {
+  return (
+    Platform.OS === 'android' && Constants.executionEnvironment === ExecutionEnvironment.StoreClient
+  );
+}
+
+function getNotifications(): NotificationsModule | null {
+  if (isExpoGoAndroid()) return null;
+  if (notificationsModule === undefined) {
+    try {
+      // Lazy on purpose: expo-notifications evaluates a native module at import.
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      notificationsModule = require('expo-notifications') as NotificationsModule;
+    } catch (error) {
+      logEvent('warn', 'expo-notifications is unavailable on this platform', error);
+      notificationsModule = null;
+    }
+  }
+  return notificationsModule;
+}
+
+function getSupportedNotifications(): NotificationsModule | null {
+  if (!isReminderPlatformSupported(Platform.OS)) return null;
+  return getNotifications();
+}
 
 export type ReminderOutcome =
   | { status: 'scheduled'; identifier: string; bodyVariant: number }
@@ -33,10 +68,10 @@ export type ConfigureReminderInput = {
 };
 
 export function areRemindersSupported(): boolean {
-  return isReminderPlatformSupported(Platform.OS);
+  return getSupportedNotifications() !== null;
 }
 
-async function ensurePermission(): Promise<'granted' | 'denied'> {
+async function ensurePermission(Notifications: NotificationsModule): Promise<'granted' | 'denied'> {
   const current = await Notifications.getPermissionsAsync();
   if (current.granted) return 'granted';
   if (!current.canAskAgain) return 'denied';
@@ -45,11 +80,14 @@ async function ensurePermission(): Promise<'granted' | 'denied'> {
   return requested.granted ? 'granted' : 'denied';
 }
 
-async function ensureChannel(language: Language): Promise<void> {
+async function ensureChannel(
+  Notifications: NotificationsModule,
+  language: Language,
+): Promise<void> {
   if (Platform.OS !== 'android') return;
   await Notifications.setNotificationChannelAsync(REMINDER_CHANNEL_ID, {
     name: translate(language, 'notifications.channelName'),
-    importance: AndroidImportance.DEFAULT,
+    importance: Notifications.AndroidImportance.DEFAULT,
     sound: 'default',
     enableVibrate: false,
     showBadge: false,
@@ -59,6 +97,8 @@ async function ensureChannel(language: Language): Promise<void> {
 /** Cancels one known reminder id and ignores "already gone" errors. */
 export async function cancelReminder(identifier?: string | null): Promise<void> {
   if (!identifier) return;
+  const Notifications = getSupportedNotifications();
+  if (!Notifications) return;
   try {
     await Notifications.cancelScheduledNotificationAsync(identifier);
   } catch (error) {
@@ -71,6 +111,8 @@ export async function cancelReminder(identifier?: string | null): Promise<void> 
  * also cleans up an id lost by a reset or an interrupted write.
  */
 export async function cancelAllReminders(): Promise<void> {
+  const Notifications = getSupportedNotifications();
+  if (!Notifications) return;
   try {
     const scheduled = await Notifications.getAllScheduledNotificationsAsync();
     for (const request of scheduled) {
@@ -90,7 +132,8 @@ export async function cancelAllReminders(): Promise<void> {
 export async function configureDailyReminder(
   input: ConfigureReminderInput,
 ): Promise<ReminderOutcome> {
-  if (!areRemindersSupported()) return { status: 'unsupported' };
+  const Notifications = getSupportedNotifications();
+  if (!Notifications) return { status: 'unsupported' };
 
   try {
     if (!input.enabled) {
@@ -105,11 +148,11 @@ export async function configureDailyReminder(
       return { status: 'error' };
     }
 
-    if ((await ensurePermission()) !== 'granted') {
+    if ((await ensurePermission(Notifications)) !== 'granted') {
       return { status: 'denied' };
     }
 
-    await ensureChannel(input.language);
+    await ensureChannel(Notifications, input.language);
     await cancelReminder(input.previousIdentifier);
     await cancelAllReminders();
 
@@ -137,7 +180,8 @@ export async function configureDailyReminder(
 
 /** Number of Yuxi reminders currently queued (normally 0 or 1). */
 export async function countScheduledReminders(): Promise<number> {
-  if (!areRemindersSupported()) return 0;
+  const Notifications = getSupportedNotifications();
+  if (!Notifications) return 0;
   try {
     const scheduled = await Notifications.getAllScheduledNotificationsAsync();
     return scheduled.filter((request) => request.content.data?.kind === REMINDER_DATA_KIND).length;

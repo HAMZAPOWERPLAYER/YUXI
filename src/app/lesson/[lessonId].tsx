@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useMemo, useRef, useState } from 'react';
-import { Alert } from 'react-native';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Alert, BackHandler, Platform } from 'react-native';
 
 import { Screen } from '@/components/Screen';
 import { ScreenHeader } from '@/components/ScreenHeader';
@@ -83,11 +83,14 @@ function LessonPlayer({
   const [saveError, setSaveError] = useState(false);
   const [answerXp, setAnswerXp] = useState(0);
   const [bonusXp, setBonusXp] = useState(0);
+  const [finished, setFinished] = useState(false);
   const [showComplete, setShowComplete] = useState(false);
 
   const dbRef = useRef<Db | null>(null);
   const shownAtRef = useRef(now());
   const lastTickRef = useRef(now());
+  const answerInFlightRef = useRef(false);
+  const finishInFlightRef = useRef(false);
 
   const getDb = async (): Promise<Db> => {
     let db = dbRef.current;
@@ -99,9 +102,12 @@ function LessonPlayer({
   };
 
   const handleCheck = (attempt: ExerciseAttempt) => {
-    if (feedback || saving) return;
+    // A ref guard closes the window before React applies the state updates,
+    // so a double tap cannot record the same exercise twice.
+    if (feedback || saving || answerInFlightRef.current) return;
     const exercise = currentExercise(run);
     if (!exercise) return;
+    answerInFlightRef.current = true;
 
     const at = now();
     const responseMs = Math.max(0, at - shownAtRef.current);
@@ -132,19 +138,21 @@ function LessonPlayer({
         setAnswerXp((current) => current + saved.xpEarned);
 
         if (isLessonRunComplete(answered.run)) {
-          const finished = await finishLessonRun(db, {
+          const completion = await finishLessonRun(db, {
             run: answered.run,
             previous,
             at: now(),
             dailyGoalMinutes,
           });
-          setBonusXp(finished.bonusXp);
+          setBonusXp(completion.bonusXp);
+          setFinished(true);
           void refresh();
         }
       } catch (error) {
         logStudyError('lesson answer', error);
         setSaveError(true);
       } finally {
+        answerInFlightRef.current = false;
         setSaving(false);
       }
     })();
@@ -165,16 +173,54 @@ function LessonPlayer({
     setSaveError(false);
     setAnswerXp(0);
     setBonusXp(0);
+    setFinished(false);
     setShowComplete(false);
+    answerInFlightRef.current = false;
+    finishInFlightRef.current = false;
     shownAtRef.current = at;
     lastTickRef.current = at;
   };
 
-  const handleNext = () => {
-    if (!feedback) return;
-    if (isLessonRunComplete(run)) {
-      setShowComplete(true);
+  const persistFinish = async (): Promise<boolean> => {
+    if (finishInFlightRef.current) return false;
+    finishInFlightRef.current = true;
+    setSaving(true);
+    setSaveError(false);
+    try {
+      const db = await getDb();
+      const result = await finishLessonRun(db, {
+        run,
+        previous,
+        at: now(),
+        dailyGoalMinutes,
+      });
+      setBonusXp(result.bonusXp);
+      setFinished(true);
       void refresh();
+      return true;
+    } catch (error) {
+      logStudyError('lesson finish', error);
+      setSaveError(true);
+      return false;
+    } finally {
+      finishInFlightRef.current = false;
+      setSaving(false);
+    }
+  };
+
+  const handleNext = () => {
+    if (!feedback || saving || finishInFlightRef.current) return;
+    if (isLessonRunComplete(run)) {
+      if (finished) {
+        setShowComplete(true);
+        void refresh();
+        return;
+      }
+      // The lesson is answered but the completion write has not succeeded
+      // yet (or is still retrying), so stay on the last exercise and retry.
+      void (async () => {
+        if (await persistFinish()) setShowComplete(true);
+      })();
       return;
     }
     const at = now();
@@ -184,7 +230,7 @@ function LessonPlayer({
   };
 
   const leave = async () => {
-    if (run.attempts.length > 0 && !isLessonRunComplete(run)) {
+    if (run.attempts.length > 0 && (!isLessonRunComplete(run) || !finished)) {
       try {
         const db = await getDb();
         await finishLessonRun(db, {
@@ -212,6 +258,26 @@ function LessonPlayer({
       },
     ]);
   };
+
+  const quitRef = useRef(quit);
+  useEffect(() => {
+    quitRef.current = quit;
+  });
+
+  useEffect(() => {
+    if (Platform.OS === 'web') return undefined;
+    // Android hardware back must run the same quit flow, otherwise a
+    // partially completed run is popped without persisting progress.
+    const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
+      if (showComplete || finished) {
+        onBackToUnit();
+        return true;
+      }
+      quitRef.current();
+      return true;
+    });
+    return () => subscription.remove();
+  }, [finished, onBackToUnit, showComplete]);
 
   const header = <ScreenHeader back onBack={quit} subtitle={unitTitle} title={lessonTitle} />;
 

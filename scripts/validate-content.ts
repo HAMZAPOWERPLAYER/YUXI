@@ -80,7 +80,7 @@ function main(): number {
   }
 
   if (issues.length > 0) {
-    printIssues('Schema errors', issues);
+    printIssues('Content file errors', issues);
     return 1;
   }
 

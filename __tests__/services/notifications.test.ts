@@ -1,3 +1,4 @@
+import Constants, { ExecutionEnvironment } from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
@@ -136,6 +137,14 @@ describe('configureDailyReminder', () => {
     jest.replaceProperty(Platform, 'OS', 'web');
     await expect(configureDailyReminder(baseInput)).resolves.toEqual({ status: 'unsupported' });
     expect(getPermissions).not.toHaveBeenCalled();
+  });
+
+  it('reports unsupported in Expo Go on Android', async () => {
+    jest.replaceProperty(Platform, 'OS', 'android');
+    jest.replaceProperty(Constants, 'executionEnvironment', ExecutionEnvironment.StoreClient);
+    await expect(configureDailyReminder(baseInput)).resolves.toEqual({ status: 'unsupported' });
+    expect(getPermissions).not.toHaveBeenCalled();
+    await expect(countScheduledReminders()).resolves.toBe(0);
   });
 
   it('never throws when scheduling fails', async () => {

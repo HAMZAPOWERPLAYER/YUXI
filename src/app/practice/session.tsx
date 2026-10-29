@@ -15,7 +15,6 @@ import {
   parseScript,
   prepareQuiz,
 } from '@/features/quiz/sessionSetup';
-import { xpForAnswer } from '@/features/progress';
 import { completeSession, logStudyError, recordAnswer, recordStudySeconds } from '@/features/study';
 import { QuizPlayView, type QuizFeedbackState } from '@/features/quiz/components/QuizPlayView';
 import {
@@ -198,9 +197,9 @@ export default function QuizSessionScreen() {
       });
       answerXpRef.current += result.xpEarned;
     } catch (error) {
+      // Do not add unpersisted XP: the summary must match what was written.
       logStudyError('answer', error);
       setSaveError(true);
-      answerXpRef.current += xpForAnswer(correct);
     }
 
     const lastQuestion = session.index + 1 >= session.questions.length;

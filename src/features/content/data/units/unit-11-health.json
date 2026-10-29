@@ -643,8 +643,8 @@
       "ja": "今日は少し疲れました。",
       "reading": "きょうはすこしつかれました。",
       "romaji": "kyou wa sukoshi tsukaremashita",
-      "translationUr": "آج میں تھوڑا تھک گیا ہوں۔",
-      "translationEn": "I am a little tired today.",
+      "translationUr": "آج میں تھوڑا تھک گیا۔",
+      "translationEn": "I got a little tired today.",
       "tokens": [
         { "surface": "今日", "reading": "きょう", "gloss": "today" },
         { "surface": "は", "reading": "は", "gloss": "topic particle" },

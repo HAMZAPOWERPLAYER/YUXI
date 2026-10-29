@@ -9,9 +9,11 @@ export const mascotImages = {
   thinking: require('../../assets/mascot/yuxi-thinking.webp') as ImageSourcePropType,
   sleepy: require('../../assets/mascot/yuxi-sleepy.webp') as ImageSourcePropType,
   cheer: require('../../assets/mascot/yuxi-cheer.webp') as ImageSourcePropType,
+  calm: require('../../assets/mascot/yuxi-calm.webp') as ImageSourcePropType,
+  encourage: require('../../assets/mascot/yuxi-encourage.webp') as ImageSourcePropType,
 };
 
-export type MascotExpression = 'happy' | 'thinking' | 'sleepy' | 'cheer';
+export type MascotExpression = 'happy' | 'thinking' | 'sleepy' | 'cheer' | 'calm' | 'encourage';
 
 /** Documented expression usage map. */
 export const mascotUsage = {

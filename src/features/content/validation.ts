@@ -1,5 +1,6 @@
 import { DEFAULT_PARTICLE_OPTIONS } from '@/features/exercises/generators';
 
+import { findForbiddenHits } from './forbiddenTerms';
 import { validateSentenceItem, validateVocabItem } from './itemValidation';
 import type {
   ContentBundle,
@@ -55,6 +56,20 @@ function checkUnitMetadata(
   path: string,
   add: AddIssue,
 ): void {
+  // Unit metadata is visible to learners, so it must follow the same safety
+  // rules as item text. No halal/dietary exemption applies to titles.
+  const textFields = ['titleUr', 'titleEn', 'descriptionUr', 'descriptionEn'] as const;
+  for (const field of textFields) {
+    for (const hit of findForbiddenHits(file.unit[field])) {
+      add(
+        'error',
+        'forbidden-term',
+        `${path}/unit/${field}`,
+        `Forbidden ${hit.label} term "${hit.term}" in content`,
+      );
+    }
+  }
+
   if (!ref) {
     add('error', 'unit-not-in-course', path, 'Unit file is not listed in course.json');
     return;
@@ -88,6 +103,16 @@ function checkUnitStructure(file: UnitFile, path: string, add: AddIssue): Map<st
 
   file.lessons.forEach((lesson, index) => {
     const lessonPath = `${path}/lessons[${index}](${lesson.id})`;
+    for (const field of ['titleUr', 'titleEn'] as const) {
+      for (const hit of findForbiddenHits(lesson[field])) {
+        add(
+          'error',
+          'forbidden-term',
+          `${lessonPath}/${field}`,
+          `Forbidden ${hit.label} term "${hit.term}" in content`,
+        );
+      }
+    }
     if (lessons.has(lesson.id)) {
       add('error', 'duplicate-lesson-id', lessonPath, `Duplicate lesson id "${lesson.id}"`);
     } else {

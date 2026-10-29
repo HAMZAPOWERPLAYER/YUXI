@@ -60,7 +60,7 @@ Useful commands:
 npm run typecheck        # tsc --noEmit
 npm run lint             # eslint .
 npm run format:check     # prettier --check .
-npm test                 # 421 Jest tests
+npm test                 # 423 Jest tests
 npm run test:coverage    # coverage report with thresholds
 npm run validate:content # course schema, references, safety and size checks
 npm run content:schema   # regenerate docs/content-schema/*.json
@@ -140,7 +140,7 @@ src/
   types/                Shared domain types
   utils/                Date, seeded random and local logging helpers
 __tests__/              Unit and integration tests
-assets/                 Icons, splash art, placeholder mascot PNGs
+assets/                 Icons, splash art and final mascot WebP artwork
 docs/                   Privacy, license and content-review documentation
 scripts/                License generation and offline privacy gate
 ```
@@ -290,8 +290,8 @@ i18n key parity and theme contrast.
 
 Latest local run:
 
-- **347 tests passing** across 28 suites
-- Statements **98.38%**, branches **93.34%**, functions **99.67%**, lines **99.18%**
+- **423 tests passing** across 36 suites
+- Statements **97.97%**, branches **92.26%**, functions **99.78%**, lines **99.36%**
 - Coverage thresholds: statements 85%, branches 80%, functions 90%, lines 85%
 - Content validator, JSON Schema freshness and offline privacy gates pass
 
@@ -313,15 +313,19 @@ validator is a structural guard rail, not a substitute for those reviews.
 
 ## Known limitations
 
-- Mascot PNGs are placeholders. Replace the five files in `assets/mascot/` without
-  changing names or sizes; `src/theme/mascot.ts` is the single source of truth.
+- Mascot artwork is final WebP (768×1152, six expressions) in `assets/mascot/`.
+  `src/theme/mascot.ts` is the single source of truth. The retired placeholder PNGs are
+  archived under `design-source/unused/` and are not bundled.
 - Stroke-order diagrams are not implemented; the kana detail screen says they are
   planned for a future update.
 - Audio uses device TTS and has no bundled recordings. Devices without a Japanese voice
   show a recovery flow instead of failing silently.
 - The theme is dark by default. Light tokens exist in the theme layer, but Part 1 does
   not expose a theme switch in Settings.
-- Reminders are local-only and may be delivered approximately by the OS.
+- Reminders are local-only and may be delivered approximately by the OS. Expo Go on
+  Android does not bundle the native topic-subscription module used by
+  `expo-notifications`, so the app disables reminders there instead of crashing; use a
+  development build to test the reminder flow.
 - No EAS project, remote, signing credentials or store listing is configured.
 - Part 2 content authoring is complete: the content model, validator, lesson browser
   and lesson player are implemented, and all 20 units (420 words/phrases, 140 sentences)

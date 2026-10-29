@@ -1,16 +1,15 @@
-import {
-  addBookmark,
-  insertReviewLog,
-  saveDailyStats,
-  saveManyLessonProgress,
-  saveManySrsItems,
-  setMeta,
-} from '@/db/repositories';
 import type { DatabaseConnection } from '@/db/types';
 import { encodeSettingsPatch } from '@/features/settings/settingsModel';
 import type { AppSettings } from '@/features/settings/settingsModel';
 import type { DailyStats } from '@/types/kana';
 import type { Bookmark, LessonProgress, ReviewLogEntry, SrsItem } from '@/types/srs';
+
+import { addBookmark } from './bookmarksRepository';
+import { saveDailyStats } from './dailyStatsRepository';
+import { saveManyLessonProgress } from './lessonProgressRepository';
+import { setMeta } from './metaRepository';
+import { insertReviewLog } from './reviewLogRepository';
+import { saveManySrsItems } from './srsRepository';
 
 export type UserDataSnapshot = {
   settings: AppSettings;
