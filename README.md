@@ -90,9 +90,10 @@ For cloud builds, install and authenticate `eas-cli`, add an `eas.json` for the 
 profile, and run `eas build`. EAS is not configured in this repository yet, and no
 remote has been added.
 
-Local notifications remain available in Expo Go on SDK 58, but the notification icon,
-channel and splash configuration are applied by a native build. Use a development or
-production build to verify those assets on a device.
+Expo Go on Android cannot load the native topic-subscription module used by
+`expo-notifications`, so reminders are disabled there. The notification icon, channel
+and splash configuration are also applied only by a native build. Use a development or
+production build to verify those assets and the reminder flow on a device.
 
 ### Platform notes
 
