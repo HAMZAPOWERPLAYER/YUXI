@@ -1,7 +1,8 @@
 # Yuxi Design System
 
-**Status:** D-M1 baseline (tokens, fonts and core primitives). Screens migrate in
-D-M3 onward; this document grows with each milestone.
+**Status:** D-M2 baseline (tokens, core primitives and feedback/motion
+components). Screens migrate in D-M3 onward; this document grows with each
+milestone.
 **Direction:** Neon Night + Companion-first, dark only for this pass.
 
 ## 1. Principles
@@ -91,7 +92,8 @@ gradient. Blur is forbidden.
 `press 120ms`, `enter 200ms`, `fill 320ms`; press scale `0.98`; entrance offset
 `8dp`. All motion is skipped or shortened when `theme.reduceMotion` is true. The
 only permitted loop is the current-path-node pulse, and it must pause offscreen
-and when reduce motion is on.
+and when reduce motion is on. Loading skeletons are deliberately static; see
+ADR-025.
 
 ## 3. Typography
 
@@ -194,11 +196,104 @@ Variants: `primary`, `secondary`, `ghost`, `danger` (alias `destructive`).
 ### Compatibility shims
 
 Old paths (`src/components/AppText.tsx`, `Button.tsx`, `Card.tsx`, `Icon.tsx`,
-`IconButton.tsx`, `Badge.tsx`, `Row.tsx`, `Screen.tsx`, `Stack.tsx`) re-export the
-new implementation during migration. D-M10 removes the shims once every screen
+`IconButton.tsx`, `Badge.tsx`, `Row.tsx`, `Screen.tsx`, `Stack.tsx`,
+`ProgressBar.tsx`, `ProgressRing.tsx`, `Skeleton.tsx`) re-export the new
+implementation during migration. D-M10 removes the shims once every screen
 imports `@/components/ui/*`.
 
-## 5. Iconography
+### `ProgressBar` and `ProgressRing`
+
+- Both clamp values to 0–1 and report `accessibilityRole="progressbar"` plus a
+  0–100 `accessibilityValue`.
+- Fill animates for 320ms; reduce motion sets the final value immediately.
+- The ring mirrors its stroke in Urdu so progress travels in the reading
+  direction. The centred value stays unmirrored.
+- `ProgressBar` sits above a `surface2` track; `ProgressRing` can be wrapped in
+  `GlowView` for the hero progress treatment.
+
+### `Skeleton`
+
+- Static placeholder at 72% opacity on `surface2`; no shimmer, no loop.
+- Hidden from TalkBack. Announce loading on the enclosing state instead.
+
+### `GlowView`
+
+- Static radial SVG halo. Pass `size` to get a square frame, or use it as an
+  absolutely positioned layer.
+- Maximum three per screen; never use Android elevation or blur.
+
+### `WavePattern`
+
+- Memoised, stroke-only seigaiha tile at 4–6% opacity by default.
+- Decorative only, hidden from TalkBack and never animated. Use behind a short
+  hero band, not behind long text.
+
+### `SpeechBubble`
+
+- Companion message with a 2-line default limit.
+- `tail="start"` points at the inline-start edge: left in English, right in
+  Urdu. `tail="end"` flips. The text itself is never mirrored.
+- `accessibilityLiveRegion="polite"` so a changed message is announced without
+  interrupting the current focus.
+
+### `MoodMascot`
+
+- Maps `idle`, `loading`, `correct`, `wrong`, `empty`, `success`, `streak` and
+  `encourage` to a mascot expression. An explicit `expression` wins.
+- Expression changes fade in over 150ms; reduce motion swaps immediately. A
+  single-layer fade avoids pose ghosting from a two-layer crossfade.
+- Decorative by default. Pass `decorative={false}` and an
+  `accessibilityLabel` only when the companion is the message.
+
+### `EmptyState`
+
+- Companion-led card with title, optional body and one action.
+- Use the expression that matches the situation (`sleepy` for empty,
+  `encourage` for recoverable errors, `calm` for first-run).
+- The action is optional; without it the card stays informational.
+
+### `Toast`
+
+- Controlled by the parent (`visible`, `message`); there is no internal timer.
+- `accessibilityRole="alert"` and `accessibilityLiveRegion="polite"`, with the
+  tone paired with an icon.
+- Overlays the bottom edge by default; `inline` renders it in the normal flow
+  for galleries and previews.
+
+### `Sheet`
+
+- Bottom-sheet `Modal` with a solid `overlay` scrim. Blur is forbidden.
+- The close action is 48dp and takes a localized `closeLabel`. The backdrop and
+  Android back button dismiss only when `dismissible` is true.
+- Content scrolls inside a 90%-height sheet; the safe-area bottom inset is
+  applied automatically.
+
+### `Dialog`
+
+- Confirmation `Modal` with cancel and confirm actions; `destructive` uses the
+  danger treatment and warning icon.
+- `loading` blocks both actions and marks confirm busy.
+- `accessibilityViewIsModal` keeps TalkBack/VoiceOver inside the dialog.
+
+### `OptionButton`
+
+- States: `idle`, `selected`, `correct`, `wrong`, `disabled`, derived from one
+  exported mapping so appearance and accessibility state cannot drift.
+- Selected and correct use a check icon; wrong uses a close icon. Colour is
+  reinforcement only.
+- Minimum height 64dp. Callers should pass an `accessibilityLabel` that names
+  the state for correct/wrong answers (use the existing `a11y.optionCorrect`
+  and `a11y.optionWrong` keys).
+
+## 5. UI gallery
+
+`src/app/dev/ui-gallery.tsx` is a development-only preview of every design-system
+component, with a language switch for RTL checks. In production the route
+renders `<Redirect href="/" />` and it is not linked from the app. It is
+excluded from release QA scope but is the fastest way to inspect states on a
+development build. See ADR-026.
+
+## 6. Iconography
 
 One family only: **Ionicons** (outline-first where a matching outline exists).
 Use the `Icon` wrapper with size tokens (`sm`, `md`, `lg`, `xl`). Do not mix
@@ -206,7 +301,7 @@ Feather, Material or emoji icons into controls. Decorative icons are hidden from
 TalkBack by the parent's accessible label; meaningful icons need a label on the
 control.
 
-## 6. Motif rules
+## 7. Motif rules
 
 Allowed: a static, stroke-only seigaiha wave pattern or asanoha geometric lines
 at 4–6% opacity, rendered once behind hero content. It must never sit behind
@@ -216,7 +311,7 @@ Forbidden: torii, shrines, temples, pagodas, Buddha/deity imagery, omamori,
 prayer beads, Shinto/Buddhist motifs, music notes, alcohol, pork, suggestive
 imagery, religious symbols of any kind.
 
-## 7. Mascot placement map
+## 8. Mascot placement map
 
 | Context             | Expression            | Placement                                  |
 | ------------------- | --------------------- | ------------------------------------------ |
@@ -234,7 +329,7 @@ imagery, religious symbols of any kind.
 Yuxi must not cover text or tap targets, and the same expression should not be
 used for opposite feedback states.
 
-## 8. RTL and localisation
+## 9. RTL and localisation
 
 - Direction comes from `useDirection()` and the logical `Row`/`Stack`; never
   call `I18nManager.forceRTL`.
@@ -248,7 +343,7 @@ used for opposite feedback states.
 - Every new string goes into both `src/i18n/en.json` and `src/i18n/ur.json` with
   identical keys.
 
-## 9. Accessibility contract
+## 10. Accessibility contract
 
 - Text contrast: WCAG AA (4.5:1), including composited `primarySoft` surfaces.
 - Non-text indicators: 3:1.
@@ -258,7 +353,7 @@ used for opposite feedback states.
 - Respect reduce motion; no infinite loops on scrolling screens.
 - Test at 100%, 150% and 200% OS font scale on 360dp and 412dp widths.
 
-## 10. Do / don't
+## 11. Do / don't
 
 **Do**
 

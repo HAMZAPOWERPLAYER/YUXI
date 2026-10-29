@@ -69,7 +69,7 @@ shims and any unused legacy component.
 | none                              | `src/components/ui/GlowView.tsx`           | New SVG radial glow wrapper                                                |
 | none                              | `src/components/ui/WavePattern.tsx`        | New static, memoised seigaiha line texture                                 |
 | none                              | `src/components/ui/SpeechBubble.tsx`       | New RTL-aware bubble with tail                                             |
-| none                              | `src/components/ui/MoodMascot.tsx`         | New expression crossfade wrapper                                           |
+| none                              | `src/components/ui/MoodMascot.tsx`         | New expression fade wrapper                                                |
 | `src/components/Mascot.tsx`       | `src/components/ui/MoodMascot.tsx` uses it | Keep `Mascot` as the asset renderer                                        |
 | `src/components/MascotBubble.tsx` | Future migration                           | Superseded by `SpeechBubble` + `MoodMascot`; remove in D-M10               |
 | `src/components/StatTile.tsx`     | Future migration                           | Keep for now; restyle in screen milestones                                 |

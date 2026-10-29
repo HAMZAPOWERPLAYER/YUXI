@@ -370,6 +370,38 @@ updated to mock the new implementation module.
 they must not diverge. A shim is not a place for new styling. The final cleanup
 milestone must prove no legacy path remains.
 
+## ADR-025: Loading skeletons are static, not shimmer loops
+
+**Context.** A shimmering skeleton is a common loading pattern, but the design
+system forbids continuous decorative animation, especially on scrolling
+screens. Reduce-motion users should still get the layout cue.
+
+**Decision.** `Skeleton` renders a static `surface2` block at 72% opacity. It
+does not loop, pulse or animate. Loading is announced by the enclosing state
+(e.g. a polite status message) rather than by the placeholder itself.
+
+**Consequences.** The loading state is calmer and cheaper on mid-range Android
+devices. It relies on screen-level state messaging for accessibility; a skeleton
+alone is not a progress signal. The current-path-node pulse remains the only
+approved loop and must pause offscreen and under reduce motion.
+
+## ADR-026: A development-only UI gallery route
+
+**Context.** The redesign adds many component states (selection, correctness,
+disabled, RTL tails, overlays) that are hard to inspect on real screens while
+screens are still being migrated.
+
+**Decision.** Add `src/app/dev/ui-gallery.tsx`. It renders every design-system
+primitive with a language switch for RTL checks. In production the screen
+returns `<Redirect href="/" />`; it is not linked from app navigation and is not
+part of the release QA path. Gallery copy lives in `devGallery.*` keys in both
+locales, like every other user-visible string.
+
+**Consequences.** The route remains in the bundle because Expo Router uses
+file-based routes, but it cannot be reached or rendered in production. It must
+be checked during development-build QA, not Expo Go. D-M10 may remove it once
+the component set stabilizes.
+
 ## Open questions
 
 These are intentionally not guessed. Each one needs a human decision.
