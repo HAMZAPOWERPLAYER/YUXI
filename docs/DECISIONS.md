@@ -4,7 +4,7 @@ This file records the decisions that shape Yuxi. It is the reference future
 milestones (and future maintainers) should read before changing architecture.
 Each entry lists the context, the decision, and the consequences we accept.
 
-**Last updated:** 2026-10-29 (UI redesign, milestone D-M1)
+**Last updated:** 2026-10-29 (UI redesign D-M2; Apache-2.0 licensing)
 
 ## ADR-001: Expo with Continuous Native Generation
 
@@ -402,6 +402,24 @@ file-based routes, but it cannot be reached or rendered in production. It must
 be checked during development-build QA, not Expo Go. D-M10 may remove it once
 the component set stabilizes.
 
+## ADR-027: Apache License 2.0 for the application
+
+**Context.** Yuxi is publicly distributed on GitHub and needs a permissive license with
+an explicit patent grant and a trademark clause. The previous permissive declaration no
+longer matched the project's licensing intent.
+
+**Decision.** License the application source under Apache-2.0. Keep the full text in
+`LICENSE`, add `NOTICE` with the current attribution, declare `"license": "Apache-2.0"`
+in `package.json`, and document bundled fonts and dependency licenses separately. The
+copyright line remains `Copyright (c) 2026 Yuxi contributors` until a final legal holder
+is designated.
+
+**Consequences.** Redistributors must preserve the license, copyright, patent, trademark
+and attribution notices and include the contents of `NOTICE` where the license requires
+it. The project gains an express patent grant and a trademark clause. Dependencies and
+bundled fonts keep their own licenses; Apache-2.0 does not relicense them. The final
+copyright holder remains an open legal decision.
+
 ## Open questions
 
 These are intentionally not guessed. Each one needs a human decision.
@@ -410,8 +428,8 @@ These are intentionally not guessed. Each one needs a human decision.
 - `UNCLEAR:` whether `を` should be taught as `wo` or particle `o`.
 - `UNCLEAR:` final Japanese and Urdu review sign-off for Part 1 kana and all
   Part 2 content; every file remains `needsHumanReview: true` until then.
-- `UNCLEAR:` final copyright holder and license owner (currently MIT,
-  "Copyright (c) 2026 Yuxi contributors").
+- `UNCLEAR:` final copyright holder and legal owner named in `LICENSE` and `NOTICE`
+  (currently "Yuxi contributors").
 - `UNCLEAR:` final Android application id and support email (currently
   `com.hamzapowerplayer.yuxi` and `hamzapowerplayer.global@gmail.com`).
 - `UNCLEAR:` whether Android `INTERNET` can be removed from production builds

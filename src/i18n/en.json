@@ -331,7 +331,7 @@
   "licenses.title": "Open-source licenses",
   "licenses.intro": "Yuxi is built with open-source software. Thank you to every maintainer.",
   "licenses.fonts": "Bundled fonts",
-  "licenses.fontBody": "Noto Sans JP and Noto Nastaliq Urdu are licensed under the SIL Open Font License 1.1.",
+  "licenses.fontBody": "Noto Sans JP, Noto Nastaliq Urdu and Nunito are licensed under the SIL Open Font License 1.1.",
   "licenses.deps": "Libraries",
   "licenses.license": "License",
   "licenses.version": "Version",

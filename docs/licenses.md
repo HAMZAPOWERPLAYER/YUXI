@@ -1,8 +1,8 @@
 # Open-Source Licenses
 
-Yuxi is built with open-source software and bundles two open-source font families. This
-document records the licenses that apply to the app and its dependencies. The in-app
-**Settings → Open-source licenses** screen shows the generated package list.
+Yuxi is built with open-source software and bundles three open-source font families.
+This document records the licenses that apply to the app and its dependencies. The
+in-app **Settings → Open-source licenses** screen shows the generated package list.
 
 The machine-readable list is `src/generated/licenses.json`, produced by:
 
@@ -11,36 +11,22 @@ npm run licenses
 ```
 
 The generator reads production dependencies from `package.json`, reads each installed
-package's `license` field, and adds the two bundled font entries. Re-run it whenever
+package's `license` field, and adds the three bundled font entries. Re-run it whenever
 dependencies change.
 
 ## Application license
 
-The Yuxi application source is released under the MIT License:
+The Yuxi application source is licensed under the **Apache License, Version 2.0**
+(Apache-2.0). The full license text is in [`LICENSE`](../LICENSE), and the current
+copyright attribution is in [`NOTICE`](../NOTICE).
 
-```text
-MIT License
+Copyright (c) 2026 Yuxi contributors.
 
-Copyright (c) 2026 Yuxi contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+Apache-2.0 permits use, reproduction, modification, distribution, public display,
+public performance, sublicensing and patent use under its terms, provided that the
+license, copyright, patent, trademark and attribution notices are preserved. It also
+includes an express patent grant and a trademark clause. This paragraph is a summary,
+not legal advice; `LICENSE` is the controlling text.
 
 ## Bundled fonts
 
@@ -48,21 +34,23 @@ SOFTWARE.
 | ------------------ | -------------------------------------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
 | Noto Sans JP       | `@expo-google-fonts/noto-sans-jp` 400, 500 and 700 (bundled into the app)  | SIL OFL 1.1 | Copyright 2014–2021 Adobe (http://www.adobe.com/), with Reserved Font Name "Source"; Noto Project Authors |
 | Noto Nastaliq Urdu | `@expo-google-fonts/noto-nastaliq-urdu` 400 and 700 (bundled into the app) | SIL OFL 1.1 | Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)                           |
+| Nunito             | `@expo-google-fonts/nunito` 600 and 800 (bundled into the app)             | SIL OFL 1.1 | Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)                         |
 
-The `@expo-google-fonts/noto-sans-jp` and `@expo-google-fonts/noto-nastaliq-urdu`
-packages are MIT-licensed wrappers published by Expo; the font files themselves are
-OFL-1.1. The OFL text below applies to both font families.
+The three `@expo-google-fonts/*` packages are MIT-licensed wrappers published by Expo;
+the font files themselves are OFL-1.1. The OFL text below applies to all three font
+families.
 
 ## Dependency license summary
 
-All production dependencies currently resolve to MIT, except the two font packages
-(`MIT AND OFL-1.1`) and the two bundled fonts (`OFL-1.1`). The exact list at the time of
-writing:
+All production dependencies currently resolve to MIT, except the three font packages
+(`MIT AND OFL-1.1`) and the three bundled fonts (`OFL-1.1`). The exact list at the time
+of writing:
 
 | Package                                  | Version | License         |
 | ---------------------------------------- | ------- | --------------- |
 | `@expo-google-fonts/noto-nastaliq-urdu`  | 0.4.2   | MIT AND OFL-1.1 |
 | `@expo-google-fonts/noto-sans-jp`        | 0.4.4   | MIT AND OFL-1.1 |
+| `@expo-google-fonts/nunito`              | 0.4.2   | MIT AND OFL-1.1 |
 | `@expo/vector-icons`                     | 15.1.1  | MIT             |
 | `@react-native-community/datetimepicker` | 9.2.1   | MIT             |
 | `expo`                                   | 58.0.19 | MIT             |
@@ -95,6 +83,7 @@ writing:
 | `zod`                                    | 4.6.7   | MIT             |
 | Noto Nastaliq Urdu                       | bundled | OFL-1.1         |
 | Noto Sans JP                             | bundled | OFL-1.1         |
+| Nunito                                   | bundled | OFL-1.1         |
 
 Transitive dependency license files remain in `node_modules` and in the published
 packages. The generated list covers the direct production dependencies that the app
@@ -105,6 +94,7 @@ imports or bundles.
 ```text
 Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'
 Copyright 2022 The Noto Project Authors (https://github.com/notofonts/nastaliq)
+Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
